@@ -1,0 +1,32 @@
+{
+	"betStatus": "02",
+	"code": "00000",
+	"data": {
+		"orderInfo": {
+			"betDouble": "1",
+			"betMode": "01",
+			"dataSource": "0",
+			"drawNumber": "2018122",
+			"gameAlias": "ssq",
+			"multiDraw": "1",
+			"noteNumber": "2",
+			"terminal": "ZDMHI1539326614",
+			"ticketList": [{
+				"eachBetMode": "01",
+				"eachTotalMoney": "20",
+				"ticket": "01 02 03 04 05 12 22|10"
+			}, {
+				"eachBetMode": "01",
+				"eachTotalMoney": "20",
+				"ticket": "01 02 03 04 05 12 20|10"
+			}],
+			"totalMoney": "40"
+		}
+	},
+	"ketStore": "0xad5f22fa4625ff79fd50aeb64648a7f8988f260208d3a8ea2d2cca7d305ce331",
+	"message": "终端下注成功!",
+	"orderCode": "201810171551003939132178",
+	"orderStatus": "00",
+	"safetyCode": "69B0AE53-6667CB49-334E7D5D-463226DE",
+	"state": "00"
+}

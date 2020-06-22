@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/update_top_bg"
+        android:adjustViewBounds="true"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="15dp"
+        android:background="@drawable/shape_update_bg"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/discover_new_version"
+                android:textColor="@color/black"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/update_dialog_tv_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="2dp"
+                android:text="(v1.0.0)"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_marginLeft="20dip"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/update_dialog_tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/tv2"
+            android:text="@string/content"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/update_dialog_bt_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:background="@drawable/shape_update_no_bg"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:text="@string/next"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/update_dialog_bt_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:background="@drawable/shape_order_pay_bg"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:text="@string/now_up"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

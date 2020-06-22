@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#F2F2F2">
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/main_color">
+        <com.zhy.android.percent.support.PercentLinearLayout
+            android:id="@+id/lly_settlement_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dip">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="23dip"
+                android:paddingLeft="10dip"
+                android:adjustViewBounds="true"
+                android:src="@drawable/arrow_left_white" />
+
+        </com.zhy.android.percent.support.PercentLinearLayout>
+        <TextView
+            android:id="@+id/header_type_one_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/settlement_details"
+            android:textColor="#FFF"
+            android:textSize="20sp"/>
+    </RelativeLayout>
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dip"
+        android:gravity="center_vertical">
+        <View
+        android:layout_width="8dip"
+        android:layout_height="8dip"
+        android:background="@drawable/settle_details_item_oval_red"
+        android:layout_marginLeft="20dip"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/representation_auditing"
+            android:textSize="14dip"
+            app:layout_textSizePercent="4%sw"
+            android:textColor="@color/jc_zq_list_group_text_color"
+            android:layout_marginLeft="5dip" />
+        <View
+            android:layout_width="8dip"
+            android:layout_height="8dip"
+            android:background="@drawable/settle_details_item_oval_group"
+            android:layout_marginLeft="20dip"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/indicates_settlement"
+            android:textSize="14dip"
+            app:layout_textSizePercent="4%sw"
+            android:textColor="@color/jc_zq_list_group_text_color"
+            android:layout_marginLeft="5dip" />
+    </com.zhy.android.percent.support.PercentLinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.jc.lottery.view.XListView
+            android:id="@+id/xlv_settlement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:cacheColorHint="@null"
+            android:divider="@null"
+            android:scrollbars="none"
+            android:background="#F2F2F2" />
+        <com.zhy.android.percent.support.PercentLinearLayout
+            android:id="@+id/lly_settlement_detail_examine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_marginBottom="20dip"
+            android:layout_alignParentBottom="true">
+            <Button
+                android:id="@+id/bt_settlement_detail_examine"
+                android:layout_width="match_parent"
+                android:layout_height="48dip"
+                app:layout_heightPercent="6%sh"
+                android:background="@drawable/button_add_zhuce"
+                android:text="@string/to_examine"
+                android:textColor="@color/white"
+                android:textSize="14dip"
+                android:layout_marginLeft="15dip"
+                android:layout_marginRight="15dip"/>
+        </com.zhy.android.percent.support.PercentLinearLayout>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="@color/main_color"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:id="@+id/lly_recharge_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dip">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="23dip"
+                android:adjustViewBounds="true"
+                android:paddingLeft="10dip"
+                android:src="@drawable/arrow_left_white" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_recharge_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:text="@string/recharge"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:id="@+id/lly_receiving_nodata"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:layout_marginTop="100dip"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/img_reward_nodata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_widthPercent="35%sw"
+            android:adjustViewBounds="true"
+            android:layout_gravity="center"
+            android:src="@drawable/recharge_success"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/congratulations"
+            android:textSize="15dip"
+            android:textColor="@color/black"
+            android:layout_marginTop="20dip"/>
+        <com.zhy.android.percent.support.PercentLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dip"
+            android:orientation="horizontal"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip"
+            android:layout_marginTop="30dip">
+            <Button
+                android:id="@+id/btn_success_close"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/close"
+                android:textColor="@color/white"
+                android:background="@drawable/scanner_shape_bg"
+                android:layout_marginRight="10dip"/>
+            <Button
+                android:id="@+id/btn_btn_success_details"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/see_details"
+                android:textColor="@color/main_color"
+                android:background="@drawable/btn_delivery_inout_submit_bg"
+                android:layout_marginLeft="10dip"/>
+        </com.zhy.android.percent.support.PercentLinearLayout>
+    </com.zhy.android.percent.support.PercentLinearLayout>
+</LinearLayout>

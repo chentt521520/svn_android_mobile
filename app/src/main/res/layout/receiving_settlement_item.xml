@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#F3F3F3"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dip"
+        android:orientation="horizontal"
+        android:weightSum="3">
+        <TextView
+            android:id="@+id/tv_receiving_item_no"
+            android:layout_width="30dip"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/xuhao"
+            android:textSize="12dip"
+            android:textColor="#333333"
+            android:layout_marginLeft="5dip"/>
+        <TextView
+            android:id="@+id/tv_receiving_item_one"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=""
+            android:textSize="12dip"
+            android:textColor="#333333" />
+        <TextView
+            android:id="@+id/tv_receiving_item_two"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=""
+            android:textSize="12dip"
+            android:textColor="#333333" />
+        <TextView
+            android:id="@+id/tv_receiving_item_three"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=""
+            android:textSize="12dip"
+            android:textColor="#333333" />
+        <TextView
+            android:id="@+id/tv_receiving_item_type"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=""
+            android:textSize="12dip"
+            android:textColor="@color/main_color"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/tv_receiving_item_time"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=""
+            android:textSize="12dip"
+            android:textColor="#333333"
+            android:visibility="gone"/>
+    </LinearLayout>
+</LinearLayout>

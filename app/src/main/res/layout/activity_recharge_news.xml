@@ -1,0 +1,844 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="@color/main_color"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:id="@+id/lly_recharge_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dip">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="23dip"
+                android:adjustViewBounds="true"
+                android:paddingLeft="10dip"
+                android:src="@drawable/arrow_left_white" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_recharge_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:text="@string/recharge"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:id="@+id/lly_recharge_recharging"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:weightSum="4">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="0dip"
+            android:layout_marginTop="40dip"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ytj0"
+            android:visibility="visible" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dip"
+            android:text="@string/order_recharge"
+            android:textColor="@color/black"
+            android:textSize="16dip" />
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rll_recharge_initialization"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.zhy.android.percent.support.PercentLinearLayout
+                android:id="@+id/lly_recharge_initialization"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="47dip"
+                android:visibility="visible">
+                <com.zhy.android.percent.support.PercentLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/recharge_top_bg"
+                    android:layout_margin="20dip"
+                    app:layout_heightPercent="35%sw">
+                    <LinearLayout
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="20dip"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/my_balance"
+                            android:textSize="10dip"
+                            android:textColor="#99ffffff" />
+                        <TextView
+                            android:id="@+id/tv_balance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textSize="24dip"
+                            android:textColor="#ffffff"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center|left"
+                        android:layout_marginRight="20dip"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:text="@string/recharge_account"
+                                android:textColor="#99ffffff"
+                                android:textSize="13dip" />
+
+                            <TextView
+                                android:id="@+id/tv_recharge_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginRight="15dip"
+                                android:gravity="center_vertical"
+                                android:textColor="#99ffffff"
+                                android:textSize="13dip" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="3dip">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:text="@string/game_type"
+                                android:textColor="#99ffffff"
+                                android:textSize="13dip" />
+
+                            <TextView
+                                android:id="@+id/tv_recharge_game_type"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginRight="15dip"
+                                android:text="@string/quick_lotterys"
+                                android:gravity="center_vertical"
+                                android:textColor="#99ffffff"
+                                android:textSize="13dip" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="3dip">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:text="@string/recharge_ratio"
+                                android:textColor="#99ffffff"
+                                android:textSize="13dip" />
+
+                            <TextView
+                                android:id="@+id/tv_recharge_instant"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginRight="15dip"
+                                android:gravity="center_vertical"
+                                android:textColor="#99ffffff"
+                                android:textSize="13dip" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.zhy.android.percent.support.PercentLinearLayout>
+
+                <View
+                    android:id="@+id/view_recharge_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:layout_marginLeft="15dip"
+                    android:layout_marginRight="15dip"
+                    android:background="#F3F3F3"
+                    android:visibility="gone"/>
+
+
+                <View
+                    android:id="@+id/view_recharge_phones"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:layout_marginLeft="15dip"
+                    android:layout_marginRight="15dip"
+                    android:background="#F3F3F3"
+                    android:visibility="gone"/>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:layout_marginLeft="15dip"
+                    android:layout_marginRight="15dip"
+                    android:background="#F3F3F3"
+                    android:visibility="gone"/>
+
+                <com.zhy.android.percent.support.PercentLinearLayout
+                    android:id="@+id/lly_recharge_phones"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dip"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    app:layout_heightPercent="12%sw"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dip"
+                        android:gravity="center_vertical"
+                        android:text="@string/recharge_phone"
+                        android:textColor="#7a7a7a"
+                        android:textSize="15dip"
+                        app:layout_textSizePercent="4.2%sw" />
+
+                    <com.zhy.android.percent.support.PercentLinearLayout
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="2dip"
+                        android:layout_marginLeft="15dip"
+                        android:layout_marginRight="15dip"
+                        android:layout_marginTop="2dip"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_recharge_pre_code"
+                            android:layout_width="0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"/>
+
+                        <EditText
+                            android:id="@+id/et_recharge_phones"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:gravity="center_vertical|left"
+                            android:hint="@string/please_input"
+                            android:inputType="number"
+                            android:textColor="#808080"
+                            android:textSize="15dip"
+                            app:layout_textSizePercent="4.2%sw"
+                            android:minWidth="100dip"
+                            android:layout_marginLeft="0dip"/>
+                    </com.zhy.android.percent.support.PercentLinearLayout>
+                </com.zhy.android.percent.support.PercentLinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:layout_marginLeft="15dip"
+                    android:layout_marginRight="15dip"
+                    android:background="#F3F3F3" />
+
+                <com.zhy.android.percent.support.PercentLinearLayout
+                    android:id="@+id/lly_recharge_sms"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginLeft="15dip"
+                        android:layout_marginRight="15dip"
+                        android:background="#F3F3F3" />
+
+                    <com.zhy.android.percent.support.PercentLinearLayout
+                        android:id="@+id/lly_recharge_card_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dip"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="15dip"
+                            android:gravity="center_vertical"
+                            android:text="@string/recharge_card"
+                            android:textColor="#7a7a7a"
+                            android:textSize="15dip"
+                            app:layout_textSizePercent="4.2%sw" />
+
+                        <com.zhy.android.percent.support.PercentLinearLayout
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="2dip"
+                            android:layout_marginLeft="15dip"
+                            android:layout_marginRight="15dip"
+                            android:layout_marginTop="2dip"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/et_recharge_card_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dip"
+                                android:layout_weight="1"
+                                android:background="@null"
+                                android:gravity="center_vertical|right"
+                                android:hint="@string/please_input_card_no"
+                                android:inputType="number"
+                                android:textColor="#808080"
+                                android:textSize="15dip"
+                                app:layout_textSizePercent="4.2%sw" />
+                        </com.zhy.android.percent.support.PercentLinearLayout>
+                    </com.zhy.android.percent.support.PercentLinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginLeft="15dip"
+                        android:layout_marginRight="15dip"
+                        android:background="#F3F3F3" />
+
+                    <com.zhy.android.percent.support.PercentLinearLayout
+                        android:id="@+id/lly_recharge_card_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dip"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="15dip"
+                            android:gravity="center_vertical"
+                            android:text="@string/recharge_card_password"
+                            android:textColor="#7a7a7a"
+                            android:textSize="15dip"
+                            app:layout_textSizePercent="4.2%sw" />
+
+                        <com.zhy.android.percent.support.PercentLinearLayout
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="2dip"
+                            android:layout_marginLeft="15dip"
+                            android:layout_marginRight="15dip"
+                            android:layout_marginTop="2dip"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/et_recharge_card_password"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dip"
+                                android:layout_weight="1"
+                                android:background="@null"
+                                android:gravity="center_vertical|right"
+                                android:hint="@string/please_input_card_pwd"
+                                android:inputType="textPassword"
+                                android:textColor="#808080"
+                                android:textSize="15dip"
+                                app:layout_textSizePercent="4.2%sw" />
+                        </com.zhy.android.percent.support.PercentLinearLayout>
+                    </com.zhy.android.percent.support.PercentLinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginLeft="15dip"
+                        android:layout_marginRight="15dip"
+                        android:background="#F3F3F3" />
+
+                    <com.zhy.android.percent.support.PercentLinearLayout
+                        android:id="@+id/lly_recharge_card_information"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dip"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="15dip"
+                            android:gravity="center_vertical"
+                            android:text="@string/card_information"
+                            android:textColor="#7a7a7a"
+                            android:textSize="15dip"
+                            app:layout_textSizePercent="4.2%sw" />
+
+                        <com.zhy.android.percent.support.PercentLinearLayout
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="2dip"
+                            android:layout_marginLeft="15dip"
+                            android:layout_marginRight="15dip"
+                            android:layout_marginTop="2dip"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_recharge_card_information"
+                                android:layout_width="90dip"
+                                android:layout_height="50dip"
+                                android:background="@drawable/shape_bjk_001"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="#7a7a7a"
+                                android:textSize="14dip"
+                                app:layout_heightPercent="12%sw"
+                                app:layout_widthPercent="23%sw" />
+                        </com.zhy.android.percent.support.PercentLinearLayout>
+                    </com.zhy.android.percent.support.PercentLinearLayout>
+                </com.zhy.android.percent.support.PercentLinearLayout>
+
+                <com.zhy.android.percent.support.PercentLinearLayout
+                    android:id="@+id/lly_recharge_money"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/lly_lottery_purchase_bg">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="42dip"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="15dip"
+                        android:text="@string/payment_amount"
+                        android:textColor="#7a7a7a"
+                        android:textSize="14dip"
+                        app:layout_textSizePercent="3.9%sw" />
+
+                    <com.zhy.android.percent.support.PercentLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:orientation="vertical"
+                        android:padding="15dip">
+
+                        <com.zhy.android.percent.support.PercentLinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_recharge_one"
+                                android:layout_width="90dip"
+                                android:layout_height="50dip"
+                                android:background="@drawable/recharge_shape_bgs"
+                                android:gravity="center"
+                                android:text="@string/five_hundred"
+                                android:textColor="@color/white"
+                                android:textSize="14dip"
+                                app:layout_heightPercent="14%sw"
+                                app:layout_widthPercent="23%sw" />
+
+                            <com.zhy.android.percent.support.PercentLinearLayout
+                                android:layout_width="0dip"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center">
+
+                                <TextView
+                                    android:id="@+id/tv_recharge_two"
+                                    android:layout_width="90dip"
+                                    android:layout_height="50dip"
+                                    android:background="@drawable/shape_bjk_001"
+                                    android:gravity="center"
+                                    android:text="@string/one_thousand"
+                                    android:textColor="#7a7a7a"
+                                    android:textSize="14dip"
+                                    app:layout_heightPercent="14%sw"
+                                    app:layout_widthPercent="23%sw" />
+                            </com.zhy.android.percent.support.PercentLinearLayout>
+
+                            <TextView
+                                android:id="@+id/tv_recharge_three"
+                                android:layout_width="90dip"
+                                android:layout_height="50dip"
+                                android:background="@drawable/shape_bjk_001"
+                                android:gravity="center"
+                                android:text="@string/five_thousand"
+                                android:textColor="#7a7a7a"
+                                android:textSize="14dip"
+                                app:layout_heightPercent="12%sw"
+                                app:layout_widthPercent="23%sw" />
+                        </com.zhy.android.percent.support.PercentLinearLayout>
+
+                        <com.zhy.android.percent.support.PercentLinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dip"
+                            android:orientation="horizontal"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true">
+
+                            <TextView
+                                android:id="@+id/tv_recharge_six"
+                                android:layout_width="90dip"
+                                android:layout_height="50dip"
+                                android:background="@drawable/shape_bjk_001"
+                                android:gravity="center"
+                                android:singleLine="true"
+                                android:text="@string/other_quantities"
+                                android:textColor="#7a7a7a"
+                                android:textSize="14dip"
+                                app:layout_heightPercent="12%sw"
+                                app:layout_widthPercent="23%sw" />
+
+                            <EditText
+                                android:id="@+id/et_recharge_four"
+                                android:layout_width="0dip"
+                                android:layout_height="50dip"
+                                android:layout_marginLeft="10dip"
+                                android:layout_weight="1"
+                                android:background="@drawable/shape_bjk_001"
+                                android:gravity="center"
+                                android:imeOptions="actionDone"
+                                android:inputType="number"
+                                android:maxLength="8"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textColor="#7a7a7a"
+                                android:textSize="14dip"
+                                android:visibility="gone"
+                                app:layout_heightPercent="12%sw" />
+                        </com.zhy.android.percent.support.PercentLinearLayout>
+                    </com.zhy.android.percent.support.PercentLinearLayout>
+                </com.zhy.android.percent.support.PercentLinearLayout>
+
+                <com.zhy.android.percent.support.PercentLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/lly_lottery_purchase_bg"
+                    android:orientation="vertical"
+                    android:layout_marginTop="20dip">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="42dip"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="15dip"
+                        android:text="@string/payment_method"
+                        android:textColor="#7a7a7a"
+                        android:textSize="14dip"
+                        app:layout_textSizePercent="3.9%sw" />
+                    <com.zhy.android.percent.support.PercentLinearLayout
+                        android:id="@+id/lly_recharge_four"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dip"
+                        android:layout_marginLeft="15dip"
+                        android:layout_marginRight="15dip"
+                        android:layout_marginTop="0.5dip"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip"
+                        android:paddingRight="15dip"
+                        android:visibility="visible"
+                        app:layout_heightPercent="13%sw"
+                        app:layout_marginBottomPercent="2%sw"
+                        app:layout_marginTopPercent="2%sw">
+
+                        <com.zhy.android.percent.support.PercentLinearLayout
+                            android:layout_width="22dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:id="@+id/img_payment_four"
+                                android:layout_width="wrap_content"
+                                android:layout_height="16dip"
+                                android:adjustViewBounds="true"
+                                app:layout_heightPercent="4.5%sw"
+                                android:src="@drawable/payment_01"/>
+                        </com.zhy.android.percent.support.PercentLinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_payment_four"
+                            android:layout_width="0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:text="@string/offline_payment"
+                            android:textColor="@color/main_color"
+                            android:textSize="14dip" />
+
+                        <com.jc.lottery.view.SmoothCheckBox
+                            android:id="@+id/scb_recharge_four"
+                            android:layout_width="21dp"
+                            android:layout_height="21dp"
+                            app:color_checked="@color/main_color"
+                            app:color_unchecked="@color/white"
+                            app:color_unchecked_stroke="#CCCCCC"
+                            app:layout_heightPercent="5.5%sw"
+                            app:layout_widthPercent="5.5%w"
+                            app:stroke_width="0.5dip" />
+                    </com.zhy.android.percent.support.PercentLinearLayout>
+                    <com.zhy.android.percent.support.PercentLinearLayout
+                        android:id="@+id/lly_recharge_one"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dip"
+                        android:layout_marginLeft="15dip"
+                        android:layout_marginRight="15dip"
+                        android:layout_marginTop="0.5dip"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip"
+                        android:paddingRight="15dip"
+                        app:layout_heightPercent="13%sw"
+                        app:layout_marginBottomPercent="2%sw">
+
+                        <com.zhy.android.percent.support.PercentLinearLayout
+                            android:layout_width="22dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:id="@+id/img_payment_one"
+                                android:layout_width="wrap_content"
+                                android:layout_height="16dip"
+                                android:adjustViewBounds="true"
+                                app:layout_heightPercent="4.5%sw"
+                                android:src="@drawable/payment_02_no"/>
+                        </com.zhy.android.percent.support.PercentLinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_payment_one"
+                            android:layout_width="0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:text="Mtn"
+                            android:textColor="@color/black"
+                            android:textSize="14dip" />
+
+                        <com.jc.lottery.view.SmoothCheckBox
+                            android:id="@+id/scb_recharge_one"
+                            android:layout_width="21dp"
+                            android:layout_height="21dp"
+                            app:color_checked="@color/main_color"
+                            app:color_unchecked="@color/white"
+                            app:color_unchecked_stroke="#CCCCCC"
+                            app:layout_heightPercent="5.5%sw"
+                            app:layout_widthPercent="5.5%w"
+                            app:stroke_width="0.5dip" />
+                    </com.zhy.android.percent.support.PercentLinearLayout>
+                    <com.zhy.android.percent.support.PercentLinearLayout
+                        android:id="@+id/lly_recharge_two"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dip"
+                        android:layout_marginLeft="15dip"
+                        android:layout_marginRight="15dip"
+                        android:layout_marginTop="0.5dip"
+                        android:background="@drawable/order_payment_select_no_bg"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip"
+                        android:paddingRight="15dip"
+                        android:visibility="gone"
+                        app:layout_heightPercent="13%sw"
+                        app:layout_marginBottomPercent="2%sw"
+                        app:layout_marginTopPercent="2%sw">
+
+                        <com.zhy.android.percent.support.PercentLinearLayout
+                            android:layout_width="22dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="16dip"
+                                android:adjustViewBounds="true"
+                                app:layout_heightPercent="4.5%sw" />
+                        </com.zhy.android.percent.support.PercentLinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_payment_two"
+                            android:layout_width="0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:text="Airtel"
+                            android:textColor="@color/black"
+                            android:textSize="14dip" />
+
+                        <com.jc.lottery.view.SmoothCheckBox
+                            android:id="@+id/scb_recharge_two"
+                            android:layout_width="21dp"
+                            android:layout_height="21dp"
+                            app:color_checked="#00A553"
+                            app:color_unchecked="@color/white"
+                            app:color_unchecked_stroke="#00A553"
+                            app:layout_heightPercent="5.5%sw"
+                            app:layout_widthPercent="5.5%w"
+                            app:stroke_width="0.5dip" />
+                    </com.zhy.android.percent.support.PercentLinearLayout>
+                    <com.zhy.android.percent.support.PercentLinearLayout
+                        android:id="@+id/lly_recharge_three"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dip"
+                        android:layout_marginLeft="15dip"
+                        android:layout_marginRight="15dip"
+                        android:layout_marginTop="0.5dip"
+                        android:background="@drawable/order_payment_select_no_bg"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip"
+                        android:paddingRight="15dip"
+                        android:visibility="gone"
+                        app:layout_heightPercent="13%sw"
+                        app:layout_marginBottomPercent="2%sw"
+                        app:layout_marginTopPercent="2%sw">
+
+                        <com.zhy.android.percent.support.PercentLinearLayout
+                            android:layout_width="22dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="16dip"
+                                android:adjustViewBounds="true"
+                                app:layout_heightPercent="4.5%sw" />
+                        </com.zhy.android.percent.support.PercentLinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_payment_three"
+                            android:layout_width="0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:text="Zamtel"
+                            android:textColor="@color/black"
+                            android:textSize="14dip" />
+
+                        <com.jc.lottery.view.SmoothCheckBox
+                            android:id="@+id/scb_recharge_three"
+                            android:layout_width="21dp"
+                            android:layout_height="21dp"
+                            app:color_checked="#00A553"
+                            app:color_unchecked="@color/white"
+                            app:color_unchecked_stroke="#00A553"
+                            app:layout_heightPercent="5.5%sw"
+                            app:layout_widthPercent="5.5%w"
+                            app:stroke_width="0.5dip" />
+                    </com.zhy.android.percent.support.PercentLinearLayout>
+
+                </com.zhy.android.percent.support.PercentLinearLayout>
+                <Button
+                    android:id="@+id/btn_recharge_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dip"
+                    android:layout_margin="20dip"
+                    android:background="@drawable/button_add_zhuce"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:text="@string/recharge"
+                    android:textColor="@color/white"
+                    android:textSize="14dip" />
+
+            </com.zhy.android.percent.support.PercentLinearLayout>
+        </ScrollView>
+
+        <com.zhy.android.percent.support.PercentLinearLayout
+            android:id="@+id/lly_recharge_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="45dip"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/recharge_money"
+                android:textColor="#7a7a7a"
+                android:textSize="14dip"
+                app:layout_textSizePercent="3.7%sw" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text=": "
+                android:textColor="#7a7a7a"
+                android:textSize="14dip"
+                app:layout_textSizePercent="3.7%sw" />
+
+            <TextView
+                android:id="@+id/tv_recharge_money"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dip"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="5000.00"
+                android:textColor="@color/main_color"
+                android:textSize="14dip"
+                app:layout_textSizePercent="3.7%sw" />
+
+
+        </com.zhy.android.percent.support.PercentLinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_above="@id/lly_recharge_bottom"
+            android:background="#F3F3F3" />
+    </RelativeLayout>
+</LinearLayout>

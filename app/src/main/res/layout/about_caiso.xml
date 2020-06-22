@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal"
+    android:background="#f0f0f0"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/title"
+        layout="@layout/header_type_one"/>
+
+    <ImageView
+        android:id="@+id/textView2"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/logo"
+        android:layout_below="@+id/title"
+        android:layout_centerHorizontal="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textView2">
+
+        <com.zhy.android.percent.support.PercentRelativeLayout
+            android:id="@+id/rel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/tv"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                app:layout_textSizePercent="4.5%sw"
+                android:text="@string/app_name"/>
+
+            <TextView
+                android:id="@+id/about_caiso_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/tv"
+                android:background="@drawable/about_tv_bg"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="12sp"
+                app:layout_textSizePercent="3%sw"
+                tools:text="版本：1.0.0"/>
+        </com.zhy.android.percent.support.PercentRelativeLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:layout_below="@+id/rel"
+            android:visibility="gone"
+            android:src="@drawable/about_text"/>
+
+
+        <TextView
+            android:id="@+id/about_service_agreement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/about_button_add_select"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:paddingLeft="35dp"
+            android:paddingRight="35dp"
+            android:text="@string/service_agreement"
+            android:layout_above="@+id/about_user_agreement"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="12dp"
+            android:textColor="@drawable/button_tv_color_selector_lottery"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/about_user_agreement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/about_button_add_select"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:visibility="gone"
+            android:paddingLeft="35dp"
+            android:paddingRight="35dp"
+            android:text="用户协议"
+            android:layout_above="@+id/tv_phone"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="40dp"
+            android:textColor="@drawable/button_tv_color_selector_lottery"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:id="@+id/tv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/banquan"
+            android:layout_marginBottom="6dip"
+            android:layout_centerHorizontal="true"
+            android:textSize="13sp"
+            android:visibility="gone"
+            android:textColor="@color/tv"
+            android:text="客服电话: 400-669-0981"/>
+
+        <TextView
+            android:id="@+id/banquan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dip"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/tv"
+            android:layout_above="@+id/guanwang"
+            android:text="© 2017 北京霁彩联横传媒科技有限公司"
+            android:visibility="gone"
+            android:textSize="13sp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/guanwang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dip"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/tv"
+            android:text="All Rights Reserved"
+            android:layout_alignParentBottom="true"
+            android:textSize="13sp">
+        </TextView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

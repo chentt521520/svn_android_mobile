@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#f0f0f0"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/main_color">
+
+        <LinearLayout
+            android:id="@+id/header_type_one_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dip">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="23dip"
+                android:src="@drawable/arrow_left_white"
+                android:adjustViewBounds="true"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_lottery_top_includes_lin_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="7dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="7dp">
+
+            <TextView
+                android:id="@+id/header_type_one_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/s90x5names"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin_kl8_zoushitu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dip">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="24dip"
+                android:src="@drawable/im_zoushitu"
+                android:adjustViewBounds="true"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="6dp"
+                android:paddingTop="6dp">
+
+                <TextView
+                    android:id="@+id/tv_qihao_37x6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#525252"
+                    android:textSize="14sp" />
+
+                <com.jc.lottery.view.CountdownTextView
+                    android:id="@+id/tv_timer_37x6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/main_color"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="16dip"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical"
+                android:paddingLeft="10dip"
+                android:paddingRight="10dip">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dip"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:id="@+id/kl8_tv_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pick_5_numbers"
+                        android:textColor="@color/tv1" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="right|center">
+                        <LinearLayout
+                            android:id="@+id/lly_90x5_type_one"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dip"
+                            android:gravity="right|center_vertical"
+                            android:minWidth="140dip"
+                            android:background="@drawable/about_select_bg"
+                            android:visibility="visible"
+                            android:paddingLeft="10dip">
+                            <Spinner
+                                android:id="@+id/sp_90x5_type"
+                                android:layout_width="0dip"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="12dip"
+                                android:textColor="#333333"
+                                android:visibility="visible"
+                                android:dropDownWidth="wrap_content"
+                                android:dropDownVerticalOffset="33dp"
+                                android:background="@null"
+                                android:layout_marginRight="5dip"/>
+                            <ImageView
+                                android:layout_width="7dip"
+                                android:layout_height="12dip"
+                                android:layout_gravity="center_vertical"
+                                android:background="@drawable/arrow_right_small"
+                                android:layout_marginRight="10dip"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/lly_90x5_type_two"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dip"
+                            android:gravity="right|center_vertical"
+                            android:minWidth="120dip"
+                            android:background="@drawable/about_select_bg"
+                            android:visibility="gone">
+                            <TextView
+                                android:id="@+id/tv_90x5_type"
+                                android:layout_width="0dip"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="12dip"
+                                android:textColor="#333333"
+                                android:background="@null"
+                                android:gravity="center"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <com.jc.lottery.view.MyGridView
+                    android:id="@+id/sna_gridView1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:numColumns="8"
+                    android:scrollbars="none" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!--<include layout="@layout/footer" />-->
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.0"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <com.zhy.android.percent.support.PercentLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="5dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="5dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/im_lingdang" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="@string/ad_tip"
+                android:textColor="#727272"
+                app:layout_textSizePercent="4%w"/>
+
+        </com.zhy.android.percent.support.PercentLinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#f0f0f0" />
+
+        <com.zhy.android.percent.support.PercentLinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/kl8_button_jixuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/button_add_bottom_select_setting"
+                android:drawableLeft="@drawable/im_jixuan_yyy"
+                android:maxLines="1"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:text="@string/random_selection"
+                app:layout_textSizePercent="3%w"
+                android:textColor="#727272" />
+
+            <com.zhy.android.percent.support.PercentLinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.zhy.android.percent.support.PercentLinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="@string/gong"
+                        android:textColor="#727272"
+                        app:layout_textSizePercent="7%w"/>
+
+                    <TextView
+                        android:id="@+id/tv_sna"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="#727272"
+                        app:layout_textSizePercent="7%w"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="@string/zhu_select"
+                        android:textColor="#727272"
+                        app:layout_textSizePercent="7%w"/>
+                </com.zhy.android.percent.support.PercentLinearLayout>
+
+                <com.zhy.android.percent.support.PercentLinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="3dp"
+                        android:gravity="center"
+                        android:text="@string/shake"
+                        android:textColor="#727272"
+                        app:layout_textSizePercent="7%w"/>
+
+                    <TextView
+                        android:id="@+id/kl8_tv_money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="#727272"
+                        app:layout_textSizePercent="7%w"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="3dp"
+                        android:gravity="center"
+                        android:text="@string/price_unit"
+                        android:textColor="#727272"
+                        app:layout_textSizePercent="7%w"/>
+                </com.zhy.android.percent.support.PercentLinearLayout>
+
+            </com.zhy.android.percent.support.PercentLinearLayout>
+
+            <Button
+                android:id="@+id/button_sure"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:layout_widthPercent="25%w"
+                android:background="@drawable/btn_recharge_status_bg"
+                android:text="@string/sure"
+                app:layout_textSizePercent="4%w"
+                android:textColor="#ffffffff" />
+        </com.zhy.android.percent.support.PercentLinearLayout>
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+</LinearLayout>

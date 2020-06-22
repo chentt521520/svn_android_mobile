@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.jc.lottery">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <!-- 安全监控权限 -->
+
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_SETTINGS" />
+
+    <uses-feature android:name="android.hardware.nfc.hce" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="org.simalliance.openmobileapi.SMARTCARD" />
+
+    <!-- 来电消音 -->
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <!-- 蓝牙分享所需的权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!-- 扫码权限 -->
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <!-- 扫码权限 -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <application
+        android:name=".base.application.LotteryApplication"
+        android:icon="@drawable/logo"
+        android:configChanges="locale"
+        android:label="@string/app_name"
+        android:theme="@style/MyStartTheme"
+        android:largeHeap="true"
+        android:persistent="true">
+        <!-- 欢迎页 -->
+        <activity
+            android:name=".activity.SplashActivity"
+            android:configChanges="keyboardHidden|orientation|locale"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyStartTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="chucaier" />
+            </intent-filter>
+        </activity>
+        <!--登录页-->
+        <activity
+            android:name=".activity.LoginActivity"
+            android:theme="@style/MyStartTheme"/>
+        <!--主页-->
+        <activity
+            android:name=".activity.MainFragmentTabActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/MyStartTheme"/>
+        <!--修改密码-->
+        <activity
+            android:name=".activity.my.UpdatePasswordActivity"
+            android:screenOrientation="portrait" />
+        <!--修改二级密码-->
+        <activity
+            android:name=".activity.my.UpdateLockPasswordActivity"
+            android:screenOrientation="portrait" />
+        <!--关于-->
+        <activity
+            android:name=".activity.my.AboutCaisoActivity"
+            android:screenOrientation="portrait" />
+
+        <!--扫描二维码-->
+        <activity
+            android:name=".activity.scanner.RewardScannerActivity"
+            android:screenOrientation="portrait" />
+        <!--手动兑奖-->
+        <activity
+            android:name=".activity.scanner.ManualScannerActivity"
+            android:screenOrientation="portrait" />
+        <!--兑奖详情-->
+        <activity
+            android:name=".activity.scanner.ScannerDetailsActivity"
+            android:screenOrientation="portrait" />
+        <!--充值-->
+        <activity
+            android:name=".activity.money.RechargeNewActivity"
+            android:screenOrientation="portrait" />
+        <!--兑奖记录详情-->
+        <activity
+            android:name=".activity.scanner.RewardRecordDetailActivity"
+            android:screenOrientation="portrait" />
+        <!--投注记录-->
+        <activity
+            android:name=".activity.scanner.BettingRecordActivity"
+            android:screenOrientation="portrait" />
+        <!--开奖记录-->
+        <activity
+            android:name=".activity.scanner.LotteryRecordActivity"
+            android:screenOrientation="portrait" />
+        <!--兑奖记录-->
+        <activity
+            android:name=".activity.scanner.CashRecordActivity"
+            android:screenOrientation="portrait" />
+        <!--我的即开彩-->
+        <activity
+            android:name=".activity.my.MyImmediateActivity"
+            android:screenOrientation="portrait" />
+        <!--我的乐透-->
+        <activity
+            android:name=".activity.my.MyLottoryActivity"
+            android:screenOrientation="portrait" />
+        <!--批量购彩-->
+        <activity
+            android:name=".activity.immediate.LotteryPurchaseActivity"
+            android:screenOrientation="portrait" />
+        <!--激活-->
+        <activity
+            android:name=".activity.immediate.ImmediatelActivationActivity"
+            android:screenOrientation="portrait" />
+        <!--结算-->
+        <activity
+            android:name=".activity.immediate.ImmediatelSettlementActivity"
+            android:screenOrientation="portrait"
+            />
+        <!--领取列表-->
+        <activity
+            android:name=".activity.immediate.ReceivingRecordsActivity"
+            android:screenOrientation="portrait" />
+        <!--即开彩兑奖列表-->
+        <activity
+            android:name=".activity.immediate.ImmediateCashRecordActivity"
+            android:screenOrientation="portrait" />
+        <!--即开彩领取详情-->
+        <activity
+            android:name=".activity.immediate.ReceivingRecordsDetailActivity"
+            android:screenOrientation="portrait" />
+        <!--结算记录-->
+        <activity
+            android:name=".activity.immediate.SettlementActivity"
+            android:screenOrientation="portrait" />
+        <!--结算详情-->
+        <activity
+            android:name=".activity.immediate.SettlementDetailActivity"
+            android:screenOrientation="portrait" />
+        <!--订单支付-->
+        <activity
+            android:name=".activity.money.OrderPaymentActivity"
+            android:screenOrientation="portrait" />
+        <!--支付记录-->
+        <activity
+            android:name=".activity.immediate.PaymentRecordActivity"
+            android:screenOrientation="portrait" />
+        <!--结算预览-->
+        <activity
+            android:name=".activity.immediate.SettlementPreviewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.Dialog"/>
+        <!--结算详情（修改版）-->
+        <activity
+            android:name=".activity.immediate.SettlementDetailNewestActivity"
+            android:screenOrientation="portrait" />
+        <!--派送记录-->
+        <activity
+            android:name=".activity.immediate.DeliveryRecordsActivity"
+            android:screenOrientation="portrait" />
+        <!--派送详情-->
+        <activity
+            android:name=".activity.immediate.DeliveryDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.immediate.DeliveryAgentDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.immediate.DeliveryAdminDetailsActivity"
+            android:screenOrientation="portrait" />
+        <!--派送录入详情-->
+        <activity
+            android:name=".activity.immediate.DeliveryInputActivity"
+            android:screenOrientation="portrait" />
+        <!--派送代理商录入详情-->
+        <activity
+            android:name=".activity.immediate.DeliveryAgentInputActivity"
+            android:screenOrientation="portrait" />
+        <!--钱包流水-->
+        <activity
+            android:name=".activity.immediate.WalletRecordActivity"
+            android:screenOrientation="portrait" />
+        <!--乐透 钱包流水-->
+        <activity
+            android:name=".activity.lottery.LotteryWalletRecordActivity"
+            android:screenOrientation="portrait" />
+        <!--销售统计-->
+        <activity
+            android:name=".activity.immediate.StatisticsAmountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.immediate.StatisticsAmountsActivity"
+            android:screenOrientation="portrait" />
+        <!--充值详情-->
+        <activity
+            android:name=".activity.money.RechargeNewDetailActivity"
+            android:screenOrientation="portrait" />
+        <!--激活详情-->
+        <activity
+            android:name=".activity.immediate.ActivationDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ProjectDialogTheme" />
+        <!--派送记录详情-->
+        <activity
+            android:name=".activity.immediate.DeliveryRecordsDetailActivity"
+            android:screenOrientation="portrait" />
+        <!--充值成功-->
+        <activity
+            android:name=".activity.money.RechargeSuccessActivity"
+            android:screenOrientation="portrait" />
+        <!--乐透-->
+
+        <!--37*6-->
+        <activity
+            android:name=".activity.lottery._37x6SelectNumActivity"
+            android:screenOrientation="portrait" />
+        <!--37x6历史查询-->
+        <activity
+            android:name=".activity.lottery._37x6HistoryQueryActivity"
+            android:screenOrientation="portrait" />
+        <!--37x6投注-->
+        <activity
+            android:name=".activity.lottery._37x6BettingActivity"
+            android:screenOrientation="portrait" />
+        <!--蓝牙-->
+        <activity
+            android:name=".activity.BluetoothNewActivity"
+            android:screenOrientation="portrait" />
+        <!--90*5-->
+        <activity
+            android:name=".activity.lottery.s90x5Activity"
+            android:screenOrientation="portrait" />
+        <!--90*5历史查询-->
+        <activity
+            android:name=".activity.lottery.s90x5HistoryQueryActivity"
+            android:screenOrientation="portrait" />
+        <!--90*5投注-->
+        <activity
+            android:name=".activity.lottery.s90x5BettingActivity"
+            android:screenOrientation="portrait" />
+        <!--乐透结算-->
+        <activity
+            android:name=".activity.lottery.LotterySettlementActivity"
+            android:screenOrientation="portrait" />
+        <!--乐透结算-->
+        <activity
+            android:name=".activity.lottery.LotterySettlementsActivity"
+            android:screenOrientation="portrait" />
+        <!--乐透结算预览-->
+        <activity
+            android:name=".activity.lottery.LotterySettlementPreviewActivity"
+            android:screenOrientation="portrait" />
+        <!--乐透结算列表-->
+        <activity
+            android:name=".activity.lottery.SettlementListActivity"
+            android:screenOrientation="portrait" />
+        <!--乐透结算列表详情-->
+        <activity
+            android:name=".activity.lottery.LotterySettlementDetailActivity"
+            android:screenOrientation="portrait" />
+        <!--乐透充值-->
+        <activity
+            android:name=".activity.lottery.RechargeLotteryActivity"
+            android:screenOrientation="portrait" />
+        <!--乐透充值记录-->
+        <activity
+            android:name=".activity.lottery.LotteryPaymentRecordActivity"
+            android:screenOrientation="portrait" />
+        <!--乐透充值详情-->
+        <activity
+            android:name=".activity.lottery.RechargeRecordsDetailActivity"
+            android:screenOrientation="portrait" />
+        <!--乐透兑奖记录-->
+        <activity
+            android:name=".activity.lottery.LottoCashRecordActivity"
+            android:screenOrientation="portrait" />
+        <!--乐透投注结果-->
+        <activity
+            android:name=".activity.lottery.BettingSuccessActivity"
+            android:screenOrientation="portrait" />
+        <!--乐透投注结果-->
+        <activity
+            android:name=".activity.scanner.LottoScannerDetailsActivity"
+            android:screenOrientation="portrait" />
+        <!--乐透销量-->
+        <activity
+            android:name=".activity.lottery.LottoStatisticsAmountActivity"
+            android:screenOrientation="portrait" />
+        <!--投注详情-->
+        <activity
+            android:name=".activity.lottery.BettingRecordsDetailActivity"
+            android:screenOrientation="portrait" />
+        <!--开奖详情-->
+        <activity
+            android:name=".activity.lottery.OpenResultDetailActivity"
+            android:screenOrientation="portrait" />
+        <!--订单追踪-->
+        <activity
+            android:name=".activity.immediate.OrderTrackActivity"
+            android:screenOrientation="portrait" />
+        <!--激活记录-->
+        <activity
+            android:name=".activity.immediate.ActivationListActivity"
+            android:screenOrientation="portrait" />
+        <!--激活记录详情-->
+        <activity
+            android:name=".activity.immediate.ActivationListDetailsActivity"
+            android:screenOrientation="portrait" />
+
+        <!--胜负彩-->
+        <activity
+            android:name=".activity.victory.VictoryDefeatActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.victory.VictoryConfirmActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.my.MyVictoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.victory.VictoryBettingRecordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.victory.VictorySettlementActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.victory.VictorySettlementPreviewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.rebound.LeCrash"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.live.PLVideoViewActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activity.live.PLVideoViewsActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activity.live.VideoListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.victory.VictorySettlementListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.victory.VictorySettlementDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.victory.VictoryStatisticsAmountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.victory.VictoryWalletRecordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.victory.VictoryBettingSuccessActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.victory.VictoryCashRecordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.victory.VictoryBettingDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.victory.VictoryScannerDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.lottery.VictoryResultDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.lottery._49x6SelectNumActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.lottery._49x6BettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.lottery._49x6HistoryQueryActivity"
+            android:screenOrientation="portrait" />
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            tools:replace="android:authorities"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+
+        </provider>
+    </application>
+
+</manifest>

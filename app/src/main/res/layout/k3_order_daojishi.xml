@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/id_order_daojishi"
+    android:background="#DCDCDC"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="距" />
+
+    <TextView
+        android:id="@+id/tv_k3order_term"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="06"
+        android:textColor="#E3874B" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="期截止：" />
+
+    <TextView
+        android:id="@+id/tv_k3order_minute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="06"
+        android:textColor="#E3874B" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="分" />
+
+    <TextView
+        android:id="@+id/tv_k3order_second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="06"
+        android:visibility="gone"
+        android:textColor="#E3874B" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="秒" />
+
+</LinearLayout>

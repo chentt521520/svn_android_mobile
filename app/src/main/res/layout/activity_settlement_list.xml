@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#F2F2F2">
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/main_color">
+        <LinearLayout
+            android:id="@+id/lly_settlement_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dip">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="23dip"
+                android:adjustViewBounds="true"
+                android:src="@drawable/arrow_left_white" />
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/header_type_one_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/settlement_records"
+            android:textColor="#FFF"
+            android:textSize="20sp"/>
+    </RelativeLayout>
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:id="@+id/lly_settlement_nodata"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_marginTop="20dip">
+        <ImageView
+            android:id="@+id/img_reward_nodata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_widthPercent="35%sw"
+            android:adjustViewBounds="true"
+            android:layout_gravity="center"
+            android:src="@drawable/no_record"
+            />
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+    <com.jc.lottery.view.XListView
+        android:id="@+id/xlv_settlement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="@null"
+        android:divider="@null"
+        android:scrollbars="none"
+        android:background="#F2F2F2"/>
+</LinearLayout>

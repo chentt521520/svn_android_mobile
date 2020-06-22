@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="@color/main_color"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/textView_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:text="@string/device_jihuo"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_activation_device_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/need_jihuo_tip"
+        android:textColor="#808080"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_activation_device_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="6dp"
+        android:text="@string/device_name"
+        android:visibility="gone"
+        android:textColor="#808080"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/et_dialog_activation_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:hint="@string/device_no_tip"
+        android:padding="10dp"
+        android:text=""
+        android:textSize="16sp"
+        android:inputType="number"
+        android:maxLength="12"/>
+    <!--android:text="0930110344556"-->
+</LinearLayout>

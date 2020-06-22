@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/srl_receiving"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:id="@+id/header_receiving"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rel_betting"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"/>
+            <com.zhy.android.percent.support.PercentLinearLayout
+                android:id="@+id/lly_settlement_nodata"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:visibility="gone"
+                android:layout_marginTop="20dip">
+                <ImageView
+                    android:id="@+id/img_reward_nodata"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_widthPercent="35%sw"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="center"
+                    android:src="@drawable/no_record"
+                    />
+            </com.zhy.android.percent.support.PercentLinearLayout>
+        </RelativeLayout>
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:id="@+id/footer_receiving"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</RelativeLayout>

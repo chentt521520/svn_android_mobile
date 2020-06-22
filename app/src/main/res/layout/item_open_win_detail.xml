@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        style="@style/openDetailItem">
+
+        <TextView
+            android:id="@+id/tv_item_open_win_playname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="玩法" />
+
+        <TextView
+            android:id="@+id/tv_item_open_win_num"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/tv_item_open_win_money"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="0"
+            android:textColor="@color/alert_message_border" />
+    </LinearLayout>
+</LinearLayout>

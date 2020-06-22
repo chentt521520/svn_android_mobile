@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#F3F3F3" />
+
+    <LinearLayout
+        android:id="@+id/lly_settlement_item"
+        android:layout_width="match_parent"
+        android:layout_height="35dip"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:gravity="center_vertical">
+        <ImageView
+            android:id="@+id/img_settlement_select"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="15dip"
+            android:adjustViewBounds="true"
+            android:src="@drawable/settle_no"
+            android:visibility="visible"/>
+        <TextView
+            android:id="@+id/tv_receiving_item_no"
+            android:layout_width="30dip"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/xuhao"
+            android:textSize="12dip"
+            android:textColor="#333333" />
+        <TextView
+            android:id="@+id/tv_settlement_batch"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/batch_number"
+            android:textSize="12dip"
+            android:textColor="#333333"
+            android:visibility="visible"/>
+        <TextView
+            android:id="@+id/tv_settlement_book"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=""
+            android:textSize="12dip"
+            android:textColor="#333333" />
+
+        <TextView
+            android:id="@+id/tv_settlement_status"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=""
+            android:textSize="12dip"
+            android:textColor="#333333" />
+    </LinearLayout>
+</com.zhy.android.percent.support.PercentRelativeLayout>

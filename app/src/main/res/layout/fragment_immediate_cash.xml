@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@color/white"
+        android:layout_marginTop="0.5dip">
+        <com.zhy.android.percent.support.PercentLinearLayout
+            android:layout_height="46dp"
+            android:layout_width="0dp"
+            app:layout_widthPercent="60%sw"
+            android:orientation="horizontal">
+            <com.zhy.android.percent.support.PercentLinearLayout
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_immediate_one"
+                    android:layout_width="70dip"
+                    android:layout_height="28dip"
+                    android:text="CMD-54"
+                    android:textSize="14dip"
+                    android:textColor="@color/main_color"
+                    android:gravity="center"
+                    android:background="@drawable/cash_top_lly_bg" />
+            </com.zhy.android.percent.support.PercentLinearLayout>
+            <com.zhy.android.percent.support.PercentLinearLayout
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_immediate_two"
+                    android:layout_width="70dip"
+                    android:layout_height="28dip"
+                    android:text="CMD-32"
+                    android:textSize="14dip"
+                    android:gravity="center" />
+            </com.zhy.android.percent.support.PercentLinearLayout>
+        </com.zhy.android.percent.support.PercentLinearLayout>
+    </com.zhy.android.percent.support.PercentLinearLayout>
+    <android.support.v4.view.ViewPager
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/view_pager"
+        android:layout_marginTop="0.5dip">
+    </android.support.v4.view.ViewPager>
+</LinearLayout>

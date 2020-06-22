@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewGroup;
@@ -866,7 +867,9 @@ public class ImmediatelSettlementActivity extends BaseActivity {
                 llySettlementAllPop.setVisibility(View.GONE);
                 break;
             case R.id.tv_settlement_open:
-                llySettlementAllPop.setVisibility(View.VISIBLE);
+                if (!TextUtils.equals(totalNum,"0")){
+                    llySettlementAllPop.setVisibility(View.VISIBLE);
+                }
                 break;
             case R.id.lly_settlement_all:
                 if (allType) {

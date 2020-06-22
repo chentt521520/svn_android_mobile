@@ -42,12 +42,11 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/main_mylottery"
+                        android:text="@string/main_lottery"
                         android:textColor="@drawable/selector_tab_text"
-                        android:textSize="14dip"
                         android:layout_marginTop="2dip"
                         android:gravity="center"
-                        app:layout_textSizePercent="4%sw"/>
+                        app:layout_textSizePercent="3%sw"/>
                 </com.zhy.android.percent.support.PercentLinearLayout>
                 <com.zhy.android.percent.support.PercentLinearLayout
                     android:id="@+id/ll_dj"
@@ -68,10 +67,9 @@
                         android:layout_height="wrap_content"
                         android:text="@string/ticket_query"
                         android:textColor="@drawable/selector_tab_text"
-                        android:textSize="14dip"
                         android:layout_marginTop="2dip"
                         android:gravity="center"
-                        app:layout_textSizePercent="4%sw"/>
+                        app:layout_textSizePercent="3%sw"/>
                 </com.zhy.android.percent.support.PercentLinearLayout>
                 <com.zhy.android.percent.support.PercentLinearLayout
                     android:id="@+id/ll_kj"
@@ -92,10 +90,9 @@
                         android:layout_height="wrap_content"
                         android:text="@string/live_broadcast"
                         android:textColor="@drawable/selector_tab_text"
-                        android:textSize="14dip"
                         android:layout_marginTop="2dip"
                         android:gravity="center"
-                        app:layout_textSizePercent="4%sw"/>
+                        app:layout_textSizePercent="3%sw"/>
                 </com.zhy.android.percent.support.PercentLinearLayout>
                 <com.zhy.android.percent.support.PercentLinearLayout
                     android:id="@+id/ll_wd"
@@ -116,10 +113,8 @@
                         android:layout_height="wrap_content"
                         android:text="@string/main_accounts"
                         android:textColor="@drawable/selector_tab_text"
-                        android:textSize="14dip"
-                        android:layout_marginTop="2dip"
                         android:gravity="center"
-                        app:layout_textSizePercent="4%sw"/>
+                        app:layout_textSizePercent="3%sw"/>
                 </com.zhy.android.percent.support.PercentLinearLayout>
 
                 <com.zhy.android.percent.support.PercentLinearLayout

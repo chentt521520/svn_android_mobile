@@ -1,6 +1,7 @@
 package com.jc.lottery.activity.my;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.CountDownTimer;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -12,7 +13,7 @@ import android.widget.ImageView;
 
 import com.google.gson.Gson;
 import com.jc.lottery.R;
-import com.jc.lottery.activity.immediate.DeliveryAgentInputActivity;
+import com.jc.lottery.activity.LoginActivity;
 import com.jc.lottery.base.BaseActivity;
 import com.jc.lottery.bean.req.PasswordUpdateBean;
 import com.jc.lottery.http.MyUrl;
@@ -65,8 +66,8 @@ public class UpdatePasswordActivity extends BaseActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String str = s.toString();
-                if (str.length()>30){
-                    etPasswordOld.setText(str.substring(0,30)); //截取前x位
+                if (str.length() > 30) {
+                    etPasswordOld.setText(str.substring(0, 30)); //截取前x位
                     etPasswordOld.requestFocus();
                     etPasswordOld.setSelection(etPasswordOld.getText().length()); //光标移动到最后
                 }
@@ -86,8 +87,8 @@ public class UpdatePasswordActivity extends BaseActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String str = s.toString();
-                if (str.length()>30){
-                    etPasswordNew.setText(str.substring(0,30)); //截取前x位
+                if (str.length() > 30) {
+                    etPasswordNew.setText(str.substring(0, 30)); //截取前x位
                     etPasswordNew.requestFocus();
                     etPasswordNew.setSelection(etPasswordNew.getText().length()); //光标移动到最后
                 }
@@ -115,16 +116,16 @@ public class UpdatePasswordActivity extends BaseActivity {
                 String oldPassword = etPasswordOld.getText().toString().trim();
                 String newPassword = etPasswordNew.getText().toString().trim();
                 String confirmPassword = etPasswordConfirm.getText().toString().trim();
-                if (oldPassword.equals("")){
+                if (oldPassword.equals("")) {
                     ToastUtils.showShort(getString(R.string.please_enter_the_old_password));
-                }else if (newPassword.equals("")){
+                } else if (newPassword.equals("")) {
                     ToastUtils.showShort(getString(R.string.please_enter_the_new_password));
-                }else if (confirmPassword.equals("")){
+                } else if (confirmPassword.equals("")) {
                     ToastUtils.showShort(getString(R.string.please_enter_the_new_password));
-                }else {
+                } else {
                     if (newPassword.equals(confirmPassword)) {
                         passwordUpdateHttp(oldPassword, newPassword);
-                    }else {
+                    } else {
                         ToastUtils.showShort(getString(R.string.please_enter_password_is_consistent));
                     }
                 }
@@ -132,7 +133,7 @@ public class UpdatePasswordActivity extends BaseActivity {
         }
     }
 
-    private void notHide(){
+    private void notHide() {
         ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(UpdatePasswordActivity.this
                 .getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
     }
@@ -141,7 +142,7 @@ public class UpdatePasswordActivity extends BaseActivity {
         String account_name = SPUtils.look(this, SPkey.username, Config.Test_accountName);
         String terminalNum = SPUtils.look(this, SPkey.userActivationCode);
         ProgressUtil.showProgressDialog(this, getString(R.string.waitting));
-        PasswordUpdateBean passwordUpdateBean = new PasswordUpdateBean(account_name,md5OrAes(oldPassword),md5OrAes(newPassword));
+        PasswordUpdateBean passwordUpdateBean = new PasswordUpdateBean(account_name, md5OrAes(oldPassword), md5OrAes(newPassword));
         String s = new Gson().toJson(passwordUpdateBean);
         OkGo.<String>post(MyUrl.password_update)
                 .upJson(s)
@@ -157,7 +158,11 @@ public class UpdatePasswordActivity extends BaseActivity {
                                 String message = jsonObject.getString("message");
                                 String code = jsonObject.getString("code");
                                 ToastUtils.showShort(message);
-                                if (code.equals("00000")){
+                                if (code.equals("00000")) {
+                                    //修改成功，退出到登录界面
+                                    Intent intent = new Intent(UpdatePasswordActivity.this, LoginActivity.class);
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivity(intent);
                                     finish();
                                 }
                             }

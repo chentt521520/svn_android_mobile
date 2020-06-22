@@ -90,8 +90,6 @@ public class ImmediatelSettlementActivity extends BaseActivity {
     LinearLayout llySettlementSelect;
     @BindView(R.id.lly_settlement_all)
     LinearLayout llySettlementAll;
-    @BindView(R.id.btn_settlement_preview)
-    Button btnSettlementPreview;
     @BindView(R.id.btn_settlement_select)
     Button btnSettlementSelect;
     @BindView(R.id.bt_settlement_no)
@@ -110,12 +108,12 @@ public class ImmediatelSettlementActivity extends BaseActivity {
     LinearLayout llySettlementOne;
     @BindView(R.id.lly_settlement_all_pop)
     LinearLayout llySettlementAllPop;
-    @BindView(R.id.tv_receiving_item_num)
-    TextView tvSettlementNum;
+    //    @BindView(R.id.tv_receiving_item_num)
+//    TextView tvSettlementNum;
     @BindView(R.id.tv_settlement_open)
     TextView tvSettlementOpen;
-    @BindView(R.id.lly_settlement_select_top)
-    LinearLayout llySettlementSelectTop;
+    //    @BindView(R.id.lly_settlement_select_top)
+//    LinearLayout llySettlementSelectTop;
     @BindView(R.id.lly_settlement_nodata)
     LinearLayout llySettlementNodata;
     @BindView(R.id.srl_receiving)
@@ -354,8 +352,8 @@ public class ImmediatelSettlementActivity extends BaseActivity {
         });
     }
 
-    public void showInType(){
-        if (typePos != typePosTop || typesPos != typesPosTop){
+    public void showInType() {
+        if (typePos != typePosTop || typesPos != typesPosTop) {
             num = 0;
             pageNo = 1;
             pageCount = 1;
@@ -414,10 +412,10 @@ public class ImmediatelSettlementActivity extends BaseActivity {
         relSettlements.setLayoutManager(new LinearLayoutManager(this));
         relSettlementPop.setLayoutManager(new LinearLayoutManager(this));
         role = SPUtils.look(this, SPkey.roleAlias);
-        if (role.equals("fxs")){
+        if (role.equals("fxs")) {
             llySettlementType.setVisibility(View.GONE);
             viewSettlementType.setVisibility(View.GONE);
-        }else {
+        } else {
             llySettlementType.setVisibility(View.VISIBLE);
             viewSettlementType.setVisibility(View.VISIBLE);
         }
@@ -433,7 +431,7 @@ public class ImmediatelSettlementActivity extends BaseActivity {
         } else {
             settleType = "02";
         }
-        if (role.equals("fxs")){
+        if (role.equals("fxs")) {
             settleType = "03";
         }
         ProgressUtil.showProgressDialog(this, getString(R.string.waitting));
@@ -504,13 +502,13 @@ public class ImmediatelSettlementActivity extends BaseActivity {
                                     } else {
                                         settlementInfoBeanList.addAll(list);
 //                                        tvSettlementNum.setText(num + "/" + "1");
-                                        btnSettlementSelect.setText(getString(R.string.have_chosen) + "(" + num + "/" + "1" + ")");
+                                        btnSettlementSelect.setText(getString(R.string.settlement) + "(" + num + "/" + "1" + ")");
                                         settlementAdapter = new SettlementNewsAdapter(ImmediatelSettlementActivity.this);
                                         settlementAdapter.setList(settlementQueryBeanList);
                                         relSettlement.setAdapter(settlementAdapter);
                                         relSettlements.setAdapter(settlementAdapter);
                                         llySettlementNodata.setVisibility(View.GONE);
-                                        llySettlementSelectTop.setVisibility(View.GONE);
+//                                        llySettlementSelectTop.setVisibility(View.GONE);
                                         llySettlementSelect.setVisibility(View.VISIBLE);
                                     }
                                 } else {
@@ -561,7 +559,7 @@ public class ImmediatelSettlementActivity extends BaseActivity {
 //                                            settlementInfoBeanList.get(i).setType(true);
 //                                        }
 //                                        tvSettlementNum.setText(num + "/" + totalNum);
-                                        btnSettlementSelect.setText(getString(R.string.have_chosen) + "(" + num + "/" + totalNum + ")");
+                                        btnSettlementSelect.setText(getString(R.string.settlement) + "(" + num + "/" + totalNum + ")");
                                         settlementAdapter = new SettlementNewsAdapter(ImmediatelSettlementActivity.this);
                                         settlementAdapter.setList(settlementInfoBeanList);
                                         relSettlement.setAdapter(settlementAdapter);
@@ -571,20 +569,24 @@ public class ImmediatelSettlementActivity extends BaseActivity {
                                             scrollToPosition();
                                         }
 //                                    setListViewHeight(lvSettlement);
-                                        llySettlementSelectTop.setVisibility(View.GONE);
+//                                        llySettlementSelectTop.setVisibility(View.GONE);
                                         llySettlementSelect.setVisibility(View.VISIBLE);
 //                                    settlementQueryHttp(list);
                                     } else {
                                         ToastUtils.showShort(getString(R.string.no_settlement_information));
                                         llySettlementNodata.setVisibility(View.VISIBLE);
-                                        llySettlementSelectTop.setVisibility(View.GONE);
+//                                        llySettlementSelectTop.setVisibility(View.GONE);
                                         llySettlementSelect.setVisibility(View.GONE);
                                         selectEndType = 0;
                                     }
                                 }
                                 num = showNum();
+//                                if (num == 0) {
+//                                    btnSettlementSelect.setText(getString(R.string.settlement) + "(0)");
+//                                } else {
+                                    btnSettlementSelect.setText(getString(R.string.settlement) + "(" + num + "/" + totalNum + ")");
+//                                }
 //                                tvSettlementNum.setText(num + "/" + totalNum);
-                                btnSettlementSelect.setText(getString(R.string.have_chosen) + "(" + num + "/" + totalNum + ")");
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -748,7 +750,7 @@ public class ImmediatelSettlementActivity extends BaseActivity {
         notHide();
     }
 
-    @OnClick({R.id.btn_settlement_reset, R.id.btn_settlement_submit, R.id.btn_settlement_preview, R.id.lly_settlement_back, R.id.btn_settlement_select, R.id.lly_settlement_pop, R.id.lly_settlement_one, R.id.bt_settlement_yes, R.id.bt_settlement_no, R.id.img_manual_scanner_qr, R.id.tv_settlement_all_pop_del, R.id.lly_settlement_all_pop, R.id.tv_settlement_open, R.id.lly_settlement_all})
+    @OnClick({R.id.btn_settlement_reset, R.id.btn_settlement_submit, R.id.lly_settlement_back, R.id.btn_settlement_select, R.id.lly_settlement_pop, R.id.lly_settlement_one, R.id.bt_settlement_yes, R.id.bt_settlement_no, R.id.img_manual_scanner_qr, R.id.tv_settlement_all_pop_del, R.id.lly_settlement_all_pop, R.id.tv_settlement_open, R.id.lly_settlement_all})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_settlement_reset:
@@ -842,7 +844,9 @@ public class ImmediatelSettlementActivity extends BaseActivity {
                 settlementSelectAdapter.setList(settlementSelectList);
                 relSettlementPop.setAdapter(settlementSelectAdapter);
                 relSettlementPop.scrollToPosition(settlementSelectList.size() - 1);
-                llySettlementPop.setVisibility(View.VISIBLE);
+                if (settlementSelectList != null && settlementSelectList.size() > 0) {
+                    llySettlementPop.setVisibility(View.VISIBLE);
+                }
                 break;
             case R.id.lly_settlement_pop:
                 llySettlementPop.setVisibility(View.GONE);
@@ -872,8 +876,7 @@ public class ImmediatelSettlementActivity extends BaseActivity {
                     }
                     imgSettlementSelect.setImageResource(R.drawable.settle_no);
                     num = 0;
-//                    tvSettlementNum.setText(num + "/" + totalNum);
-                    btnSettlementSelect.setText(getString(R.string.have_chosen) + "(" + num + "/" + totalNum + ")");
+                    btnSettlementSelect.setText(getString(R.string.settlement) + "(" + num + "/" + totalNum + ")");
                 } else {
                     List<SettleBookBean> list = new ArrayList<SettleBookBean>();
                     if (settlementInfoBeanList.size() > 100) {
@@ -899,8 +902,7 @@ public class ImmediatelSettlementActivity extends BaseActivity {
                     }
                     settlementSelectList.addAll(list);
                     imgSettlementSelect.setImageResource(R.drawable.settle_yes);
-//                    tvSettlementNum.setText(num + "/" + totalNum);
-                    btnSettlementSelect.setText(getString(R.string.have_chosen) + "(" + num + "/" + totalNum + ")");
+                    btnSettlementSelect.setText(getString(R.string.settlement) + "(" + num + "/" + totalNum + ")");
                 }
                 settlementAdapter.notifyDataSetChanged();
                 allType = !allType;
@@ -957,7 +959,7 @@ public class ImmediatelSettlementActivity extends BaseActivity {
         startDay = 0;
         pageNo = 1;
         llySettlementSelect.setVisibility(View.GONE);
-        llySettlementSelectTop.setVisibility(View.GONE);
+//        llySettlementSelectTop.setVisibility(View.GONE);
         selectEndType = 0;
         llySettlementNodata.setVisibility(View.VISIBLE);
     }
@@ -1028,8 +1030,7 @@ public class ImmediatelSettlementActivity extends BaseActivity {
         } else {
             num = settlementSelectList.size();
         }
-//        tvSettlementNum.setText(num + "/" + totalNum);
-        btnSettlementSelect.setText(getString(R.string.have_chosen) + "(" + num + "/" + totalNum + ")");
+        btnSettlementSelect.setText(getString(R.string.settlement) + "(" + num + "/" + totalNum + ")");
         if (num == 0) {
             imgSettlementSelect.setImageResource(R.drawable.settle_no);
             allType = false;

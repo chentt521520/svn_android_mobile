@@ -76,6 +76,7 @@ public class RechargeNewActivity extends BaseActivity {
     @BindView(R.id.view_recharge_phone)
     View viewRechargePhone;
     //    @BindView(R.id.et_recharge_phone)
+
 //    EditText etRechargePhone;
 //    @BindView(R.id.lly_recharge_phone)
 //    LinearLayout llyRechargePhone;
@@ -109,8 +110,8 @@ public class RechargeNewActivity extends BaseActivity {
     TextView tvPaymentTwo;
     @BindView(R.id.tv_payment_three)
     TextView tvPaymentThree;
-    @BindView(R.id.tv_recharge_six)
-    TextView tvRechargeSix;
+//    @BindView(R.id.tv_recharge_six)
+//    TextView tvRechargeSix;
     @BindView(R.id.tv_payment_four)
     TextView tvPaymentFour;
     @BindView(R.id.scb_recharge_four)
@@ -218,7 +219,7 @@ public class RechargeNewActivity extends BaseActivity {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (hasFocus) {
-                    initTextView(2, tvRechargeSix);
+                    initTextView(2, tvPaymentFour);
                     if (etRechargeFour.getText().toString().trim().equals("")) {
                         tvRechargeMoney.setText(moneyString("0"));
                     } else {
@@ -255,7 +256,7 @@ public class RechargeNewActivity extends BaseActivity {
         scbRechargeFour.setChecked(true);
     }
 
-    @OnClick({R.id.lly_recharge_back, R.id.btn_recharge_submit, R.id.tv_recharge_one, R.id.tv_recharge_two, R.id.tv_recharge_three, R.id.tv_recharge_six, R.id.et_recharge_four, R.id.lly_recharge_one, R.id.lly_recharge_two, R.id.lly_recharge_three, R.id.lly_recharge_four})
+    @OnClick({R.id.lly_recharge_back, R.id.btn_recharge_submit, R.id.tv_recharge_one, R.id.tv_recharge_two, R.id.tv_recharge_three, R.id.et_recharge_four, R.id.lly_recharge_one, R.id.lly_recharge_two, R.id.lly_recharge_three, R.id.lly_recharge_four})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.lly_recharge_back:
@@ -310,8 +311,8 @@ public class RechargeNewActivity extends BaseActivity {
                 initTextView(1, tvRechargeThree);
                 tvRechargeMoney.setText(moneyString("100000"));
                 break;
-            case R.id.tv_recharge_six:
-                initTextView(2, tvRechargeSix);
+            case R.id.et_recharge_four:
+                initTextView(2, tvPaymentFour);
                 if (etRechargeFour.getText().toString().trim().equals("")) {
                     tvRechargeMoney.setText(moneyString("0"));
                 } else {
@@ -349,19 +350,19 @@ public class RechargeNewActivity extends BaseActivity {
         tvRechargeOne.setBackgroundResource(R.drawable.shape_bjk_001);
         tvRechargeTwo.setBackgroundResource(R.drawable.shape_bjk_001);
         tvRechargeThree.setBackgroundResource(R.drawable.shape_bjk_001);
-        tvRechargeSix.setBackgroundResource(R.drawable.shape_bjk_001);
+//        tvRechargeSix.setBackgroundResource(R.drawable.shape_bjk_001);
         tvRechargeOne.setTextColor(Color.rgb(122, 122, 122));
         tvRechargeTwo.setTextColor(Color.rgb(122, 122, 122));
         tvRechargeThree.setTextColor(Color.rgb(122, 122, 122));
-        tvRechargeSix.setTextColor(Color.rgb(122, 122, 122));
+//        tvRechargeSix.setTextColor(Color.rgb(122, 122, 122));
         TextView textView = (TextView) view;
         textView.setBackgroundResource(R.drawable.recharge_shape_bgs);
         textView.setTextColor(Color.rgb(255, 255, 255));
-        if (type == 1) {
-            etRechargeFour.setVisibility(View.GONE);
-        } else {
-            etRechargeFour.setVisibility(View.VISIBLE);
-        }
+//        if (type == 1) {
+//            etRechargeFour.setVisibility(View.GONE);
+//        } else {
+//            etRechargeFour.setVisibility(View.VISIBLE);
+//        }
     }
 
     private void initTextCardView() {

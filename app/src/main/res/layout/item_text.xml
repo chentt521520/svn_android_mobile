@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/item_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:maxEms="10"
+        android:maxLines="1"
+        android:textColor="#999999"
+        app:layout_marginPercent="2%sw"
+        app:layout_textSizePercent="4%sw"
+        android:padding="5dp"/>
+
+</com.zhy.android.percent.support.PercentLinearLayout>

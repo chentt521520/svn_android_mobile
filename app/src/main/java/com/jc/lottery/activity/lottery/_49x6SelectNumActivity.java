@@ -103,6 +103,7 @@ public class _49x6SelectNumActivity extends BaseActivity implements AdapterView.
     private long time_daojishi;
     private String termNo;
     private List<GameAddListBean> gameAddList = new ArrayList<GameAddListBean>();
+
     @Override
     public int getLayoutId() {
         return R.layout.activity_49x6_select_num;
@@ -226,7 +227,7 @@ public class _49x6SelectNumActivity extends BaseActivity implements AdapterView.
         String account_name = SPUtils.look(this, SPkey.username);
         pos_GetDrawNotOpenQuery.DrawListInfo drawListInfo = new pos_GetDrawNotOpenQuery.DrawListInfo("49x6");
         pos_GetDrawNotOpenQuery.DataBean dataBean = new pos_GetDrawNotOpenQuery.DataBean(drawListInfo);
-        pos_GetDrawNotOpenQuery pos_getDrawNotOpenQuery = new pos_GetDrawNotOpenQuery(account_name,dataBean );
+        pos_GetDrawNotOpenQuery pos_getDrawNotOpenQuery = new pos_GetDrawNotOpenQuery(account_name, dataBean);
         String s = new Gson().toJson(pos_getDrawNotOpenQuery);
         LogUtils.e("  获取37选6 奖期 参数  ===" + s);
         OkGo.<String>post(MyUrl.pos_drawNotOpenQuery)
@@ -296,7 +297,7 @@ public class _49x6SelectNumActivity extends BaseActivity implements AdapterView.
         s37x6_tv_money.setText(MoneyUtil.getIns().GetMoney(FormatUtil.addComma(Config.s49x6_R007_NoteMoney_min * s)));
     }
 
-    @OnClick({R.id.s37x6_button_jixuan, R.id.button_sure, R.id.lin_s37x6_zoushitu,R.id.header_type_one_back})
+    @OnClick({R.id.s37x6_button_jixuan, R.id.button_sure, R.id.lin_s37x6_zoushitu, R.id.header_type_one_back})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.header_type_one_back:
@@ -336,6 +337,8 @@ public class _49x6SelectNumActivity extends BaseActivity implements AdapterView.
                             stringBuffer.append(",");
                         }
                     }
+
+                    //判断是否选择了特别号码
                     stringBuffer.append("|");
                     stringBuffer.append(selectListTop.get(0));
                     ListSelectionNumerical suoShui = new ListSelectionNumerical();

@@ -140,10 +140,10 @@ public class PaymentRecordActivity extends BaseActivity {
         customDatePicker = new CustomDatePicker(this, new CustomDatePicker.ResultHandler() {
             @Override
             public void handle(String time) { // 回调接口，获得选中的时间
-                if (timeType.equals("1")){
-                    tvReceivingSelectStart.setText(showArTime(time,0));
+                if (timeType.equals("1")) {
+                    tvReceivingSelectStart.setText(showArTime(time, 0));
                 } else {
-                    tvReceivingSelectEnd.setText(showArTime(time,0));
+                    tvReceivingSelectEnd.setText(showArTime(time, 0));
                 }
             }
         }, "1999-01-01 00:00:00", now); // 初始化日期格式请用：yyyy-MM-dd HH:mm，否则不能正常运行
@@ -153,7 +153,7 @@ public class PaymentRecordActivity extends BaseActivity {
 //        tvReceivingSelectEnd.setText("");
     }
 
-    private String showArTime(String time,int type){
+    private String showArTime(String time, int type) {
         String newTime = "";
         if (type == 0) {
             if (time.length() == 19) {
@@ -162,11 +162,11 @@ public class PaymentRecordActivity extends BaseActivity {
             } else {
                 newTime = time;
             }
-        }else {
+        } else {
             newTime = time;
-            newTime = newTime.replace(getString(R.string.y),"-");
-            newTime = newTime.replace(getString(R.string.m),"-");
-            newTime = newTime.replace(getString(R.string.d),"");
+            newTime = newTime.replace(getString(R.string.y), "-");
+            newTime = newTime.replace(getString(R.string.m), "-");
+            newTime = newTime.replace(getString(R.string.d), "");
         }
         return newTime;
     }
@@ -194,7 +194,7 @@ public class PaymentRecordActivity extends BaseActivity {
                 if (pageNo < pageCount) {
                     pageNo++;
                     getHttpInfo();
-                }else {
+                } else {
                     srlReceiving.finishLoadmoreWithNoMoreData();
                 }
             }
@@ -203,7 +203,7 @@ public class PaymentRecordActivity extends BaseActivity {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
-                if(recyclerView.getLayoutManager() != null) {
+                if (recyclerView.getLayoutManager() != null) {
                     getPositionAndOffset();
                 }
             }
@@ -214,7 +214,7 @@ public class PaymentRecordActivity extends BaseActivity {
         LinearLayoutManager layoutManager = (LinearLayoutManager) relPaymentRecord.getLayoutManager();
         //获取可视的第一个view
         View topView = layoutManager.getChildAt(0);
-        if(topView != null) {
+        if (topView != null) {
             //获取与该view的顶部的偏移量
             lastOffset = topView.getTop();
             //得到该View的数组位置
@@ -226,7 +226,7 @@ public class PaymentRecordActivity extends BaseActivity {
      * 让RecyclerView滚动到指定位置
      */
     private void scrollToPosition() {
-        if(relPaymentRecord.getLayoutManager() != null && lastPosition >= 0) {
+        if (relPaymentRecord.getLayoutManager() != null && lastPosition >= 0) {
             ((LinearLayoutManager) relPaymentRecord.getLayoutManager()).scrollToPositionWithOffset(lastPosition, lastOffset);
         }
     }
@@ -254,23 +254,23 @@ public class PaymentRecordActivity extends BaseActivity {
 
         String starts = tvReceivingSelectStart.getText().toString().trim();
         String ends = tvReceivingSelectEnd.getText().toString().trim();
-        if (!starts.equals("")){
-            if (!ends.equals("")){
-                starts = showArTime(starts,1) + " 00:00:01";
-                ends = showArTime(ends,1) + " 23:59:59";
-                starts = parseServerTime(starts,"");
-                ends = parseServerTime(ends,"");
-            }else {
+        if (!starts.equals("")) {
+            if (!ends.equals("")) {
+                starts = showArTime(starts, 1) + " 00:00:01";
+                ends = showArTime(ends, 1) + " 23:59:59";
+                starts = parseServerTime(starts, "");
+                ends = parseServerTime(ends, "");
+            } else {
                 starts = "";
                 ends = "";
             }
-        }else {
+        } else {
             starts = "";
             ends = "";
         }
         String account_name = SPUtils.look(this, SPkey.username);
         String account_password = SPUtils.look(this, SPkey.password);
-        final pos_GetPaymentRecordQuery.PayRecordBean payRecordBean = new pos_GetPaymentRecordQuery.PayRecordBean(pageNo + "",starts,ends, TimeUtils.get10IntTimeStamp() + "");
+        final pos_GetPaymentRecordQuery.PayRecordBean payRecordBean = new pos_GetPaymentRecordQuery.PayRecordBean(pageNo + "", starts, ends, TimeUtils.get10IntTimeStamp() + "");
         pos_GetPaymentRecordQuery.DataBean dataBean = new pos_GetPaymentRecordQuery.DataBean(payRecordBean);
         pos_GetPaymentRecordQuery pos_getPaymentRecordQuery = new pos_GetPaymentRecordQuery(account_name, account_password, "3", dataBean);
         String s1 = new Gson().toJson(pos_getPaymentRecordQuery);
@@ -297,7 +297,7 @@ public class PaymentRecordActivity extends BaseActivity {
                                 int num = 1;
                                 if (pageNo == 1) {
                                     num = 1;
-                                }else {
+                                } else {
                                     num = (pageNo - 1) * pageNum + 1;
                                 }
                                 paymentBean = new Gson().fromJson(response.body(), PaymentBean.class);
@@ -311,15 +311,15 @@ public class PaymentRecordActivity extends BaseActivity {
                                     scrollToPosition();
 //                                    relPaymentRecord.scrollToPosition(payListBeans.size() - 1);
                                 }
-                            }else {
+                            } else {
                                 ToastUtils.showShort(jsonObject.getString("message"));
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                        if (payListBeans.size() < 1){
+                        if (payListBeans.size() < 1) {
                             llyPaymentNodata.setVisibility(View.VISIBLE);
-                        }else {
+                        } else {
                             llyPaymentNodata.setVisibility(View.GONE);
                         }
                         ProgressUtil.dismissProgressDialog();
@@ -331,7 +331,7 @@ public class PaymentRecordActivity extends BaseActivity {
                         ProgressUtil.dismissProgressDialog();
                         srlReceiving.finishRefresh();
                         srlReceiving.finishLoadmore();
-                        if (codeType){
+                        if (codeType) {
                             finish();
                         }
                     }
@@ -345,7 +345,7 @@ public class PaymentRecordActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.lly_manual_scanner_back,R.id.lly_reward_record_select,R.id.lly_receiving_select,R.id.tv_receiving_select_start,R.id.tv_receiving_select_end, R.id.btn_receiving_select_submit,R.id.btn_receiving_select_reset,R.id.lly_receiving_click})
+    @OnClick({R.id.lly_manual_scanner_back, R.id.lly_reward_record_select, R.id.lly_receiving_select, R.id.tv_receiving_select_start, R.id.tv_receiving_select_end, R.id.btn_receiving_select_submit, R.id.btn_receiving_select_reset, R.id.lly_receiving_click})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.lly_manual_scanner_back:
@@ -359,8 +359,12 @@ public class PaymentRecordActivity extends BaseActivity {
 
                 break;
             case R.id.lly_reward_record_select:
-                llyReceivingSelect.setVisibility(View.VISIBLE);
-                new ViewAnimationUtil().setShowAnimation(llyReceivingSelect, 300, mAnimation);
+                if (llyReceivingSelect.getVisibility() == View.VISIBLE) {
+                    new ViewAnimationUtil().setHideAnimation(llyReceivingSelect, 300, mAnimation);
+                } else {
+                    new ViewAnimationUtil().setShowAnimation(llyReceivingSelect, 300, mAnimation);
+                    llyReceivingSelect.setVisibility(View.VISIBLE);
+                }
                 break;
             case R.id.lly_receiving_select:
                 new ViewAnimationUtil().setHideAnimation(llyReceivingSelect, 300, mAnimation);
@@ -368,18 +372,18 @@ public class PaymentRecordActivity extends BaseActivity {
                 break;
             case R.id.tv_receiving_select_start:
                 timeType = "1";
-                if (tvReceivingSelectStart.getText().toString().equals("")){
+                if (tvReceivingSelectStart.getText().toString().equals("")) {
                     customDatePicker.show(start);
-                }else {
-                    customDatePicker.show(showArTime(tvReceivingSelectStart.getText().toString(),1) + " 00:00:00");
+                } else {
+                    customDatePicker.show(showArTime(tvReceivingSelectStart.getText().toString(), 1) + " 00:00:00");
                 }
                 break;
             case R.id.tv_receiving_select_end:
                 timeType = "2";
-                if (tvReceivingSelectEnd.getText().toString().equals("")){
+                if (tvReceivingSelectEnd.getText().toString().equals("")) {
                     customDatePicker.show(end);
-                }else {
-                    customDatePicker.show(showArTime(tvReceivingSelectEnd.getText().toString(),1) + " 00:00:00");
+                } else {
+                    customDatePicker.show(showArTime(tvReceivingSelectEnd.getText().toString(), 1) + " 00:00:00");
                 }
                 break;
             case R.id.btn_receiving_select_submit:

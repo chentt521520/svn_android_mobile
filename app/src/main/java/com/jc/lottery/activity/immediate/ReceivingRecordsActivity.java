@@ -1,12 +1,11 @@
 package com.jc.lottery.activity.immediate;
 
 import android.graphics.Color;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -17,6 +16,7 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.jc.lottery.R;
 import com.jc.lottery.adapter.InventoryAdapter;
+import com.jc.lottery.adapter.ReceivingRecordFilterAdapter;
 import com.jc.lottery.base.BaseActivity;
 import com.jc.lottery.bean.GameListBean;
 import com.jc.lottery.bean.RecordInfoBean;
@@ -29,12 +29,11 @@ import com.jc.lottery.util.MoneyUtil;
 import com.jc.lottery.util.ProgressUtil;
 import com.jc.lottery.util.SPUtils;
 import com.jc.lottery.util.SPkey;
-import com.jc.lottery.util.ScaleUtils;
 import com.jc.lottery.util.TimeUtils;
 import com.jc.lottery.util.ToastUtils;
 import com.jc.lottery.util.ViewAnimationUtil;
-import com.jc.lottery.view.FlowLayout;
 import com.jc.lottery.view.LinearItemDecoration;
+import com.jc.lottery.view.MyGridView;
 import com.jc.lottery.view.SlideRecyclerView;
 import com.jc.lottery.view.XListView;
 import com.jc.lottery.view.widget.CustomDatePicker;
@@ -59,7 +58,6 @@ import java.util.List;
 import java.util.Locale;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
@@ -94,9 +92,9 @@ public class ReceivingRecordsActivity extends BaseActivity implements XListView.
     @BindView(R.id.lly_receiving_select_container_two)
     LinearLayout llyReceivingSelectContainerTwo;
     @BindView(R.id.flow)
-    FlowLayout flow;
+    MyGridView flow;
     @BindView(R.id.flow_one)
-    FlowLayout flowOne;
+    MyGridView flowOne;
     @BindView(R.id.lly_receiving_click)
     LinearLayout llyReceivingClick;
     @BindView(R.id.tv_receiving_select_order)
@@ -128,8 +126,8 @@ public class ReceivingRecordsActivity extends BaseActivity implements XListView.
     private int pageNum = 1;
     private int pageCount = 1;
     private int refreshType = 1; //1：下拉刷新 2：上拉加载
-    private List<String> nameList = new ArrayList<String>();
-    private List<String> typeList = new ArrayList<String>();
+    private List<ItemCheck> nameList = new ArrayList<ItemCheck>();
+    private List<ItemCheck> typeList = new ArrayList<ItemCheck>();
     private List<GameListBean> gameListBeans = new ArrayList<GameListBean>();
     private String gameAlias = "";
     private String status = "";
@@ -298,9 +296,9 @@ public class ReceivingRecordsActivity extends BaseActivity implements XListView.
             @Override
             public void handle(String time) { // 回调接口，获得选中的时间
                 if (timeType.equals("1")) {
-                    tvReceivingSelectStart.setText(showArTime(time,0));
+                    tvReceivingSelectStart.setText(showArTime(time, 0));
                 } else {
-                    tvReceivingSelectEnd.setText(showArTime(time,0));
+                    tvReceivingSelectEnd.setText(showArTime(time, 0));
                 }
             }
         }, "1999-01-01 00:00:00", now); // 初始化日期格式请用：yyyy-MM-dd HH:mm，否则不能正常运行
@@ -310,7 +308,7 @@ public class ReceivingRecordsActivity extends BaseActivity implements XListView.
 //        tvReceivingSelectEnd.setText("");
     }
 
-    private String showArTime(String time,int type){
+    private String showArTime(String time, int type) {
         String newTime = "";
         if (type == 0) {
             if (time.length() == 19) {
@@ -319,11 +317,11 @@ public class ReceivingRecordsActivity extends BaseActivity implements XListView.
             } else {
                 newTime = time;
             }
-        }else {
+        } else {
             newTime = time;
-            newTime = newTime.replace(getString(R.string.y),"-");
-            newTime = newTime.replace(getString(R.string.m),"-");
-            newTime = newTime.replace(getString(R.string.d),"");
+            newTime = newTime.replace(getString(R.string.y), "-");
+            newTime = newTime.replace(getString(R.string.m), "-");
+            newTime = newTime.replace(getString(R.string.d), "");
         }
         return newTime;
     }
@@ -336,8 +334,8 @@ public class ReceivingRecordsActivity extends BaseActivity implements XListView.
         String ends = tvReceivingSelectEnd.getText().toString().trim();
         if (!starts.equals("")) {
             if (!ends.equals("")) {
-                starts = showArTime(starts,1) + " 00:00:01";
-                ends = showArTime(ends,1) + " 23:59:59";
+                starts = showArTime(starts, 1) + " 00:00:01";
+                ends = showArTime(ends, 1) + " 23:59:59";
                 starts = parseServerTime(starts, "");
                 ends = parseServerTime(ends, "");
             } else {
@@ -522,14 +520,18 @@ public class ReceivingRecordsActivity extends BaseActivity implements XListView.
 //        }
 //    }
     private void showTypeInfo() {
-        typeList.add(getString(R.string.all));
-        typeList.add(getString(R.string.has_been_received));
-        typeList.add(getString(R.string.unclaimed));
-//        typeList.add(getString(R.string.chupiao_fail));
-        typeList.add(getString(R.string.order_invalidation));
-        typeList.add(getString(R.string.cancellation_of_order));
+        typeList.add(new ItemCheck(getString(R.string.all), true));
+        typeList.add(new ItemCheck(getString(R.string.has_been_received), false));
+        typeList.add(new ItemCheck(getString(R.string.unclaimed), false));
+        typeList.add(new ItemCheck(getString(R.string.order_invalidation), false));
+        typeList.add(new ItemCheck(getString(R.string.cancellation_of_order), false));
+//        typeList.add(getString(R.string.has_been_received));
+//        typeList.add(getString(R.string.unclaimed));
+////        typeList.add(getString(R.string.chupiao_fail));
 //        typeList.add(getString(R.string.order_invalidation));
-        showTypeFlowLayout(typeList);
+//        typeList.add(getString(R.string.cancellation_of_order));
+////        typeList.add(getString(R.string.order_invalidation));
+        showTypeFlowLayout();
     }
 
     private void getGameHttpInfo() {
@@ -556,7 +558,7 @@ public class ReceivingRecordsActivity extends BaseActivity implements XListView.
                                 gameBean.setGameAlias("");
                                 gameBean.setTicketPrice("");
                                 gameBean.setEnabled("00");
-                                nameList.add(gameBean.getGameName());
+                                nameList.add(new ItemCheck(gameBean.getGameName(), true));
                                 gameListBeans.add(gameBean);
                                 for (int i = 0; i < gameList.length(); i++) {
                                     JSONObject json = gameList.getJSONObject(i);
@@ -566,12 +568,12 @@ public class ReceivingRecordsActivity extends BaseActivity implements XListView.
                                     gameListBean.setTicketPrice(json.getString("ticketPrice"));
                                     gameListBean.setEnabled(json.getString("enabled"));
                                     if (gameListBean.getEnabled().equals("00")) {
-                                        nameList.add(gameListBean.getGameName());
+                                        nameList.add(new ItemCheck(gameListBean.getGameName(), false));
                                         gameListBeans.add(gameListBean);
                                     }
                                 }
 //                                changeSpinner(spReceivingSelectName, nameList);
-                                showGameFlowLayout(nameList);
+                                showGameFlowLayout();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -642,7 +644,7 @@ public class ReceivingRecordsActivity extends BaseActivity implements XListView.
                 if (tvReceivingSelectStart.getText().toString().equals("")) {
                     customDatePicker.show(start);
                 } else {
-                    customDatePicker.show(showArTime(tvReceivingSelectStart.getText().toString(),1) + " 00:00:00");
+                    customDatePicker.show(showArTime(tvReceivingSelectStart.getText().toString(), 1) + " 00:00:00");
                 }
 
                 break;
@@ -651,7 +653,7 @@ public class ReceivingRecordsActivity extends BaseActivity implements XListView.
                 if (tvReceivingSelectEnd.getText().toString().equals("")) {
                     customDatePicker.show(end);
                 } else {
-                    customDatePicker.show(showArTime(tvReceivingSelectEnd.getText().toString(),1) + " 00:00:00");
+                    customDatePicker.show(showArTime(tvReceivingSelectEnd.getText().toString(), 1) + " 00:00:00");
                 }
                 break;
             case R.id.bt_receiving_pop_no:
@@ -665,15 +667,15 @@ public class ReceivingRecordsActivity extends BaseActivity implements XListView.
         }
     }
 
-    public void showViewPop(String id,String status) {
+    public void showViewPop(String id, String status) {
         String role = SPUtils.look(this, SPkey.roleAlias);
-        if (role.equals("fxs")){
-            if (status.equals("00")){
+        if (role.equals("fxs")) {
+            if (status.equals("00")) {
                 tvReceivingTip.setText(getString(R.string.close_order_notss));
-            }else {
+            } else {
                 tvReceivingTip.setText(getString(R.string.close_order_nots));
             }
-        }else {
+        } else {
             tvReceivingTip.setText(getString(R.string.close_order_nots));
         }
         orderId = id;
@@ -715,61 +717,111 @@ public class ReceivingRecordsActivity extends BaseActivity implements XListView.
                 });
     }
 
-    private void showGameFlowLayout(List<String> list) {
-        //往容器内添加TextView数据
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        layoutParams.setMargins(ScaleUtils.dip2px(this, 5), ScaleUtils.dip2px(this, 5), ScaleUtils.dip2px(this, 5), ScaleUtils.dip2px(this, 5));
-        if (flowOne != null) {
-            flowOne.removeAllViews();
-        }
-        for (int i = 0; i < list.size(); i++) {
-            TextView tv = new TextView(this);
-            tv.setPadding(ScaleUtils.dip2px(this, 25), ScaleUtils.dip2px(this, 5), ScaleUtils.dip2px(this, 25), ScaleUtils.dip2px(this, 5));
-            tv.setText(list.get(i));
-            tv.setMaxEms(10);
-            tv.setSingleLine();
-            if (i == 0) {
-                tv.setTextColor(Color.WHITE);
-                tv.setBackgroundResource(R.drawable.reward_et_red_bg);
-                gameAliasSelect = gameListBeans.get(0).getGameAlias();
-            } else {
-                tv.setBackgroundResource(R.drawable.reward_et_bg);
-                tv.setTextColor(Color.GRAY);
+    private void showGameFlowLayout() {
+//        //往容器内添加TextView数据
+//        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+//        layoutParams.setMargins(ScaleUtils.dip2px(this, 5), ScaleUtils.dip2px(this, 5), ScaleUtils.dip2px(this, 5), ScaleUtils.dip2px(this, 5));
+//        if (flowOne != null) {
+//            flowOne.removeAllViews();
+//        }
+//        for (int i = 0; i < list.size(); i++) {
+//            TextView tv = new TextView(this);
+//            tv.setPadding(ScaleUtils.dip2px(this, 25), ScaleUtils.dip2px(this, 5), ScaleUtils.dip2px(this, 25), ScaleUtils.dip2px(this, 5));
+//            tv.setText(list.get(i));
+//            tv.setMaxEms(10);
+//            tv.setSingleLine();
+//            if (i == 0) {
+//                tv.setTextColor(Color.WHITE);
+//                tv.setBackgroundResource(R.drawable.reward_et_red_bg);
+//                gameAliasSelect = gameListBeans.get(0).getGameAlias();
+//            } else {
+//                tv.setBackgroundResource(R.drawable.reward_et_bg);
+//                tv.setTextColor(Color.GRAY);
+//            }
+//            tv.setLayoutParams(layoutParams);
+//            tv.setOnClickListener(this);
+//            flowOne.addView(tv, layoutParams);
+//        }
+
+        final ReceivingRecordFilterAdapter adapter = new ReceivingRecordFilterAdapter(ReceivingRecordsActivity.this, nameList);
+        flowOne.setAdapter(adapter);
+
+        flowOne.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                ItemCheck itemCheck = nameList.get(i);
+                if (itemCheck.check) {
+                    return;
+                }
+                for (ItemCheck item : nameList) {
+                    item.setCheck(false);
+                }
+                itemCheck.setCheck(true);
+                gameAliasSelect = gameListBeans.get(i).getGameAlias();
+                adapter.refresh(nameList);
+
             }
-            tv.setLayoutParams(layoutParams);
-            tv.setOnClickListener(this);
-            flowOne.addView(tv, layoutParams);
-        }
+        });
     }
 
-    private void showTypeFlowLayout(List<String> tvList) {
-        //往容器内添加TextView数据
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        layoutParams.setMargins(ScaleUtils.dip2px(this, 5), ScaleUtils.dip2px(this, 5), ScaleUtils.dip2px(this, 5), ScaleUtils.dip2px(this, 5));
-//        if (flow != null) {
-//            flow.removeAllViews();
-//        }
-        for (int i = 0; i < tvList.size(); i++) {
-            TextView tv = new TextView(this);
-            tv.setPadding(ScaleUtils.dip2px(this, 25), ScaleUtils.dip2px(this, 5), ScaleUtils.dip2px(this, 25), ScaleUtils.dip2px(this, 5));
-            tv.setText(tvList.get(i));
-            tv.setMaxEms(10);
-            tv.setSingleLine();
-            if (i == 0) {
-                tv.setTextColor(Color.WHITE);
-                tv.setBackgroundResource(R.drawable.reward_et_red_bg);
-                statusSelect = "";
-            } else {
-                tv.setBackgroundResource(R.drawable.reward_et_bg);
-                tv.setTextColor(Color.GRAY);
+    private void showTypeFlowLayout() {
+        final ReceivingRecordFilterAdapter adapter = new ReceivingRecordFilterAdapter(ReceivingRecordsActivity.this, typeList);
+        flow.setAdapter(adapter);
+
+        flow.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                ItemCheck itemCheck = typeList.get(i);
+                if (itemCheck.check) {
+                    return;
+                }
+                for (ItemCheck item : typeList) {
+                    item.setCheck(false);
+                }
+                itemCheck.setCheck(true);
+                adapter.refresh(typeList);
+
+                if (i == 0) {
+                    statusSelect = "";
+                } else if (i == 1) {
+                    statusSelect = "00";
+                } else if (i == 2) {
+                    statusSelect = "02";
+                } else if (i == 3) {
+                    statusSelect = "03";
+                } else {
+                    statusSelect = "04";
+                }
             }
-            tv.setLayoutParams(layoutParams);
-            tv.setOnClickListener(this);
-//            if (i == 2) {
-//                tv.setVisibility(View.GONE);
+        });
+
+//        //往容器内添加TextView数据
+//        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+//        layoutParams.setMargins(ScaleUtils.dip2px(this, 5), ScaleUtils.dip2px(this, 5), ScaleUtils.dip2px(this, 5), ScaleUtils.dip2px(this, 5));
+////        if (flow != null) {
+////            flow.removeAllViews();
+////        }
+//        for (int i = 0; i < tvList.size(); i++) {
+//            TextView tv = new TextView(this);
+//            tv.setPadding(ScaleUtils.dip2px(this, 25), ScaleUtils.dip2px(this, 5), ScaleUtils.dip2px(this, 25), ScaleUtils.dip2px(this, 5));
+//            tv.setText(tvList.get(i));
+//            tv.setMaxEms(10);
+//            tv.setSingleLine();
+//            if (i == 0) {
+//                tv.setTextColor(Color.WHITE);
+//                tv.setBackgroundResource(R.drawable.reward_et_red_bg);
+//                statusSelect = "";
+//            } else {
+//                tv.setBackgroundResource(R.drawable.reward_et_bg);
+//                tv.setTextColor(Color.GRAY);
 //            }
-            flow.addView(tv, layoutParams);
-        }
+//            tv.setLayoutParams(layoutParams);
+//            tv.setOnClickListener(this);
+////            if (i == 2) {
+////                tv.setVisibility(View.GONE);
+////            }
+//            flow.addView(tv, layoutParams);
+//        }
     }
 
     @Override
@@ -811,4 +863,30 @@ public class ReceivingRecordsActivity extends BaseActivity implements XListView.
         }
     }
 
+
+    public static class ItemCheck {
+        private String text;
+        private boolean check;
+
+        public ItemCheck(String text, boolean check) {
+            this.text = text;
+            this.check = check;
+        }
+
+        public String getText() {
+            return text;
+        }
+
+        public void setText(String text) {
+            this.text = text;
+        }
+
+        public boolean isCheck() {
+            return check;
+        }
+
+        public void setCheck(boolean check) {
+            this.check = check;
+        }
+    }
 }

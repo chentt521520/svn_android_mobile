@@ -61,7 +61,7 @@ public class PaymentRecordAdapter extends RecyclerView.Adapter<PaymentRecordHold
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(mOnItemClickListener != null){
+                if (mOnItemClickListener != null) {
                     mOnItemClickListener.onItemClick(v, viewType);
                 }
             }
@@ -73,23 +73,22 @@ public class PaymentRecordAdapter extends RecyclerView.Adapter<PaymentRecordHold
     public void onBindViewHolder(final PaymentRecordHolderView holder, final int position) {
         String bean = list.get(position).getOrderCode();
         if (bean != null) {
-            holder.itemNum.setText(list.get(position).getIndex() + ". ");
             holder.itemName.setText(list.get(position).getOrderCode());
             if (list.get(position).getPayTime() != null && !list.get(position).getPayTime().equals("")) {
-                holder.itemTime.setText(timeStamp2Date(list.get(position).getPayTime()));
-            }else {
-                holder.itemTime.setText("--");
+                holder.itemTime.setText(mContext.getResources().getString(R.string.time) + timeStamp2Date(list.get(position).getPayTime()));
+            } else {
+                holder.itemTime.setText(mContext.getResources().getString(R.string.time) + "--");
             }
             if (list.get(position).getPayState().equals("01")) {
                 holder.itemState.setText(mContext.getString(R.string.successful_payment));
                 holder.itemState.setTextColor(Color.rgb(21, 119, 255));
-            }else if (list.get(position).getPayState().equals("02")) {
+            } else if (list.get(position).getPayState().equals("02")) {
                 holder.itemState.setText(mContext.getString(R.string.failure_to_pay));
-                holder.itemState.setTextColor(Color.rgb(255,102,0));
-            }else if (list.get(position).getPayState().equals("03")) {
+                holder.itemState.setTextColor(Color.rgb(255, 102, 0));
+            } else if (list.get(position).getPayState().equals("03")) {
                 holder.itemState.setText(mContext.getString(R.string.to_be_confirmed));
                 holder.itemState.setTextColor(Color.rgb(255, 171, 0));
-            }else if (list.get(position).getPayState().equals("00")) {
+            } else if (list.get(position).getPayState().equals("00")) {
                 holder.itemState.setText(mContext.getString(R.string.no_recharge));
                 holder.itemState.setTextColor(Constant.dispatched);
             }
@@ -119,10 +118,8 @@ public class PaymentRecordAdapter extends RecyclerView.Adapter<PaymentRecordHold
 
 class PaymentRecordHolderView extends RecyclerView.ViewHolder {
 
-//    @BindView(R.id.lly_payment_item)
+    //    @BindView(R.id.lly_payment_item)
 //    LinearLayout itemLly;
-    @BindView(R.id.tv_record_num)
-    TextView itemNum;
     @BindView(R.id.tv_payment_item_order)
     TextView itemName;
     @BindView(R.id.tv_payment_item_time)

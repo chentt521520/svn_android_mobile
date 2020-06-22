@@ -83,42 +83,47 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:paddingBottom="47dip"
                 android:visibility="visible">
+
                 <com.zhy.android.percent.support.PercentLinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="15dip"
                     android:background="@drawable/recharge_top_bg"
-                    android:layout_margin="20dip"
                     app:layout_heightPercent="35%sw">
+
                     <LinearLayout
                         android:layout_width="0dip"
                         android:layout_height="match_parent"
+                        android:layout_marginLeft="20dip"
                         android:layout_weight="1"
                         android:gravity="center_vertical"
-                        android:layout_marginLeft="20dip"
                         android:orientation="vertical">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/my_balance"
-                            android:textSize="10dip"
-                            android:textColor="#99ffffff" />
+                            android:textColor="#99ffffff"
+                            android:textSize="10sp" />
+
                         <TextView
                             android:id="@+id/tv_balance"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text=""
-                            android:textSize="24dip"
                             android:textColor="#ffffff"
-                            android:textStyle="bold"/>
+                            android:textSize="26sp"
+                            android:textStyle="bold" />
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:gravity="center|left"
                         android:layout_marginRight="20dip"
+                        android:gravity="center|left"
                         android:orientation="vertical">
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -130,7 +135,7 @@
                                 android:gravity="center_vertical"
                                 android:text="@string/recharge_account"
                                 android:textColor="#99ffffff"
-                                android:textSize="13dip" />
+                                android:textSize="14sp" />
 
                             <TextView
                                 android:id="@+id/tv_recharge_name"
@@ -139,14 +144,14 @@
                                 android:layout_marginRight="15dip"
                                 android:gravity="center_vertical"
                                 android:textColor="#99ffffff"
-                                android:textSize="13dip" />
+                                android:textSize="14sp" />
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layout_marginTop="3dip">
+                            android:layout_marginTop="3dip"
+                            android:orientation="horizontal">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -154,24 +159,24 @@
                                 android:gravity="center_vertical"
                                 android:text="@string/game_type"
                                 android:textColor="#99ffffff"
-                                android:textSize="13dip" />
+                                android:textSize="14sp" />
 
                             <TextView
                                 android:id="@+id/tv_recharge_game_type"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_marginRight="15dip"
-                                android:text="@string/quick_lotterys"
                                 android:gravity="center_vertical"
+                                android:text="@string/quick_lotterys"
                                 android:textColor="#99ffffff"
-                                android:textSize="13dip" />
+                                android:textSize="14sp" />
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layout_marginTop="3dip">
+                            android:layout_marginTop="3dip"
+                            android:orientation="horizontal">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -179,7 +184,7 @@
                                 android:gravity="center_vertical"
                                 android:text="@string/recharge_ratio"
                                 android:textColor="#99ffffff"
-                                android:textSize="13dip" />
+                                android:textSize="14sp" />
 
                             <TextView
                                 android:id="@+id/tv_recharge_instant"
@@ -188,7 +193,7 @@
                                 android:layout_marginRight="15dip"
                                 android:gravity="center_vertical"
                                 android:textColor="#99ffffff"
-                                android:textSize="13dip" />
+                                android:textSize="14sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </com.zhy.android.percent.support.PercentLinearLayout>
@@ -200,7 +205,7 @@
                     android:layout_marginLeft="15dip"
                     android:layout_marginRight="15dip"
                     android:background="#F3F3F3"
-                    android:visibility="gone"/>
+                    android:visibility="gone" />
 
 
                 <View
@@ -210,7 +215,7 @@
                     android:layout_marginLeft="15dip"
                     android:layout_marginRight="15dip"
                     android:background="#F3F3F3"
-                    android:visibility="gone"/>
+                    android:visibility="gone" />
 
 
                 <View
@@ -219,18 +224,18 @@
                     android:layout_marginLeft="15dip"
                     android:layout_marginRight="15dip"
                     android:background="#F3F3F3"
-                    android:visibility="gone"/>
+                    android:visibility="gone" />
 
                 <com.zhy.android.percent.support.PercentLinearLayout
                     android:id="@+id/lly_recharge_phones"
                     android:layout_width="match_parent"
                     android:layout_height="45dip"
                     android:background="@color/white"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
                     android:orientation="horizontal"
                     android:visibility="gone"
-                    app:layout_heightPercent="12%sw"
-                    android:focusable="true"
-                    android:focusableInTouchMode="true">
+                    app:layout_heightPercent="12%sw">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -245,10 +250,10 @@
                     <com.zhy.android.percent.support.PercentLinearLayout
                         android:layout_width="0dip"
                         android:layout_height="match_parent"
-                        android:layout_marginBottom="2dip"
                         android:layout_marginLeft="15dip"
-                        android:layout_marginRight="15dip"
                         android:layout_marginTop="2dip"
+                        android:layout_marginRight="15dip"
+                        android:layout_marginBottom="2dip"
                         android:layout_weight="1"
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
@@ -258,22 +263,22 @@
                             android:layout_width="0dip"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:gravity="right"/>
+                            android:gravity="right" />
 
                         <EditText
                             android:id="@+id/et_recharge_phones"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
+                            android:layout_marginLeft="0dip"
                             android:layout_weight="1"
                             android:background="@null"
                             android:gravity="center_vertical|left"
                             android:hint="@string/please_input"
                             android:inputType="number"
+                            android:minWidth="100dip"
                             android:textColor="#808080"
                             android:textSize="15dip"
-                            app:layout_textSizePercent="4.2%sw"
-                            android:minWidth="100dip"
-                            android:layout_marginLeft="0dip"/>
+                            app:layout_textSizePercent="4.2%sw" />
                     </com.zhy.android.percent.support.PercentLinearLayout>
                 </com.zhy.android.percent.support.PercentLinearLayout>
 
@@ -318,10 +323,10 @@
                         <com.zhy.android.percent.support.PercentLinearLayout
                             android:layout_width="0dip"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="2dip"
                             android:layout_marginLeft="15dip"
-                            android:layout_marginRight="15dip"
                             android:layout_marginTop="2dip"
+                            android:layout_marginRight="15dip"
+                            android:layout_marginBottom="2dip"
                             android:layout_weight="1"
                             android:orientation="vertical">
 
@@ -367,10 +372,10 @@
                         <com.zhy.android.percent.support.PercentLinearLayout
                             android:layout_width="0dip"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="2dip"
                             android:layout_marginLeft="15dip"
-                            android:layout_marginRight="15dip"
                             android:layout_marginTop="2dip"
+                            android:layout_marginRight="15dip"
+                            android:layout_marginBottom="2dip"
                             android:layout_weight="1"
                             android:orientation="vertical">
 
@@ -416,10 +421,10 @@
                         <com.zhy.android.percent.support.PercentLinearLayout
                             android:layout_width="0dip"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="2dip"
                             android:layout_marginLeft="15dip"
-                            android:layout_marginRight="15dip"
                             android:layout_marginTop="2dip"
+                            android:layout_marginRight="15dip"
+                            android:layout_marginBottom="2dip"
                             android:layout_weight="1"
                             android:gravity="center_vertical"
                             android:orientation="vertical">
@@ -443,148 +448,106 @@
                     android:id="@+id/lly_recharge_money"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/lly_lottery_purchase_bg"
                     android:orientation="vertical"
-                    android:background="@drawable/lly_lottery_purchase_bg">
+                    android:padding="15dp">
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="42dip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:gravity="center_vertical"
-                        android:paddingLeft="15dip"
                         android:text="@string/payment_amount"
-                        android:textColor="#7a7a7a"
-                        android:textSize="14dip"
+                        android:textColor="#333333"
+                        android:textSize="14sp"
                         app:layout_textSizePercent="3.9%sw" />
 
                     <com.zhy.android.percent.support.PercentLinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
                         android:focusable="true"
                         android:focusableInTouchMode="true"
-                        android:orientation="vertical"
-                        android:padding="15dip">
+                        android:orientation="horizontal">
 
-                        <com.zhy.android.percent.support.PercentLinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/tv_recharge_one"
+                            android:layout_width="0dp"
+                            android:layout_height="35dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/recharge_shape_bgs"
+                            android:gravity="center"
+                            android:text="@string/five_hundred"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
 
-                            <TextView
-                                android:id="@+id/tv_recharge_one"
-                                android:layout_width="90dip"
-                                android:layout_height="50dip"
-                                android:background="@drawable/recharge_shape_bgs"
-                                android:gravity="center"
-                                android:text="@string/five_hundred"
-                                android:textColor="@color/white"
-                                android:textSize="14dip"
-                                app:layout_heightPercent="14%sw"
-                                app:layout_widthPercent="23%sw" />
+                        <TextView
+                            android:id="@+id/tv_recharge_two"
+                            android:layout_width="0dp"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_bjk_001"
+                            android:gravity="center"
+                            android:text="@string/one_thousand"
+                            android:textColor="#7a7a7a"
+                            android:textSize="14sp" />
 
-                            <com.zhy.android.percent.support.PercentLinearLayout
-                                android:layout_width="0dip"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center">
+                        <TextView
+                            android:id="@+id/tv_recharge_three"
+                            android:layout_width="0dp"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_bjk_001"
+                            android:gravity="center"
+                            android:text="@string/five_thousand"
+                            android:textColor="#7a7a7a"
+                            android:textSize="14sp" />
 
-                                <TextView
-                                    android:id="@+id/tv_recharge_two"
-                                    android:layout_width="90dip"
-                                    android:layout_height="50dip"
-                                    android:background="@drawable/shape_bjk_001"
-                                    android:gravity="center"
-                                    android:text="@string/one_thousand"
-                                    android:textColor="#7a7a7a"
-                                    android:textSize="14dip"
-                                    app:layout_heightPercent="14%sw"
-                                    app:layout_widthPercent="23%sw" />
-                            </com.zhy.android.percent.support.PercentLinearLayout>
-
-                            <TextView
-                                android:id="@+id/tv_recharge_three"
-                                android:layout_width="90dip"
-                                android:layout_height="50dip"
-                                android:background="@drawable/shape_bjk_001"
-                                android:gravity="center"
-                                android:text="@string/five_thousand"
-                                android:textColor="#7a7a7a"
-                                android:textSize="14dip"
-                                app:layout_heightPercent="12%sw"
-                                app:layout_widthPercent="23%sw" />
-                        </com.zhy.android.percent.support.PercentLinearLayout>
-
-                        <com.zhy.android.percent.support.PercentLinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="15dip"
-                            android:orientation="horizontal"
-                            android:focusable="true"
-                            android:focusableInTouchMode="true">
-
-                            <TextView
-                                android:id="@+id/tv_recharge_six"
-                                android:layout_width="90dip"
-                                android:layout_height="50dip"
-                                android:background="@drawable/shape_bjk_001"
-                                android:gravity="center"
-                                android:singleLine="true"
-                                android:text="@string/other_quantities"
-                                android:textColor="#7a7a7a"
-                                android:textSize="14dip"
-                                app:layout_heightPercent="12%sw"
-                                app:layout_widthPercent="23%sw" />
-
-                            <EditText
-                                android:id="@+id/et_recharge_four"
-                                android:layout_width="0dip"
-                                android:layout_height="50dip"
-                                android:layout_marginLeft="10dip"
-                                android:layout_weight="1"
-                                android:background="@drawable/shape_bjk_001"
-                                android:gravity="center"
-                                android:imeOptions="actionDone"
-                                android:inputType="number"
-                                android:maxLength="8"
-                                android:singleLine="true"
-                                android:text=""
-                                android:textColor="#7a7a7a"
-                                android:textSize="14dip"
-                                android:visibility="gone"
-                                app:layout_heightPercent="12%sw" />
-                        </com.zhy.android.percent.support.PercentLinearLayout>
                     </com.zhy.android.percent.support.PercentLinearLayout>
+
+                    <EditText
+                        android:id="@+id/et_recharge_four"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="top"
+                        android:hint="@string/other_amount"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLength="8"
+                        android:singleLine="true"
+                        android:textColor="#333333"
+                        android:layout_marginTop="10dp"
+                        android:textColorHint="#B3B3B3"
+                        android:textSize="14sp" />
                 </com.zhy.android.percent.support.PercentLinearLayout>
 
                 <com.zhy.android.percent.support.PercentLinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/lly_lottery_purchase_bg"
-                    android:orientation="vertical"
-                    android:layout_marginTop="20dip">
+                    android:padding="15dp"
+                    android:paddingTop="20dp"
+                    android:orientation="vertical">
+
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="42dip"
-                        android:gravity="center_vertical"
-                        android:paddingLeft="15dip"
+                        android:layout_height="wrap_content"
                         android:text="@string/payment_method"
-                        android:textColor="#7a7a7a"
-                        android:textSize="14dip"
-                        app:layout_textSizePercent="3.9%sw" />
+                        android:textColor="#333333"
+                        android:textSize="14sp"/>
+
                     <com.zhy.android.percent.support.PercentLinearLayout
                         android:id="@+id/lly_recharge_four"
                         android:layout_width="match_parent"
                         android:layout_height="50dip"
-                        android:layout_marginLeft="15dip"
-                        android:layout_marginRight="15dip"
-                        android:layout_marginTop="0.5dip"
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
-                        android:paddingLeft="15dip"
-                        android:paddingRight="15dip"
-                        android:visibility="visible"
-                        app:layout_heightPercent="13%sw"
-                        app:layout_marginBottomPercent="2%sw"
-                        app:layout_marginTopPercent="2%sw">
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="20dp"
+                        android:visibility="visible">
 
                         <com.zhy.android.percent.support.PercentLinearLayout
                             android:layout_width="22dp"
@@ -596,8 +559,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="16dip"
                                 android:adjustViewBounds="true"
-                                app:layout_heightPercent="4.5%sw"
-                                android:src="@drawable/payment_01"/>
+                                android:src="@drawable/payment_01"
+                                app:layout_heightPercent="4.5%sw" />
                         </com.zhy.android.percent.support.PercentLinearLayout>
 
                         <TextView
@@ -622,17 +585,15 @@
                             app:layout_widthPercent="5.5%w"
                             app:stroke_width="0.5dip" />
                     </com.zhy.android.percent.support.PercentLinearLayout>
+
                     <com.zhy.android.percent.support.PercentLinearLayout
                         android:id="@+id/lly_recharge_one"
                         android:layout_width="match_parent"
                         android:layout_height="50dip"
-                        android:layout_marginLeft="15dip"
-                        android:layout_marginRight="15dip"
-                        android:layout_marginTop="0.5dip"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
-                        android:paddingLeft="15dip"
-                        android:paddingRight="15dip"
                         app:layout_heightPercent="13%sw"
                         app:layout_marginBottomPercent="2%sw">
 
@@ -646,8 +607,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="16dip"
                                 android:adjustViewBounds="true"
-                                app:layout_heightPercent="4.5%sw"
-                                android:src="@drawable/payment_02_no"/>
+                                android:src="@drawable/payment_02_no"
+                                app:layout_heightPercent="4.5%sw" />
                         </com.zhy.android.percent.support.PercentLinearLayout>
 
                         <TextView
@@ -672,18 +633,16 @@
                             app:layout_widthPercent="5.5%w"
                             app:stroke_width="0.5dip" />
                     </com.zhy.android.percent.support.PercentLinearLayout>
+
                     <com.zhy.android.percent.support.PercentLinearLayout
                         android:id="@+id/lly_recharge_two"
                         android:layout_width="match_parent"
                         android:layout_height="50dip"
-                        android:layout_marginLeft="15dip"
-                        android:layout_marginRight="15dip"
-                        android:layout_marginTop="0.5dip"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
                         android:background="@drawable/order_payment_select_no_bg"
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
-                        android:paddingLeft="15dip"
-                        android:paddingRight="15dip"
                         android:visibility="gone"
                         app:layout_heightPercent="13%sw"
                         app:layout_marginBottomPercent="2%sw"
@@ -723,13 +682,14 @@
                             app:layout_widthPercent="5.5%w"
                             app:stroke_width="0.5dip" />
                     </com.zhy.android.percent.support.PercentLinearLayout>
+
                     <com.zhy.android.percent.support.PercentLinearLayout
                         android:id="@+id/lly_recharge_three"
                         android:layout_width="match_parent"
                         android:layout_height="50dip"
                         android:layout_marginLeft="15dip"
-                        android:layout_marginRight="15dip"
                         android:layout_marginTop="0.5dip"
+                        android:layout_marginRight="15dip"
                         android:background="@drawable/order_payment_select_no_bg"
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
@@ -776,13 +736,16 @@
                     </com.zhy.android.percent.support.PercentLinearLayout>
 
                 </com.zhy.android.percent.support.PercentLinearLayout>
+
                 <Button
                     android:id="@+id/btn_recharge_submit"
                     android:layout_width="match_parent"
-                    android:layout_height="32dip"
-                    android:layout_margin="20dip"
+                    android:layout_height="35dp"
                     android:background="@drawable/button_add_zhuce"
                     android:clickable="true"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="35dp"
                     android:gravity="center"
                     android:text="@string/recharge"
                     android:textColor="@color/white"

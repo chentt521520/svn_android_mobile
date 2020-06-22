@@ -1,8 +1,6 @@
 package com.jc.lottery.activity.immediate;
 
-import android.content.Intent;
 import android.graphics.Color;
-import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
@@ -16,7 +14,6 @@ import com.jc.lottery.R;
 import com.jc.lottery.base.BaseActivity;
 import com.jc.lottery.bean.req.pos_GetSettlement;
 import com.jc.lottery.bean.req.pos_settlementQuery;
-import com.jc.lottery.bean.resp.PermissionsListBean;
 import com.jc.lottery.bean.resp.SettlementQueryBean;
 import com.jc.lottery.http.MyUrl;
 import com.jc.lottery.inter.vStringCallback;
@@ -26,7 +23,6 @@ import com.jc.lottery.util.SPUtils;
 import com.jc.lottery.util.SPkey;
 import com.jc.lottery.util.ToastUtils;
 import com.lzy.okgo.OkGo;
-import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
@@ -41,7 +37,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
@@ -69,6 +64,8 @@ public class SettlementPreviewActivity extends BaseActivity {
     TextView tvPreviewBook;
     @BindView(R.id.tv_receiving_real_moneys)
     TextView tvPreviewMoneys;
+    @BindView(R.id.tv_game_name)
+    TextView tvGameName;
     @BindView(R.id.bt_preview_submit)
     Button btPreviewSubmit;
     @BindView(R.id.lly_reward_record_back)
@@ -87,7 +84,8 @@ public class SettlementPreviewActivity extends BaseActivity {
     }
 
     @Override
-    public void getPreIntent() {}
+    public void getPreIntent() {
+    }
 
     @Override
     public void initData() {
@@ -95,13 +93,14 @@ public class SettlementPreviewActivity extends BaseActivity {
         String bookList = getIntent().getStringExtra("bookList");
         Type listType = new TypeToken<List<pos_settlementQuery.BookList>>() {
         }.getType();
-        list = new Gson().fromJson(bookList,listType);
+        list = new Gson().fromJson(bookList, listType);
         gameAlias = getIntent().getStringExtra("gameAlias");
         settlementQueryBean = (SettlementQueryBean) getIntent().getSerializableExtra("settlementQueryBean");
         showData();
     }
 
-    private void showData(){
+    private void showData() {
+        tvGameName.setText(gameAlias);
         tvPreviewBook.setText(list.size() + "");
         tvPreviewTotalReward.setText(MoneyUtil.getIns().GetMoney(settlementQueryBean.getCashMoney()));
         tvPreviewExchangeCommission.setText(MoneyUtil.getIns().GetMoney(settlementQueryBean.getCommissionPrize()));
@@ -178,7 +177,7 @@ public class SettlementPreviewActivity extends BaseActivity {
                             if (jsonObject.getString("code").equals("00000")) {
                                 settlementQueryBean = new Gson().fromJson(response.body(), SettlementQueryBean.class);
                                 showData();
-                            }else {
+                            } else {
                                 ToastUtils.showShort(jsonObject.getString("message"));
                             }
                         } catch (JSONException e) {
@@ -217,6 +216,8 @@ public class SettlementPreviewActivity extends BaseActivity {
                             if (jsonObject.getString("code").equals("00000")) {
                                 ImmediatelSettlementActivity.instance.resetAll();
                                 ImmediatelSettlementActivity.instance.getBookInfoHttp("");
+
+                                //弹出结算成功界面
                                 finish();
                             }
                         } catch (JSONException e) {
@@ -237,7 +238,7 @@ public class SettlementPreviewActivity extends BaseActivity {
         super.onResume();
     }
 
-    @OnClick({R.id.lly_reward_record_back,R.id.bt_preview_finish, R.id.bt_preview_submit})
+    @OnClick({R.id.lly_reward_record_back, R.id.bt_preview_finish, R.id.bt_preview_submit})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.lly_reward_record_back:

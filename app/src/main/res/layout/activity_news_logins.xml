@@ -155,6 +155,7 @@
                     android:id="@+id/lly_login_forgot_password"
                     android:layout_width="match_parent"
                     android:layout_height="30dip"
+                    android:visibility="gone"
                     android:gravity="right|center">
                     <TextView
                         android:layout_width="wrap_content"
@@ -169,7 +170,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="38dip"
                     android:background="@drawable/button_add_zhuce"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="70dp"
                     android:text="@string/login"
                     android:textColor="@color/white"
                     android:textSize="14dip" />

@@ -33,6 +33,7 @@
     <string name="shi">Yes</string>
     <string name="fou">No</string>
     <string name="main_mylottery">Home</string>
+    <string name="main_lottery">Lottery</string>
     <!--<string name="main_awarddetail">Past Drawings</string>-->
     <string name="main_awarddetail">Notice</string>
     <string name="main_accounts">User</string>
@@ -844,5 +845,8 @@
     <string name="successful_trade">Successful trade</string>
     <string name="info">Info</string>
     <string name="news">News</string>
+    <string name="back_home">Back Home</string>
+    <string name="see_order">See Order</string>
+    <string name="number_settle">Number Settle</string>
 
 </resources>

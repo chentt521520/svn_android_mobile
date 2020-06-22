@@ -2,7 +2,6 @@ package com.jc.lottery.activity.money;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -10,8 +9,7 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.jc.lottery.R;
-import com.jc.lottery.activity.immediate.LotteryPurchaseActivity;
-import com.jc.lottery.activity.immediate.ReceivingRecordsDetailActivity;
+import com.jc.lottery.activity.MainFragmentTabActivity;
 import com.jc.lottery.base.BaseActivity;
 import com.jc.lottery.bean.req.pos_GetOrderPay;
 import com.jc.lottery.http.MyUrl;
@@ -23,7 +21,6 @@ import com.jc.lottery.util.SPkey;
 import com.jc.lottery.util.ToastUtils;
 import com.jc.lottery.view.SmoothCheckBox;
 import com.lzy.okgo.OkGo;
-import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
 import com.zhy.android.percent.support.PercentLinearLayout;
 
@@ -31,7 +28,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
@@ -80,8 +76,8 @@ public class OrderPaymentActivity extends BaseActivity {
     TextView tvRechargeMoney;
     @BindView(R.id.btn_payment_submit)
     Button btnPaymentSubmit;
-    @BindView(R.id.btn_lottery_pop_two_dismiss)
-    Button btnLotteryPopTwoDismiss;
+    //    @BindView(R.id.btn_lottery_pop_two_dismiss)
+//    Button btnLotteryPopTwoDismiss;
     @BindView(R.id.lly_payment_pop_one)
     LinearLayout llyPaymentPopOne;
     @BindView(R.id.lly_payment_pop)
@@ -90,6 +86,10 @@ public class OrderPaymentActivity extends BaseActivity {
     TextView tvPaymentGameName;
     @BindView(R.id.tv_payment_book)
     TextView tvPaymentBook;
+    @BindView(R.id.pay_amount)
+    TextView pay_amount;
+    @BindView(R.id.pay_type)
+    TextView pay_type;
     private int rechargeType = 0; // 1:YoPayments 2:card 3:APay
     private String gameName = "";
     private String book = "";
@@ -97,6 +97,8 @@ public class OrderPaymentActivity extends BaseActivity {
     private String order = "";
     private String role = "";
     private String openType = "";
+    private String orderCode;
+    private String payChannl;
 
     @Override
     public int getLayoutId() {
@@ -127,11 +129,11 @@ public class OrderPaymentActivity extends BaseActivity {
             llyRechargeTwo.setVisibility(View.VISIBLE);
             rechargeType = 1;
             initSmoothCheckBox(llyRechargeTwo, tvPaymentTwo, scbRechargeTwo);
-        }else if (role.equals("dls")){
+        } else if (role.equals("dls")) {
             llyRechargeOne.setVisibility(View.VISIBLE);
             rechargeType = 0;
             initSmoothCheckBox(llyRechargeOne, tvPaymentOne, scbRechargeOne);
-        }else {
+        } else {
             llyRechargeOne.setVisibility(View.VISIBLE);
             llyRechargeTwo.setVisibility(View.VISIBLE);
 //            llyRechargeThree.setVisibility(View.VISIBLE);
@@ -144,7 +146,8 @@ public class OrderPaymentActivity extends BaseActivity {
     public void initListener() {
     }
 
-    @OnClick({R.id.lly_recharge_back, R.id.lly_recharge_one, R.id.lly_recharge_two, R.id.lly_recharge_three, R.id.lly_recharge_four, R.id.lly_recharge_five, R.id.btn_payment_submit, R.id.btn_lottery_pop_two_dismiss,R.id.lly_payment_pop})
+    @OnClick({R.id.lly_recharge_back, R.id.lly_recharge_one, R.id.lly_recharge_two, R.id.lly_recharge_three, R.id.lly_recharge_four, R.id.lly_recharge_five,
+            R.id.btn_payment_submit, R.id.btn_lottery_pop_to_home, R.id.btn_lottery_pop_to_detail, R.id.lly_payment_pop})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.lly_recharge_back:
@@ -173,17 +176,31 @@ public class OrderPaymentActivity extends BaseActivity {
             case R.id.btn_payment_submit:
                 orderHttp();
                 break;
-            case R.id.btn_lottery_pop_two_dismiss:
-                if (openType.equals("1")) {
-                    LotteryPurchaseActivity.ins.finish();
-                    Intent intent = new Intent();
-                    intent.setClass(this, LotteryPurchaseActivity.class);
-                    startActivity(intent);
-                    finish();
-                }else {
-                    ReceivingRecordsDetailActivity.ins.showOrder();
-                    finish();
-                }
+//            case R.id.btn_lottery_pop_two_dismiss:
+//                if (openType.equals("1")) {
+//                    LotteryPurchaseActivity.ins.finish();
+//                    Intent intent = new Intent();
+//                    intent.setClass(this, LotteryPurchaseActivity.class);
+//                    startActivity(intent);
+//                    finish();
+//                }else {
+//                    ReceivingRecordsDetailActivity.ins.showOrder();
+//                    finish();
+//                }
+//                break;
+            case R.id.btn_lottery_pop_to_home://返回首页
+                Intent intent = new Intent(OrderPaymentActivity.this, MainFragmentTabActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.btn_lottery_pop_to_detail://订单详情
+
+//                Intent intent2 = new Intent();
+//                intent2.putExtra("activityType", payChannl);
+//                intent2.putExtra("recordDetailsId", "");
+//                intent2.setClass(OrderPaymentActivity.this, ReceivingRecordsDetailActivity.class);
+//                startActivity(intent2);
                 break;
             case R.id.lly_payment_pop:
                 break;
@@ -197,7 +214,7 @@ public class OrderPaymentActivity extends BaseActivity {
         String account_name = SPUtils.look(this, SPkey.username);
         String account_password = SPUtils.look(this, SPkey.password);
         String device = SPUtils.look(this, SPkey.terminalname);
-        pos_GetOrderPay.OrderData orderData = new pos_GetOrderPay.OrderData(order, "0" + rechargeType);
+        final pos_GetOrderPay.OrderData orderData = new pos_GetOrderPay.OrderData(order, "0" + rechargeType);
         pos_GetOrderPay.DataBean dataBean = new pos_GetOrderPay.DataBean(orderData);
         pos_GetOrderPay pos_createOrder = new pos_GetOrderPay(account_name, account_password, "3", dataBean);
         String s1 = new Gson().toJson(pos_createOrder);
@@ -209,11 +226,20 @@ public class OrderPaymentActivity extends BaseActivity {
                     public void vOnSuccess(Response<String> response) {
                         ProgressUtil.dismissProgressDialog();
                         try {
+
                             JSONObject jsonObject = new JSONObject(response.body());
                             if (jsonObject.getString("code").equals("00000")) {
                                 llyPaymentPop.setVisibility(View.VISIBLE);
                                 llyPaymentPopOne.setVisibility(View.VISIBLE);
-//                                recordDetailsId = jsonObject.getString("receiveId");
+                                pay_amount.setText(MoneyUtil.getIns().GetMoney(money) + "ZWM");
+
+                                // {"code":"00000","data":{"orderData":{"orderCode":"724325486397100032","payChannl":"00"}},"message":"支付成功!","state":"00"}
+//                                String data = jsonObject.getString("data");
+                                JSONObject orderData = jsonObject.getJSONObject("data").getJSONObject("orderData");
+                                orderCode = orderData.getString("orderCode");
+                                payChannl = orderData.getString("payChannl");
+
+//   recordDetailsId = jsonObject.getString("receiveId");
                             } else {
                                 ToastUtils.showShort(jsonObject.getString("message"));
                             }
@@ -276,7 +302,7 @@ public class OrderPaymentActivity extends BaseActivity {
         scbRechargeFour.setChecked(false, false);
         scbRechargeFive.setChecked(false, false);
         llyBg.setBackgroundResource(R.drawable.order_payment_select_bg);
-        tvBg.setTextColor(Color.rgb(0,75,255));
+        tvBg.setTextColor(Color.rgb(0, 75, 255));
         smoothCheckBox.setChecked(true, true);
     }
 

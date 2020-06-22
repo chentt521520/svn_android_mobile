@@ -47,6 +47,7 @@
             android:id="@+id/srl_receiving"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <com.scwang.smartrefresh.layout.header.ClassicsHeader
                 android:id="@+id/header_receiving"
                 android:layout_width="match_parent"
@@ -56,69 +57,78 @@
                 android:id="@+id/sv_detail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/white"
                         android:orientation="vertical">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:gravity="center">
+                            android:gravity="center"
+                            android:orientation="vertical">
+
                             <TextView
                                 android:id="@+id/tv_receiving_two"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="10dip"
+                                android:layout_marginBottom="10dip"
                                 android:gravity="center"
                                 android:text="@string/book_number"
-                                android:textSize="16dip"
                                 android:textColor="@color/black"
-                                android:layout_marginTop="10dip"
-                                android:layout_marginBottom="10dip"/>
+                                android:textSize="14sp" />
+
                             <TextView
                                 android:id="@+id/tv_receiving_real_moneys"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dip"
                                 android:gravity="center"
                                 android:text=""
-                                android:textSize="24dip"
-                                android:textStyle="bold"
-                                android:textColor="@color/main_color"
-                                android:layout_marginBottom="5dip"/>
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
                             <TextView
                                 android:id="@+id/tv_receiving_real_state"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dip"
                                 android:gravity="center"
                                 android:text="@string/successful_trade"
-                                android:textSize="12dip"
                                 android:textColor="@color/black"
-                                android:layout_marginBottom="5dip"/>
+                                android:textSize="12sp" />
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="40dip"
-                            android:gravity="center_vertical"
                             android:background="#f3f3f3"
+                            android:gravity="center_vertical"
                             android:visibility="gone">
+
                             <View
                                 android:layout_width="3dip"
                                 android:layout_height="15dip"
-                                android:background="@color/main_color"
                                 android:layout_marginLeft="15dip"
-                                android:layout_marginTop="0.5dip"/>
+                                android:layout_marginTop="0.5dip"
+                                android:background="@color/black" />
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dip"
                                 android:text="@string/order_information"
-                                android:textSize="16dip"
                                 android:textColor="@color/black"
-                                android:layout_marginLeft="5dip"/>
+                                android:textSize="16dip" />
                         </LinearLayout>
 
 
@@ -126,270 +136,303 @@
                             android:layout_width="match_parent"
                             android:layout_height="30dip"
                             android:orientation="horizontal">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:layout_marginLeft="15dip"
                                 android:gravity="center"
                                 android:text="@string/payment_method"
-                                android:textSize="12dip"
                                 android:textColor="#999999"
-                                android:layout_marginLeft="15dip"/>
+                                android:textSize="12sp" />
+
                             <TextView
                                 android:id="@+id/tv_receiving_payment_method"
                                 android:layout_width="0dip"
                                 android:layout_height="match_parent"
+                                android:layout_marginRight="15dip"
                                 android:layout_weight="1"
                                 android:gravity="center|right"
                                 android:text=""
-                                android:textSize="12dip"
-                                android:textColor="@color/main_color"
-                                android:layout_marginRight="15dip"/>
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
                         </LinearLayout>
+
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dip"
-                            android:background="#F3F3F3"
                             android:layout_marginLeft="15dip"
                             android:layout_marginRight="15dip"
-                            android:visibility="gone"/>
+                            android:background="#F3F3F3"
+                            android:visibility="gone" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="30dip"
                             android:orientation="horizontal">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:layout_marginLeft="15dip"
                                 android:gravity="center"
                                 android:text="@string/number"
-                                android:textSize="12dip"
                                 android:textColor="#999999"
-                                android:layout_marginLeft="15dip"/>
+                                android:textSize="12sp" />
+
                             <TextView
                                 android:id="@+id/tv_receiving_four"
                                 android:layout_width="0dip"
                                 android:layout_height="match_parent"
+                                android:layout_marginRight="15dip"
                                 android:layout_weight="1"
                                 android:gravity="center|right"
                                 android:text=""
-                                android:textSize="12dip"
-                                android:textColor="@color/main_color"
-                                android:layout_marginRight="15dip"/>
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
                         </LinearLayout>
+
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dip"
-                            android:background="#F3F3F3"
                             android:layout_marginLeft="15dip"
                             android:layout_marginRight="15dip"
-                            android:visibility="gone"/>
+                            android:background="#F3F3F3"
+                            android:visibility="gone" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="30dip"
                             android:orientation="horizontal">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:layout_marginLeft="15dip"
                                 android:gravity="center"
                                 android:text="@string/order_money"
-                                android:textSize="12dip"
                                 android:textColor="#999999"
-                                android:layout_marginLeft="15dip"/>
+                                android:textSize="12sp" />
+
                             <TextView
                                 android:id="@+id/tv_receiving_money"
                                 android:layout_width="0dip"
                                 android:layout_height="match_parent"
+                                android:layout_marginRight="15dip"
                                 android:layout_weight="1"
                                 android:gravity="center|right"
                                 android:text=""
-                                android:textSize="12dip"
-                                android:textColor="@color/main_color"
-                                android:layout_marginRight="15dip"/>
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
                         </LinearLayout>
+
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dip"
-                            android:background="#F3F3F3"
                             android:layout_marginLeft="15dip"
                             android:layout_marginRight="15dip"
-                            android:visibility="gone"/>
+                            android:background="#F3F3F3"
+                            android:visibility="gone" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="30dip"
                             android:orientation="horizontal">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:layout_marginLeft="15dip"
                                 android:gravity="center"
                                 android:text="@string/actual_payment_amount"
-                                android:textSize="12dip"
                                 android:textColor="#999999"
-                                android:layout_marginLeft="15dip"/>
+                                android:textSize="12sp" />
+
                             <TextView
                                 android:id="@+id/tv_receiving_real_money"
                                 android:layout_width="0dip"
                                 android:layout_height="match_parent"
+                                android:layout_marginRight="15dip"
                                 android:layout_weight="1"
                                 android:gravity="center|right"
                                 android:text=""
-                                android:textSize="12dip"
-                                android:textColor="@color/main_color"
-                                android:layout_marginRight="15dip"/>
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
                         </LinearLayout>
+
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dip"
-                            android:background="#F3F3F3"
                             android:layout_marginLeft="15dip"
-                            android:layout_marginRight="15dip"
-                            android:visibility="visible"
                             android:layout_marginTop="5dip"
-                            android:layout_marginBottom="5dip"/>
+                            android:layout_marginRight="15dip"
+                            android:layout_marginBottom="5dip"
+                            android:background="#F3F3F3"
+                            android:visibility="visible" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="30dip"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:layout_marginLeft="15dip"
                                 android:gravity="center"
                                 android:text="@string/payment_status"
-                                android:textSize="12dip"
                                 android:textColor="#999999"
-                                android:layout_marginLeft="15dip"/>
+                                android:textSize="12sp" />
+
                             <TextView
                                 android:id="@+id/tv_receiving_three"
                                 android:layout_width="0dip"
                                 android:layout_height="match_parent"
+                                android:layout_marginRight="15dip"
                                 android:layout_weight="1"
                                 android:gravity="center|right"
                                 android:text=""
-                                android:textSize="12dip"
-                                android:textColor="@color/main_color"
-                                android:layout_marginRight="15dip"/>
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
                         </LinearLayout>
+
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dip"
-                            android:background="#F3F3F3"
                             android:layout_marginLeft="15dip"
                             android:layout_marginRight="15dip"
-                            android:visibility="gone"/>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="30dip"
-                            android:orientation="horizontal">
-                            <TextView
-                                android:id="@+id/tv_receiving_state"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:text=""
-                                android:textSize="12dip"
-                                android:textColor="#999999"
-                                android:layout_marginLeft="15dip"/>
-                            <TextView
-                                android:id="@+id/tv_receiving_six"
-                                android:layout_width="0dip"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center|right"
-                                android:text=""
-                                android:textSize="12dip"
-                                android:textColor="@color/main_color"
-                                android:layout_marginRight="15dip"/>
-                        </LinearLayout>
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dip"
                             android:background="#F3F3F3"
-                            android:layout_marginLeft="15dip"
-                            android:layout_marginRight="15dip"
-                            android:visibility="gone"/>
+                            android:visibility="gone" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="30dip"
                             android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_receiving_state"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="15dip"
+                                android:gravity="center"
+                                android:text=""
+                                android:textColor="#999999"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/tv_receiving_six"
+                                android:layout_width="0dip"
+                                android:layout_height="match_parent"
+                                android:layout_marginRight="15dip"
+                                android:layout_weight="1"
+                                android:gravity="center|right"
+                                android:text=""
+                                android:textColor="@color/main_color"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dip"
+                            android:layout_marginLeft="15dip"
+                            android:layout_marginRight="15dip"
+                            android:background="#F3F3F3"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="30dip"
+                            android:orientation="horizontal">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:layout_marginLeft="15dip"
                                 android:gravity="center"
                                 android:text="@string/ticket_number"
-                                android:textSize="12dip"
                                 android:textColor="#999999"
-                                android:layout_marginLeft="15dip"/>
+                                android:textSize="12sp" />
+
                             <TextView
                                 android:id="@+id/tv_receiving_one"
                                 android:layout_width="0dip"
                                 android:layout_height="match_parent"
+                                android:layout_marginRight="15dip"
                                 android:layout_weight="1"
                                 android:gravity="center|right"
                                 android:text=""
-                                android:textSize="12dip"
                                 android:textColor="#333333"
-                                android:layout_marginRight="15dip"/>
+                                android:textSize="12sp" />
                         </LinearLayout>
+
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dip"
-                            android:background="#F3F3F3"
                             android:layout_marginLeft="15dip"
                             android:layout_marginRight="15dip"
-                            android:visibility="gone"/>
+                            android:background="#F3F3F3"
+                            android:visibility="gone" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="30dip"
                             android:orientation="horizontal">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:layout_marginLeft="15dip"
                                 android:gravity="center"
                                 android:text="@string/order_time"
-                                android:textSize="12dip"
                                 android:textColor="#999999"
-                                android:layout_marginLeft="15dip"/>
+                                android:textSize="12sp" />
+
                             <TextView
                                 android:id="@+id/tv_receiving_seven"
                                 android:layout_width="0dip"
                                 android:layout_height="match_parent"
+                                android:layout_marginRight="15dip"
                                 android:layout_weight="1"
                                 android:gravity="center|right"
                                 android:text=""
-                                android:textSize="12dip"
                                 android:textColor="#333333"
-                                android:layout_marginRight="15dip"/>
+                                android:textSize="12sp" />
                         </LinearLayout>
+
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dip"
-                            android:background="#F3F3F3"
                             android:layout_marginLeft="15dip"
                             android:layout_marginRight="15dip"
-                            android:visibility="gone"/>
+                            android:background="#F3F3F3"
+                            android:visibility="gone" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="30dip"
                             android:orientation="horizontal">
+
                             <TextView
                                 android:id="@+id/tv_receiving_time"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:layout_marginLeft="15dip"
                                 android:gravity="center"
                                 android:text=""
-                                android:textSize="12dip"
                                 android:textColor="#999999"
-                                android:layout_marginLeft="15dip"/>
+                                android:textSize="12sp" />
+
                             <TextView
                                 android:id="@+id/tv_receiving_five"
                                 android:layout_width="0dip"
                                 android:layout_height="match_parent"
+                                android:layout_marginRight="15dip"
                                 android:layout_weight="1"
                                 android:gravity="center|right"
                                 android:text=""
-                                android:textSize="12dip"
                                 android:textColor="#333333"
-                                android:layout_marginRight="15dip"/>
+                                android:textSize="12sp" />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -398,107 +441,121 @@
                         android:id="@+id/lly_receiving_pop"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:visibility="gone"
                         android:layout_marginLeft="20dip"
                         android:layout_marginRight="20dip"
-                        android:layout_marginBottom="20dip">
+                        android:layout_marginBottom="20dip"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/scanning_lottery_tickets"
-                            android:textSize="14dip"
-                            android:textColor="@color/grad"
                             android:layout_marginTop="14dip"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:text="@string/scanning_lottery_tickets"
+                            android:textColor="@color/grad"
+                            android:textSize="14dip" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:gravity="center">
+                            android:gravity="center"
+                            android:orientation="vertical">
+
                             <ImageView
                                 android:id="@+id/img_lottery_pop_one"
                                 android:layout_width="210dip"
                                 android:layout_height="210dip"
                                 android:adjustViewBounds="true" />
+
                             <LinearLayout
                                 android:id="@+id/lly_lottery_pop_zoom"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:gravity="center">
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
                                 <ImageView
                                     android:layout_width="15dip"
                                     android:layout_height="wrap_content"
                                     android:adjustViewBounds="true"
                                     android:src="@drawable/cx" />
+
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginLeft="2dip"
                                     android:text="@string/click_to_zoom_in"
-                                    android:textSize="12dip"
                                     android:textColor="@color/grad"
-                                    android:layout_marginLeft="2dip"/>
+                                    android:textSize="12sp" />
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
+
                     <LinearLayout
                         android:id="@+id/lly_receiving_activation"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
                         android:background="@color/white"
+                        android:orientation="vertical"
                         android:visibility="gone">
+
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="10dip"
-                            android:background="#f3f3f3">
-                        </View>
+                            android:background="#f3f3f3"></View>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="40dip"
-                            android:gravity="center_vertical"
-                            android:background="@color/white">
+                            android:background="@color/white"
+                            android:gravity="center_vertical">
+
                             <View
                                 android:layout_width="3dip"
                                 android:layout_height="10dip"
-                                android:background="#1577FF"
                                 android:layout_marginLeft="15dip"
-                                android:layout_marginTop="0.5dip"/>
+                                android:layout_marginTop="0.5dip"
+                                android:background="#1577FF" />
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dip"
                                 android:text="@string/activation_information"
-                                android:textSize="14dip"
                                 android:textColor="#1577FF"
-                                android:layout_marginLeft="5dip"/>
+                                android:textSize="14dip" />
                         </LinearLayout>
+
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dip"
-                            android:background="#f3f3f3"
                             android:layout_marginLeft="15dip"
-                            android:layout_marginRight="15dip">
-                        </View>
+                            android:layout_marginRight="15dip"
+                            android:background="#f3f3f3"></View>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:layout_margin="10dip">
+                            android:layout_margin="10dip"
+                            android:orientation="vertical">
+
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="35dip"
                                 android:orientation="horizontal"
                                 android:weightSum="4">
+
                                 <TextView
                                     android:id="@+id/tv_receiving_item_no"
                                     android:layout_width="30dip"
                                     android:layout_height="match_parent"
                                     android:gravity="center"
                                     android:text="@string/xuhao"
-                                    android:textSize="12dip"
-                                    android:textColor="#333333" />
+                                    android:textColor="#333333"
+                                    android:textSize="12sp" />
+
                                 <TextView
                                     android:id="@+id/tv_receiving_item_one"
                                     android:layout_width="0dip"
@@ -506,8 +563,9 @@
                                     android:layout_weight="1"
                                     android:gravity="center"
                                     android:text="@string/batch_number"
-                                    android:textSize="12dip"
-                                    android:textColor="#333333" />
+                                    android:textColor="#333333"
+                                    android:textSize="12sp" />
+
                                 <TextView
                                     android:id="@+id/tv_receiving_item_two"
                                     android:layout_width="0dip"
@@ -515,8 +573,9 @@
                                     android:layout_weight="1"
                                     android:gravity="center"
                                     android:text="@string/book_numbers"
-                                    android:textSize="12dip"
-                                    android:textColor="#333333" />
+                                    android:textColor="#333333"
+                                    android:textSize="12sp" />
+
                                 <TextView
                                     android:id="@+id/tv_receiving_item_type"
                                     android:layout_width="0dip"
@@ -524,8 +583,9 @@
                                     android:layout_weight="1"
                                     android:gravity="center"
                                     android:text="@string/activation_state"
-                                    android:textSize="12dip"
-                                    android:textColor="#333333" />
+                                    android:textColor="#333333"
+                                    android:textSize="12sp" />
+
                                 <TextView
                                     android:id="@+id/tv_receiving_item_time"
                                     android:layout_width="0dip"
@@ -533,85 +593,92 @@
                                     android:layout_weight="1"
                                     android:gravity="center"
                                     android:text="@string/activation_time"
-                                    android:textSize="12dip"
-                                    android:textColor="#333333" />
+                                    android:textColor="#333333"
+                                    android:textSize="12sp" />
                             </LinearLayout>
+
                             <ListView
                                 android:id="@+id/lv_receiving_detail"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:divider="@null"
                                 android:layout_marginLeft="1dip"
                                 android:layout_marginRight="1dip"
-                                android:layout_marginBottom="1dip"/>
+                                android:layout_marginBottom="1dip"
+                                android:divider="@null" />
                         </LinearLayout>
                     </LinearLayout>
+
                     <com.zhy.android.percent.support.PercentLinearLayout
                         android:id="@+id/lly_receiving_record_order"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
                         android:layout_marginTop="20dip"
                         android:layout_marginBottom="10dip"
+                        android:gravity="center"
                         android:visibility="gone">
+
                         <Button
                             android:id="@+id/bt_receiving_record_order"
                             android:layout_width="match_parent"
                             android:layout_height="32dip"
+                            android:layout_marginLeft="15dip"
+                            android:layout_marginRight="15dip"
                             android:background="@drawable/button_add_zhuce"
                             android:text="@string/order_payment"
                             android:textColor="@color/white"
-                            android:textSize="14dip"
-                            android:layout_marginLeft="15dip"
-                            android:layout_marginRight="15dip"/>
+                            android:textSize="14dip" />
                     </com.zhy.android.percent.support.PercentLinearLayout>
+
                     <com.zhy.android.percent.support.PercentLinearLayout
                         android:id="@+id/lly_receiving_record_cancel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
                         android:layout_marginTop="10dip"
                         android:layout_marginBottom="20dip"
+                        android:gravity="center"
                         android:visibility="gone">
+
                         <Button
                             android:id="@+id/bt_receiving_record_cancel"
                             android:layout_width="match_parent"
                             android:layout_height="32dip"
+                            android:layout_marginLeft="15dip"
+                            android:layout_marginRight="15dip"
                             android:background="@drawable/button_add_zhuce"
                             android:text="@string/closing_order"
                             android:textColor="@color/white"
-                            android:textSize="14dip"
-                            android:layout_marginLeft="15dip"
-                            android:layout_marginRight="15dip"/>
+                            android:textSize="14dip" />
                     </com.zhy.android.percent.support.PercentLinearLayout>
 
                     <com.zhy.android.percent.support.PercentLinearLayout
                         android:id="@+id/lly_receiving_record_audit"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
                         android:layout_marginTop="10dip"
                         android:layout_marginBottom="20dip"
+                        android:gravity="center"
                         android:visibility="gone">
+
                         <Button
                             android:id="@+id/bt_receiving_record_a_audit"
                             android:layout_width="0dip"
                             android:layout_height="48dip"
+                            android:layout_marginLeft="15dip"
+                            android:layout_marginRight="15dip"
                             android:layout_weight="1"
-                            app:layout_heightPercent="6%sh"
                             android:background="@drawable/btn_delivery_inout_back_bg"
                             android:text="@string/to_examine"
                             android:textColor="@color/white"
                             android:textSize="14dip"
-                            android:layout_marginLeft="15dip"
-                            android:layout_marginRight="15dip"/>
+                            app:layout_heightPercent="6%sh" />
                     </com.zhy.android.percent.support.PercentLinearLayout>
                 </LinearLayout>
             </ScrollView>
+
             <com.scwang.smartrefresh.layout.footer.ClassicsFooter
                 android:id="@+id/footer_receiving"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
         </com.scwang.smartrefresh.layout.SmartRefreshLayout>
     </LinearLayout>
 

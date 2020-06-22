@@ -90,6 +90,7 @@
     <string name="award_level_bonus">单注奖金</string>
     <string name="main_awarddetail">开奖信息</string>
     <string name="main_mylottery">电子选号</string>
+    <string name="main_lottery">售彩</string>
     <string name="main_caishendao">站点查询</string>
     <string name="main_accounts">个人中心</string>
     <string name="main_consulting">资讯攻略</string>
@@ -871,6 +872,7 @@
     <string name="incorrect_receiver_please_input_again">领取人不正确 请重新输入</string>
     <string name="qr_code_format_incorrect">二维码格式不正确</string>
     <string name="settlement_book">结算本数</string>
+    <string name="count">数量(本)</string>
     <string name="please_enter_this_number">请输入本号</string>
     <string name="this_number_already_exists">本号已存在</string>
     <string name="xuhao">序号</string>
@@ -970,7 +972,10 @@
     <string name="victory_ticket_number_activation">激活单号:</string>
     <string name="victory_ticket_number_payment">充值单号:</string>
     <string name="victory_ticket_number_settle">结算单号:</string>
+    <string name="number_settle">结算单号</string>
     <string name="victory_ticket_number_activations">激活单号</string>
+    <string name="back_home">返回首页</string>
+    <string name="see_order">查看订单</string>
 
 </resources>
 

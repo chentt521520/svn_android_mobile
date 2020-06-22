@@ -1,39 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:background="@color/main_color">
+    android:background="@drawable/bg_gradient"
+    android:orientation="vertical">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/main_color"
         android:scrollbars="none">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dip"
-                android:gravity="center_vertical"
-                android:layout_marginLeft="20dip"
-                android:layout_marginRight="20dip">
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:gravity="bottom">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Welcome"
                     android:textColor="@color/white"
-                    android:textSize="16dip"
-                    android:textStyle="bold"/>
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
             </LinearLayout>
+
             <com.zhy.android.percent.support.PercentRelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginLeft="20dip"
-                android:layout_marginRight="20dip">
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
                 <com.youth.banner.Banner
                     android:id="@+id/banner"
                     android:layout_width="match_parent"
@@ -42,212 +48,233 @@
                     app:indicator_height="10dp"
                     app:indicator_margin="5dp"
                     app:indicator_width="10dp"
-                    app:layout_heightPercent="27%sh"/>
+                    app:layout_heightPercent="27%sh" />
             </com.zhy.android.percent.support.PercentRelativeLayout>
-
-            <com.zhy.android.percent.support.PercentLinearLayout
-                android:id="@+id/lly_my_lottery_lt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/my_lottery_lly_bg"
-                android:layout_marginTop="-18dip"
-                android:visibility="gone">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/lotto"
-                    app:layout_marginLeftPercent="4.5%sw"
-                    app:layout_textSizePercent="5%sw"
-                    app:layout_marginTopPercent="4%sw"
-                    app:layout_marginBottomPercent="4%sw"/>
-                <com.zhy.android.percent.support.PercentLinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <com.zhy.android.percent.support.PercentRelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:descendantFocusability="blocksDescendants">
-                        <android.support.v7.widget.RecyclerView
-                            android:id="@+id/rel_my_lottery_lt"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:visibility="visible"
-                            app:layout_marginLeftPercent="2%sw"
-                            app:layout_marginRightPercent="3%sw">
-                        </android.support.v7.widget.RecyclerView>
-                    </com.zhy.android.percent.support.PercentRelativeLayout>
-                    <com.zhy.android.percent.support.PercentLinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:layout_widthPercent="45%sw"
-                        app:layout_heightPercent="25%sw"
-                        android:orientation="vertical"
-                        android:background="@drawable/k3"
-                        app:layout_marginLeftPercent="4%sw"
-                        android:gravity="center_vertical"
-                        android:visibility="gone">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/kuai3_name"
-                            android:textColor="@color/white"
-                            app:layout_textSizePercent="4%sw"
-                            android:layout_marginLeft="15dip"/>
-                    </com.zhy.android.percent.support.PercentLinearLayout>
-                    <com.zhy.android.percent.support.PercentLinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:layout_widthPercent="45%sw"
-                        app:layout_heightPercent="25%sw"
-                        android:orientation="vertical"
-                        android:background="@drawable/icon_905"
-                        app:layout_marginLeftPercent="2%sw"
-                        android:gravity="center_vertical"
-                        android:visibility="gone">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/s90x5name"
-                            android:textColor="@color/white"
-                            app:layout_textSizePercent="4%sw"
-                            android:layout_marginLeft="15dip"/>
-                    </com.zhy.android.percent.support.PercentLinearLayout>
-                </com.zhy.android.percent.support.PercentLinearLayout>
-
-                <com.zhy.android.percent.support.PercentLinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layout_widthPercent="45%sw"
-                    app:layout_heightPercent="25%sw"
-                    android:orientation="vertical"
-                    android:background="@drawable/icon_376"
-                    app:layout_marginTopPercent="2%sw"
-                    app:layout_marginLeftPercent="4%sw"
-                    app:layout_marginBottomPercent="4%sw"
-                    android:gravity="center_vertical"
-                    android:visibility="gone">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/s37x6name"
-                        android:textColor="@color/white"
-                        app:layout_textSizePercent="4%sw"
-                        android:layout_marginLeft="15dip"/>
-
-                </com.zhy.android.percent.support.PercentLinearLayout>
-
-            </com.zhy.android.percent.support.PercentLinearLayout>
 
             <com.zhy.android.percent.support.PercentLinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="45dip"
-                android:layout_marginTop="20dip"
-                android:layout_marginLeft="20dip"
-                android:layout_marginRight="20dip"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/cash_bg_bottom"
                 android:gravity="center_vertical"
-                android:paddingLeft="15dip"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingLeft="15dip">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/info"
                     android:textColor="@color/black"
-                    android:textSize="16dip"/>
+                    android:textSize="16sp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/news"
-                    android:textColor="@color/white"
-                    android:textSize="15dip"
+                    android:layout_marginLeft="1dip"
                     android:background="@drawable/main_title_bg"
+                    android:paddingBottom="1dip"
                     android:paddingLeft="4dip"
                     android:paddingRight="4dip"
                     android:paddingTop="1dip"
-                    android:paddingBottom="1dip"
-                    android:layout_marginLeft="1dip"/>
+                    android:text="@string/news"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dip"
                     android:text="@string/is_new_version"
                     android:textColor="@color/white"
-                    android:textSize="14dip"
-                    android:layout_marginLeft="7dip"/>
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
             </com.zhy.android.percent.support.PercentLinearLayout>
+
             <com.zhy.android.percent.support.PercentLinearLayout
-                android:id="@+id/lly_my_lottery_immediate"
+                android:id="@+id/lly_my_lottery_lt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/main_bg_top_one"
-                android:layout_marginTop="20dip"
-                android:layout_marginLeft="20dip"
-                android:layout_marginRight="20dip">
+                android:orientation="vertical">
+                <!--my_lottery_lly_bg-->
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/quick_lottery"
-                    android:textColor="@color/white"
-                    app:layout_textSizePercent="5%sw"
-                    app:layout_heightPercent="13%sw"
+                    android:background="@drawable/main_bg_top_two"
                     android:gravity="center"
-                    android:background="@drawable/main_bg_top_two"/>
+                    android:text="@string/lotto"
+                    android:textColor="@color/white"
+                    app:layout_heightPercent="13%sw"
+                    app:layout_textSizePercent="5%sw" />
+
                 <com.zhy.android.percent.support.PercentLinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
                     <com.zhy.android.percent.support.PercentRelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:descendantFocusability="blocksDescendants">
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rel_my_lottery_lt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible"
+                            app:layout_marginPercent="2%sw" />
+                    </com.zhy.android.percent.support.PercentRelativeLayout>
+
+                    <com.zhy.android.percent.support.PercentLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/k3"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        app:layout_heightPercent="25%sw"
+                        app:layout_marginLeftPercent="4%sw"
+                        app:layout_widthPercent="45%sw">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dip"
+                            android:text="@string/kuai3_name"
+                            android:textColor="@color/white"
+                            app:layout_textSizePercent="4%sw" />
+                    </com.zhy.android.percent.support.PercentLinearLayout>
+
+                    <com.zhy.android.percent.support.PercentLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/icon_905"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        app:layout_heightPercent="25%sw"
+                        app:layout_marginLeftPercent="2%sw"
+                        app:layout_widthPercent="45%sw">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dip"
+                            android:text="@string/s90x5name"
+                            android:textColor="@color/white"
+                            app:layout_textSizePercent="4%sw" />
+                    </com.zhy.android.percent.support.PercentLinearLayout>
+                </com.zhy.android.percent.support.PercentLinearLayout>
+
+                <com.zhy.android.percent.support.PercentLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/icon_376"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    app:layout_heightPercent="25%sw"
+                    app:layout_marginBottomPercent="4%sw"
+                    app:layout_marginLeftPercent="4%sw"
+                    app:layout_marginTopPercent="2%sw"
+                    app:layout_widthPercent="45%sw">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dip"
+                        android:text="@string/s37x6name"
+                        android:textColor="@color/white"
+                        app:layout_textSizePercent="4%sw" />
+
+                </com.zhy.android.percent.support.PercentLinearLayout>
+
+            </com.zhy.android.percent.support.PercentLinearLayout>
+
+            <com.zhy.android.percent.support.PercentLinearLayout
+                android:id="@+id/lly_my_lottery_immediate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/main_bg_top_one"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/main_bg_top_two"
+                    android:gravity="center"
+                    android:text="@string/quick_lottery"
+                    android:textColor="@color/white"
+                    app:layout_heightPercent="13%sw"
+                    app:layout_textSizePercent="5%sw" />
+
+                <com.zhy.android.percent.support.PercentLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.zhy.android.percent.support.PercentRelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:descendantFocusability="blocksDescendants">
+
                         <android.support.v7.widget.RecyclerView
                             android:id="@+id/rel_my_lottery"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:visibility="visible"
-                            app:layout_marginLeftPercent="2%sw"
-                            app:layout_marginRightPercent="3%sw">
-                        </android.support.v7.widget.RecyclerView>
+                            app:layout_marginPercent="2%sw" />
                     </com.zhy.android.percent.support.PercentRelativeLayout>
+
                     <com.zhy.android.percent.support.PercentLinearLayout
                         android:id="@+id/lly_my_lottery_ticket"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:layout_widthPercent="45%sw"
-                        app:layout_heightPercent="25%sw"
-                        android:orientation="vertical"
                         android:background="@drawable/gc"
-                        app:layout_marginLeftPercent="4%sw"
                         android:gravity="center_vertical"
-                        android:visibility="gone">
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        app:layout_heightPercent="25%sw"
+                        app:layout_marginLeftPercent="4%sw"
+                        app:layout_widthPercent="45%sw">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dip"
                             android:text="@string/ticket_collection"
                             android:textColor="@color/white"
-                            app:layout_textSizePercent="4%sw"
-                            android:layout_marginLeft="15dip"/>
+                            app:layout_textSizePercent="4%sw" />
                     </com.zhy.android.percent.support.PercentLinearLayout>
+
                     <com.zhy.android.percent.support.PercentLinearLayout
                         android:id="@+id/lly_my_lottery_activation"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:layout_widthPercent="45%sw"
-                        app:layout_heightPercent="25%sw"
-                        android:orientation="vertical"
                         android:background="@drawable/jh"
-                        app:layout_marginLeftPercent="2%sw"
                         android:gravity="center_vertical"
-                        android:visibility="gone">
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        app:layout_heightPercent="25%sw"
+                        app:layout_marginLeftPercent="2%sw"
+                        app:layout_widthPercent="45%sw">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dip"
                             android:text="@string/activation"
                             android:textColor="@color/white"
-                            app:layout_textSizePercent="4%sw"
-                            android:layout_marginLeft="15dip"/>
+                            app:layout_textSizePercent="4%sw" />
                     </com.zhy.android.percent.support.PercentLinearLayout>
                 </com.zhy.android.percent.support.PercentLinearLayout>
 
@@ -255,22 +282,23 @@
                     android:id="@+id/lly_my_lottery_settlement"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_widthPercent="45%sw"
-                    app:layout_heightPercent="25%sw"
-                    android:orientation="vertical"
                     android:background="@drawable/js"
-                    app:layout_marginTopPercent="2%sw"
-                    app:layout_marginLeftPercent="4%sw"
-                    app:layout_marginBottomPercent="4%sw"
                     android:gravity="center_vertical"
-                    android:visibility="gone">
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    app:layout_heightPercent="25%sw"
+                    app:layout_marginBottomPercent="4%sw"
+                    app:layout_marginLeftPercent="4%sw"
+                    app:layout_marginTopPercent="2%sw"
+                    app:layout_widthPercent="45%sw">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dip"
                         android:text="@string/settlement"
                         android:textColor="@color/white"
-                        app:layout_textSizePercent="4%sw"
-                        android:layout_marginLeft="15dip"/>
+                        app:layout_textSizePercent="4%sw" />
                 </com.zhy.android.percent.support.PercentLinearLayout>
             </com.zhy.android.percent.support.PercentLinearLayout>
 
@@ -278,37 +306,34 @@
             <com.zhy.android.percent.support.PercentLinearLayout
                 android:id="@+id/lly_my_lottery_jack"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:background="@color/white"
-                android:layout_marginTop="20dip"
-                android:visibility="gone">
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="@drawable/main_bg_top_one"
+                android:orientation="vertical">
+
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/jackpot"
-                    app:layout_marginLeftPercent="4.5%sw"
-                    app:layout_textSizePercent="5%sw"
-                    app:layout_marginTopPercent="4%sw"
-                    app:layout_marginBottomPercent="4%sw"/>
-                <com.zhy.android.percent.support.PercentLinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-                    <com.zhy.android.percent.support.PercentRelativeLayout
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/main_bg_top_two"
+                    android:gravity="center"
+                    android:text="@string/jackpot"
+                    android:textColor="@color/white"
+                    app:layout_heightPercent="13%sw"
+                    app:layout_textSizePercent="5%sw" />
+
+
+                <com.zhy.android.percent.support.PercentRelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:descendantFocusability="blocksDescendants">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rel_my_jack"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:descendantFocusability="blocksDescendants">
-                        <android.support.v7.widget.RecyclerView
-                            android:id="@+id/rel_my_jack"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:visibility="visible"
-                            app:layout_marginLeftPercent="2%sw"
-                            app:layout_marginRightPercent="3%sw">
-                        </android.support.v7.widget.RecyclerView>
-                    </com.zhy.android.percent.support.PercentRelativeLayout>
-                </com.zhy.android.percent.support.PercentLinearLayout>
+                        android:visibility="visible"
+                        app:layout_marginPercent="2%sw" />
+                </com.zhy.android.percent.support.PercentRelativeLayout>
             </com.zhy.android.percent.support.PercentLinearLayout>
         </LinearLayout>
 
@@ -318,11 +343,12 @@
         android:id="@+id/lly_my_immediate_pop"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:visibility="gone"
         android:background="#33000000"
+        android:gravity="center"
         android:orientation="vertical"
-        android:paddingBottom="10dip">
+        android:paddingBottom="10dip"
+        android:visibility="gone">
+
         <LinearLayout
             android:id="@+id/lly_delivery_pop_one"
             android:layout_width="match_parent"
@@ -330,95 +356,107 @@
             android:layout_marginLeft="40dip"
             android:layout_marginRight="40dip"
             android:background="@drawable/pop_delivery_management_bg"
-            android:orientation="vertical"
             android:gravity="center_horizontal"
+            android:orientation="vertical"
             android:visibility="visible">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="32dip">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="@string/password_verification"
-                    android:textSize="14dip"
-                    android:textColor="@color/white"
                     android:background="@drawable/delivery_management_lly_bg"
                     android:gravity="center"
                     android:paddingLeft="35dip"
-                    android:paddingRight="35dip"/>
+                    android:paddingRight="35dip"
+                    android:text="@string/password_verification"
+                    android:textColor="@color/white"
+                    android:textSize="14dip" />
+
                 <LinearLayout
                     android:layout_width="0dip"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center_vertical|right"
                     android:visibility="gone">
+
                     <ImageView
                         android:id="@+id/img_my_immediate_no"
                         android:layout_width="26dip"
                         android:layout_height="16dip"
-                        android:src="@drawable/guanbi"
-                        android:paddingRight="10dip"/>
+                        android:paddingRight="10dip"
+                        android:src="@drawable/guanbi" />
                 </LinearLayout>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dip"
                 android:layout_marginLeft="15dip"
                 android:layout_marginRight="15dip"
-                android:orientation="vertical"
-                android:gravity="center_vertical">
+                android:layout_marginTop="15dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/please_enter_secondary_password"
-                    android:textSize="14dip"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:textSize="14dip" />
+
                 <EditText
                     android:id="@+id/et_my_immediate_password"
                     android:layout_width="match_parent"
                     android:layout_height="40dip"
-                    android:textSize="14dip"
-                    android:gravity="center_vertical"
                     android:layout_marginTop="10dip"
+                    android:background="@drawable/delivery_input_btn_bg"
+                    android:gravity="center_vertical"
                     android:hint="@string/please_enter_secondary_password"
                     android:inputType="textPassword"
-                    android:paddingLeft="20dip"
-                    android:background="@drawable/delivery_input_btn_bg"/>
+                    android:paddingLeft="15dp"
+                    android:textSize="14dip" />
             </LinearLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dip"
-                android:background="#CCCCCC"
-                android:layout_marginTop="20dip"/>
+                android:layout_marginTop="15dp"
+                android:background="#CCCCCC" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="45dip"
-                android:weightSum="2"
+                android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:gravity="center_vertical">
+                android:weightSum="2">
+
                 <Button
                     android:id="@+id/bt_my_immediate_pop_no"
                     android:layout_width="0dip"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@null"
                     android:text="@string/str_cancel"
                     android:textColor="#999999"
-                    android:textSize="14dip"
-                    android:background="@null"/>
+                    android:textSize="14dip" />
+
                 <View
                     android:layout_width="0.5dip"
                     android:layout_height="match_parent"
-                    android:background="#CCCCCC"/>
+                    android:background="#CCCCCC" />
+
                 <Button
                     android:id="@+id/bt_my_immediate_pop_yes"
                     android:layout_width="0dip"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@null"
                     android:text="@string/confirm"
                     android:textColor="@color/main_color"
-                    android:textSize="14dip"
-                    android:background="@null"/>
+                    android:textSize="14dip" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
@@ -427,103 +465,116 @@
         android:id="@+id/lly_lock_pop"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
         android:background="#33000000"
+        android:gravity="center"
         android:orientation="vertical"
         android:paddingBottom="10dip"
         android:visibility="gone">
+
         <LinearLayout
             android:id="@+id/lly_lock_pop_one"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/pop_delivery_management_bg"
-            android:orientation="vertical"
-            android:gravity="center_horizontal"
-            android:visibility="visible"
             android:layout_marginLeft="40dip"
-            android:layout_marginRight="40dip">
+            android:layout_marginRight="40dip"
+            android:background="@drawable/pop_delivery_management_bg"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="visible">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="32dip">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="@string/password_verification"
-                    android:textSize="14dip"
-                    android:textColor="@color/white"
                     android:background="@drawable/delivery_management_lly_bg"
                     android:gravity="center"
                     android:paddingLeft="35dip"
-                    android:paddingRight="35dip"/>
+                    android:paddingRight="35dip"
+                    android:text="@string/password_verification"
+                    android:textColor="@color/white"
+                    android:textSize="14dip" />
+
                 <LinearLayout
                     android:layout_width="0dip"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center_vertical|right"
                     android:visibility="gone">
+
                     <ImageView
                         android:layout_width="26dip"
                         android:layout_height="16dip"
-                        android:src="@drawable/guanbi"
-                        android:paddingRight="10dip"/>
+                        android:paddingRight="10dip"
+                        android:src="@drawable/guanbi" />
                 </LinearLayout>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dip"
                 android:layout_marginLeft="15dip"
                 android:layout_marginRight="15dip"
-                android:orientation="vertical"
-                android:gravity="center">
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
                 <ImageView
                     android:id="@+id/img_lock_icon"
                     android:layout_width="48dip"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/suo"/>
+                    android:src="@drawable/suo" />
+
                 <TextView
                     android:id="@+id/tv_lock_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="15dip"
                     android:text="@string/lock_or_not"
-                    android:textSize="14dip"
                     android:textColor="@color/black"
-                    android:layout_marginTop="15dip"/>
+                    android:textSize="14dip" />
             </LinearLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dip"
-                android:background="#CCCCCC"
-                android:layout_marginTop="20dip"/>
+                android:layout_marginTop="15dp"
+                android:background="#CCCCCC" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="45dip"
-                android:weightSum="2"
+                android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:gravity="center_vertical">
+                android:weightSum="2">
+
                 <Button
                     android:id="@+id/bt_lock_pop_no"
                     android:layout_width="0dip"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@null"
                     android:text="@string/str_cancel"
                     android:textColor="#999999"
-                    android:textSize="14dip"
-                    android:background="@null"/>
+                    android:textSize="14dip" />
+
                 <View
                     android:layout_width="0.5dip"
                     android:layout_height="match_parent"
-                    android:background="#CCCCCC"/>
+                    android:background="#CCCCCC" />
+
                 <Button
                     android:id="@+id/bt_lock_pop_yes"
                     android:layout_width="0dip"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@null"
                     android:text="@string/confirm"
                     android:textColor="@color/main_color"
-                    android:textSize="14dip"
-                    android:background="@null"/>
+                    android:textSize="14dip" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
     android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="48dp"
-        android:background="@color/white"
         android:gravity="center_vertical"
         android:visibility="visible">
 
@@ -18,17 +19,18 @@
             android:layout_centerVertical="true"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:padding="5dip"
+            android:padding="5dp"
             android:visibility="gone">
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="23dip"
-                android:paddingLeft="10dip"
+                android:layout_height="23dp"
                 android:adjustViewBounds="true"
+                android:paddingLeft="10dp"
                 android:src="@drawable/arrow_left_white" />
 
         </LinearLayout>
+
         <TextView
             android:id="@+id/tv_recharge_detail_title"
             android:layout_width="wrap_content"
@@ -37,390 +39,461 @@
             android:layout_centerVertical="true"
             android:text="@string/preview_of_settlement"
             android:textColor="#121212"
-            android:textSize="14dip" />
+            android:textSize="16sp" />
     </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dip"
-        android:background="#F3F3F3"/>
+        android:layout_height="1dp"
+        android:background="#F3F3F3" />
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
         android:id="@+id/srl_preview"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <com.scwang.smartrefresh.layout.header.ClassicsHeader
-        android:id="@+id/header_receiving"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:id="@+id/header_receiving"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <com.zhy.android.percent.support.PercentLinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
                 android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="40dip"
-                    android:gravity="center_vertical"
+                    android:layout_height="40dp"
                     android:background="#f3f3f3"
+                    android:gravity="center_vertical"
                     android:visibility="gone">
+
                     <View
-                        android:layout_width="3dip"
-                        android:layout_height="15dip"
-                        android:background="@color/main_color"
-                        android:layout_marginLeft="15dip"
-                        android:layout_marginTop="0.5dip"/>
+                        android:layout_width="3dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="0.5dp"
+                        android:background="@color/main_color" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
                         android:text="@string/settlement_information"
-                        android:textSize="16dip"
                         android:textColor="@color/black"
-                        android:layout_marginLeft="5dip"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:gravity="center">
-                    <TextView
-                        android:id="@+id/tv_receiving_two"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/book_number"
-                        android:textSize="16dip"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="10dip"
-                        android:layout_marginBottom="10dip"
-                        android:visibility="gone"/>
-                    <TextView
-                        android:id="@+id/tv_receiving_real_moneys"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text=""
-                        android:textSize="24dip"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-                        android:layout_marginBottom="5dip"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/successful_trade"
-                        android:textSize="12dip"
-                        android:textColor="@color/black"
-                        android:layout_marginBottom="5dip"/>
+                        android:textSize="16dp" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="30dip"
-                    android:orientation="horizontal"
-                    android:visibility="visible">
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <TextView
+                        android:id="@+id/tv_receiving_two"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
                         android:gravity="center"
-                        android:text="@string/settlement_book"
-                        android:textSize="12dip"
-                        android:textColor="#333333"
-                        android:layout_marginLeft="15dip"/>
+                        android:text="@string/book_number"
+                        android:textColor="@color/black"
+                        android:textSize="16dp"
+                        android:visibility="gone" />
+
                     <TextView
-                        android:id="@+id/tv_preview_book"
-                        android:layout_width="0dip"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center|right"
+                        android:id="@+id/tv_receiving_real_moneys"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center"
                         android:text=""
-                        android:textSize="12dip"
-                        android:textColor="#333333"
-                        android:layout_marginRight="15dip"/>
-                </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dip"
-                    android:background="#F3F3F3"
-                    android:layout_marginLeft="15dip"
-                    android:layout_marginRight="15dip"
-                    android:visibility="gone"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dip"
-                    android:orientation="horizontal">
+                        android:textColor="#d10000"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
                         android:gravity="center"
                         android:text="@string/payable"
-                        android:textSize="12dip"
+                        android:textColor="@color/black"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center"
+                        android:text="@string/game_name"
                         android:textColor="#333333"
-                        android:layout_marginLeft="15dip"/>
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_game_name"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="15dp"
+                        android:layout_weight="1"
+                        android:gravity="center|right"
+                        android:text=""
+                        android:textColor="#333333"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center"
+                        android:text="@string/count"
+                        android:textColor="#333333"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_preview_book"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="15dp"
+                        android:layout_weight="1"
+                        android:gravity="center|right"
+                        android:text=""
+                        android:textColor="#333333"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="#F3F3F3"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center"
+                        android:text="@string/payable"
+                        android:textColor="#333333"
+                        android:textSize="14sp" />
+
                     <TextView
                         android:id="@+id/tv_preview_payable"
-                        android:layout_width="0dip"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
+                        android:layout_marginRight="15dp"
                         android:layout_weight="1"
                         android:gravity="center|right"
                         android:text=""
-                        android:textSize="12dip"
-                        android:textColor="#333333"
-                        android:layout_marginRight="15dip"/>
+                        android:textColor="#098000"
+                        android:textSize="14sp" />
                 </LinearLayout>
+
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1dip"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
                     android:background="#F3F3F3"
-                    android:layout_marginLeft="15dip"
-                    android:layout_marginRight="15dip"
                     android:visibility="gone"/>
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="30dip"
+                    android:layout_height="30dp"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/sales_commission_ratio"
-                        android:textSize="12dip"
-                        android:textColor="#333333"
-                        android:layout_marginLeft="15dip"/>
-                    <TextView
-                        android:id="@+id/tv_preview_sales_commission_ratio"
-                        android:layout_width="0dip"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center|right"
-                        android:text=""
-                        android:textSize="12dip"
-                        android:textColor="#333333"
-                        android:layout_marginRight="15dip"/>
-                </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dip"
-                    android:background="#F3F3F3"
-                    android:layout_marginLeft="15dip"
-                    android:layout_marginRight="15dip"
-                    android:visibility="gone"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dip"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/sales_commission"
-                        android:textSize="12dip"
-                        android:textColor="#333333"
-                        android:layout_marginLeft="15dip"/>
-                    <TextView
-                        android:id="@+id/tv_preview_sales_commission"
-                        android:layout_width="0dip"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center|right"
-                        android:text=""
-                        android:textSize="12dip"
-                        android:textColor="#333333"
-                        android:layout_marginRight="15dip"/>
-                </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dip"
-                    android:background="#F3F3F3"
-                    android:layout_marginLeft="15dip"
-                    android:layout_marginRight="15dip"
-                    android:visibility="gone"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dip"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
                         android:gravity="center"
                         android:text="@string/total_rewards"
-                        android:textSize="12dip"
                         android:textColor="#333333"
-                        android:layout_marginLeft="15dip"/>
+                        android:textSize="14sp" />
+
                     <TextView
                         android:id="@+id/tv_preview_total_reward"
-                        android:layout_width="0dip"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
+                        android:layout_marginRight="15dp"
                         android:layout_weight="1"
                         android:gravity="center|right"
                         android:text=""
-                        android:textSize="12dip"
-                        android:textColor="#333333"
-                        android:layout_marginRight="15dip"/>
+                        android:textColor="#098000"
+                        android:textSize="14sp" />
                 </LinearLayout>
+
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1dip"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="10dp"
                     android:background="#F3F3F3"
-                    android:layout_marginLeft="15dip"
-                    android:layout_marginRight="15dip"
-                    android:visibility="gone"/>
+                    android:visibility="visible" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="30dip"
+                    android:layout_height="30dp"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center"
+                        android:text="@string/sales_commission_ratio"
+                        android:textColor="#333333"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_preview_sales_commission_ratio"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="15dp"
+                        android:layout_weight="1"
+                        android:gravity="center|right"
+                        android:text=""
+                        android:textColor="#333333"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="#F3F3F3"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center"
+                        android:text="@string/sales_commission"
+                        android:textColor="#333333"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_preview_sales_commission"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="15dp"
+                        android:layout_weight="1"
+                        android:gravity="center|right"
+                        android:text=""
+                        android:textColor="#333333"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
                         android:gravity="center"
                         android:text="@string/exchange_commission_ratio"
-                        android:textSize="12dip"
                         android:textColor="#333333"
-                        android:layout_marginLeft="15dip"/>
+                        android:textSize="14sp" />
+
                     <TextView
                         android:id="@+id/tv_preview_commission_ratio"
-                        android:layout_width="0dip"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
+                        android:layout_marginRight="15dp"
                         android:layout_weight="1"
                         android:gravity="center|right"
                         android:text=""
-                        android:textSize="12dip"
                         android:textColor="#333333"
-                        android:layout_marginRight="15dip"/>
+                        android:textSize="14sp" />
                 </LinearLayout>
+
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1dip"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
                     android:background="#F3F3F3"
-                    android:layout_marginLeft="15dip"
-                    android:layout_marginRight="15dip"
-                    android:visibility="gone"/>
+                    android:visibility="gone" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="30dip"
+                    android:layout_height="30dp"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
                         android:gravity="center"
                         android:text="@string/exchange_commission"
-                        android:textSize="12dip"
                         android:textColor="#333333"
-                        android:layout_marginLeft="15dip"/>
+                        android:textSize="14sp" />
+
                     <TextView
                         android:id="@+id/tv_preview_exchange_commission"
-                        android:layout_width="0dip"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
                         android:layout_weight="1"
                         android:gravity="center|right"
                         android:text=""
-                        android:textSize="12dip"
                         android:textColor="#333333"
-                        android:layout_marginRight="15dip"/>
+                        android:textSize="14sp" />
                 </LinearLayout>
+
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1dip"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
                     android:background="#F3F3F3"
-                    android:layout_marginLeft="15dip"
-                    android:layout_marginRight="15dip"
-                    android:visibility="gone"/>
+                    android:visibility="gone" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="30dip"
+                    android:layout_height="30dp"
                     android:orientation="horizontal"
                     android:visibility="gone">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
                         android:gravity="center"
                         android:text="@string/total_commission"
-                        android:textSize="12dip"
                         android:textColor="#333333"
-                        android:layout_marginLeft="15dip"/>
+                        android:textSize="14sp" />
+
                     <TextView
                         android:id="@+id/tv_preview_total_commission"
-                        android:layout_width="0dip"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
+                        android:layout_marginRight="15dp"
                         android:layout_weight="1"
                         android:gravity="center|right"
                         android:text=""
-                        android:textSize="12dip"
                         android:textColor="#333333"
-                        android:layout_marginRight="15dip"/>
+                        android:textSize="14sp" />
                 </LinearLayout>
+
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1dip"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
                     android:background="#F3F3F3"
-                    android:layout_marginLeft="15dip"
-                    android:layout_marginRight="15dip"
-                    android:visibility="gone"/>
+                    android:visibility="gone" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="30dip"
-                    android:orientation="horizontal">
+                    android:layout_height="30dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
                         android:gravity="center"
                         android:text="@string/total_settlement_amount"
-                        android:textSize="12dip"
                         android:textColor="#333333"
-                        android:layout_marginLeft="15dip"/>
+                        android:textSize="14sp" />
+
                     <TextView
                         android:id="@+id/tv_preview_total_settlement_amount"
-                        android:layout_width="0dip"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
+                        android:layout_marginRight="15dp"
                         android:layout_weight="1"
                         android:gravity="center|right"
                         android:text=""
-                        android:textSize="12dip"
                         android:textColor="#D10000"
-                        android:layout_marginRight="15dip"/>
+                        android:textSize="14sp" />
                 </LinearLayout>
+
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1dip"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
                     android:background="#F3F3F3"
-                    android:layout_marginLeft="15dip"
-                    android:layout_marginRight="15dip"
-                    android:visibility="gone"/>
+                    android:visibility="gone" />
             </com.zhy.android.percent.support.PercentLinearLayout>
+
             <com.zhy.android.percent.support.PercentLinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:gravity="center">
+
                 <Button
                     android:id="@+id/bt_preview_finish"
-                    android:layout_width="0dip"
-                    android:layout_height="32dip"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/button_add_zhuce"
+                    android:background="@drawable/bg_corner_grey"
                     android:text="@string/str_cancel"
                     android:textColor="@color/white"
-                    android:textSize="14dip"
-                    android:layout_marginLeft="15dip"
-                    android:layout_marginRight="5dip"
-                    android:layout_marginBottom="15dip"
-                    android:layout_marginTop="5dip"/>
+                    android:textSize="14dp" />
+
                 <Button
                     android:id="@+id/bt_preview_submit"
-                    android:layout_width="0dip"
-                    android:layout_height="32dip"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/button_add_zhuce"
-                    android:text="@string/submit"
+                    android:text="@string/confirm"
                     android:textColor="@color/white"
-                    android:textSize="14dip"
-                    android:layout_marginLeft="5dip"
-                    android:layout_marginRight="15dip"
-                    android:layout_marginBottom="15dip"
-                    android:layout_marginTop="5dip"/>
+                    android:textSize="14dp" />
             </com.zhy.android.percent.support.PercentLinearLayout>
         </LinearLayout>
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>

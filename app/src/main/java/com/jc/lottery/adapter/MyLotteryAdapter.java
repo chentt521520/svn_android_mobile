@@ -3,7 +3,6 @@ package com.jc.lottery.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,18 +13,12 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.jc.lottery.R;
-import com.jc.lottery.activity.immediate.DeliveryRecordsActivity;
 import com.jc.lottery.activity.immediate.ImmediatelActivationActivity;
 import com.jc.lottery.activity.immediate.ImmediatelSettlementActivity;
 import com.jc.lottery.activity.immediate.LotteryPurchaseActivity;
-import com.jc.lottery.activity.immediate.PaymentRecordActivity;
-import com.jc.lottery.activity.immediate.ReceivingRecordsActivity;
-import com.jc.lottery.activity.immediate.StatisticsAmountActivity;
 import com.jc.lottery.activity.lottery._37x6SelectNumActivity;
 import com.jc.lottery.activity.lottery._49x6SelectNumActivity;
 import com.jc.lottery.activity.lottery.s90x5Activity;
-import com.jc.lottery.activity.my.MyImmediateActivity;
-import com.jc.lottery.activity.scanner.ManualScannerActivity;
 import com.jc.lottery.activity.victory.VictoryDefeatActivity;
 import com.jc.lottery.bean.MyImmediateBean;
 import com.jc.lottery.bean.req.pos_GetDrawNotOpenQuery;
@@ -40,7 +33,6 @@ import com.jc.lottery.util.SPUtils;
 import com.jc.lottery.util.SPkey;
 import com.jc.lottery.util.TimeManager;
 import com.jc.lottery.util.ToastUtils;
-import com.jc.lottery.view.rebound.LeCrash;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
 
@@ -60,7 +52,7 @@ public class MyLotteryAdapter extends RecyclerView.Adapter<MyLotteryAdapter.MyLo
     private MyLotteryFragment fragment;
     private Context mContext = null;
 
-    public MyLotteryAdapter(Context context,MyLotteryFragment fragment) {
+    public MyLotteryAdapter(Context context, MyLotteryFragment fragment) {
         this.mContext = context;
         this.fragment = fragment;
         mInflater = LayoutInflater.from(context);
@@ -83,31 +75,63 @@ public class MyLotteryAdapter extends RecyclerView.Adapter<MyLotteryAdapter.MyLo
 
     @Override
     public MyLotteryHolderView onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.my_lottery_item, parent, false);
+//        View view = mInflater.inflate(R.layout.my_lottery_item, parent, false);
+        View view = mInflater.inflate(R.layout.my_immediates_item, parent, false);
         MyLotteryHolderView holder = new MyLotteryHolderView(view);
         return holder;
     }
 
     @Override
     public void onBindViewHolder(final MyLotteryHolderView holder, final int position) {
+//        String bean = list.get(position).getName();
+//        if (bean != null) {
+//            holder.tvMyImmediateItemName.setText(bean);
+//        }
+//        if (list.get(position).isState()){
+//            holder.llyMyLotteryItemTwo.setVisibility(View.VISIBLE);
+//        }else {
+//            holder.llyMyLotteryItemTwo.setVisibility(View.GONE);
+//        }
+////        holder.llyMyLotteryItem.setOnClickListener(new View.OnClickListener() {
+////            @Override
+////            public void onClick(View v) {
+////                showIntent(position);
+////            }
+////        });
+//        holder.llyMyLotteryItem.setBackgroundResource(list.get(position).getIcon());
+//
+//        holder.llyMyLotteryItem.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (list.get(position).isState()){
+//                    fragment.showPopView(position,1,false,"","");
+//                }else {
+//                    showIntent(position);
+//                }
+//            }
+//        });
+//        holder.llyMyLotteryItem.setOnLongClickListener(new View.OnLongClickListener() {
+//            @Override
+//            public boolean onLongClick(View v) {
+//                if (list.get(position).isState()){
+//                    fragment.showLockView(position,false,list.get(position).getAlias(),mContext.getString(R.string.unlock_or_not),"");
+//                }else {
+//                    fragment.showLockView(position,true,list.get(position).getAlias(),mContext.getString(R.string.lock_or_not),"");
+//                }
+//                return true;
+//            }
+//        });
+
         String bean = list.get(position).getName();
         if (bean != null) {
             holder.tvMyImmediateItemName.setText(bean);
         }
         if (list.get(position).isState()){
-            holder.llyMyLotteryItemTwo.setVisibility(View.VISIBLE);
+            holder.imgMyImmediateItemLock.setVisibility(View.VISIBLE);
         }else {
-            holder.llyMyLotteryItemTwo.setVisibility(View.GONE);
+            holder.imgMyImmediateItemLock.setVisibility(View.GONE);
         }
-//        holder.llyMyLotteryItem.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                showIntent(position);
-//            }
-//        });
-        holder.llyMyLotteryItem.setBackgroundResource(list.get(position).getIcon());
-
-        holder.llyMyLotteryItem.setOnClickListener(new View.OnClickListener() {
+        holder.llyMyImmediateItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (list.get(position).isState()){
@@ -117,7 +141,7 @@ public class MyLotteryAdapter extends RecyclerView.Adapter<MyLotteryAdapter.MyLo
                 }
             }
         });
-        holder.llyMyLotteryItem.setOnLongClickListener(new View.OnLongClickListener() {
+        holder.llyMyImmediateItem.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
                 if (list.get(position).isState()){
@@ -128,6 +152,7 @@ public class MyLotteryAdapter extends RecyclerView.Adapter<MyLotteryAdapter.MyLo
                 return true;
             }
         });
+        holder.imgMyImmediateItemIcon.setImageResource(list.get(position).getIcon());
     }
 
     @Override
@@ -171,12 +196,14 @@ public class MyLotteryAdapter extends RecyclerView.Adapter<MyLotteryAdapter.MyLo
 
     class MyLotteryHolderView extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.lly_my_lottery_item)
-        LinearLayout llyMyLotteryItem;
-        @BindView(R.id.lly_my_lottery_item_two)
-        LinearLayout llyMyLotteryItemTwo;
-        @BindView(R.id.tv_my_lottery_item)
+        @BindView(R.id.lly_my_immediate_item)
+        LinearLayout llyMyImmediateItem;
+        @BindView(R.id.tv_my_immediate_item_name)
         TextView tvMyImmediateItemName;
+        @BindView(R.id.img_my_immediate_item_icon)
+        ImageView imgMyImmediateItemIcon;
+        @BindView(R.id.img_my_immediate_item_lock)
+        ImageView imgMyImmediateItemLock;
 
         public MyLotteryHolderView(View itemView) {
             super(itemView);

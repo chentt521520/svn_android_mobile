@@ -53,11 +53,18 @@
                 android:padding="5dip"
                 android:layout_alignParentRight="true">
 
-                <ImageView
+                <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="23dip"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/cx_w" />
+                    android:layout_height="match_parent"
+                    android:text="筛选"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <!--<ImageView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="23dip"-->
+                    <!--android:adjustViewBounds="true"-->
+                    <!--android:src="@drawable/cx_w" />-->
 
             </LinearLayout>
 
@@ -188,11 +195,12 @@
                         android:orientation="horizontal"
                         android:layout_marginLeft="15dip"
                         android:layout_marginRight="15dip">
-                        <com.jc.lottery.view.FlowLayout
+                        <com.jc.lottery.view.MyGridView
                             android:id="@+id/flow_one"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@color/white" />
+                            android:background="@color/white"
+                            android:numColumns="3"/>
                     </LinearLayout>
                     <View
                         android:layout_width="match_parent"
@@ -220,11 +228,12 @@
                         android:layout_marginBottom="20dip"
                         android:layout_marginLeft="15dip"
                         android:layout_marginRight="15dip">
-                        <com.jc.lottery.view.FlowLayout
+                        <com.jc.lottery.view.MyGridView
                             android:id="@+id/flow"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@color/white" />
+                            android:background="@color/white"
+                            android:numColumns="3"/>
                     </LinearLayout>
                     <View
                         android:layout_width="match_parent"
@@ -460,7 +469,7 @@
                 android:textColor="@color/white"
                 android:paddingLeft="30dip"
                 android:background="@drawable/pop_receiving_top_bg"/>
-            
+
             <TextView
                 android:id="@+id/tv_receiving_tip"
                 android:layout_width="match_parent"

@@ -6,9 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,7 +23,6 @@ import com.jc.lottery.activity.immediate.ImmediatelActivationActivity;
 import com.jc.lottery.activity.immediate.ImmediatelSettlementActivity;
 import com.jc.lottery.activity.immediate.LotteryPurchaseActivity;
 import com.jc.lottery.activity.lottery._37x6SelectNumActivity;
-import com.jc.lottery.adapter.MyImmediateAdapter;
 import com.jc.lottery.adapter.MyImmediatesAdapter;
 import com.jc.lottery.adapter.MyLotteryAdapter;
 import com.jc.lottery.base.BaseFragment;
@@ -66,7 +63,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
@@ -170,9 +166,9 @@ public class MyLotteryFragment extends BaseFragment {
 
     @Override
     public void initListener() {
-        relMyLotteryLt.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+        relMyLotteryLt.setLayoutManager(new GridLayoutManager(getActivity(), 3));
         relMyLottery.setLayoutManager(new GridLayoutManager(getActivity(), 3));
-        relMyJack.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+        relMyJack.setLayoutManager(new GridLayoutManager(getActivity(), 3));
     }
 
     @Override
@@ -270,7 +266,7 @@ public class MyLotteryFragment extends BaseFragment {
                                 } else if (TextUtils.equals(gameListBean.getAlias(), SPkey.kind_90x5)) {
                                     SPUtils.save(getActivity(), SPkey.kind_90x5, gameListBean.getId() + "");
                                     gameListName.add(Constant.Game_Name_90x5);
-                                }else if (TextUtils.equals(gameListBean.getAlias(), SPkey.kind_49x6)) {
+                                } else if (TextUtils.equals(gameListBean.getAlias(), SPkey.kind_49x6)) {
                                     SPUtils.save(getActivity(), SPkey.kind_49x6, gameListBean.getId() + "");
                                     gameListName.add(Constant.Game_Name_49x6);
                                 }
@@ -327,7 +323,7 @@ public class MyLotteryFragment extends BaseFragment {
             immediateBeanList.add(new MyImmediateBean(3, getString(R.string.settlement), R.drawable.my_jkc_three, isState("yddjkcjs"), "yddjkcjs"));
         }
         if (immediateBeanList.size() > 0) {
-            myImmediateAdapter = new MyImmediatesAdapter(this,getContext(), "0");
+            myImmediateAdapter = new MyImmediatesAdapter(this, getContext(), "0");
             myImmediateAdapter.setList(immediateBeanList);
             relMyLottery.setAdapter(myImmediateAdapter);
             llyMyLotteryImmediate.setVisibility(View.VISIBLE);
@@ -339,17 +335,18 @@ public class MyLotteryFragment extends BaseFragment {
         } else {
             llyMyLotteryLt.setVisibility(View.GONE);
         }
-//        if (getPermissionsUtil.getPermissions("yddsfctz")) {
-//            jcBeanList.add(new MyImmediateBean(6, getString(R.string.jackpot), R.drawable.jackpot_icon, false, "yddsfc"));
-//        } else {
+        if (getPermissionsUtil.getPermissions("yddsfctz")) {
+            jcBeanList.add(new MyImmediateBean(6, getString(R.string.jackpot), R.drawable.jackpot_icon, false, "yddsfc"));
+        } else {
             llyMyLotteryJack.setVisibility(View.GONE);
-//        }
+        }
         myLotteryJcAdapter = new MyLotteryAdapter(getActivity(), this);
         myLotteryJcAdapter.setList(jcBeanList);
         relMyJack.setAdapter(myLotteryJcAdapter);
-//        llyMyLotteryImmediate.setVisibility(View.VISIBLE);
+        llyMyLotteryImmediate.setVisibility(View.VISIBLE);
     }
 
+    //乐透
     private void initGameList(ArrayList<String> gameListName) {
         GetPermissionsUtil getPermissionsUtil = new GetPermissionsUtil();
         if (getPermissionsUtil.getPermissions("yddlttz")) {
@@ -358,21 +355,21 @@ public class MyLotteryFragment extends BaseFragment {
                     ltBeanList.add(new MyImmediateBean(4, getString(R.string.s37x6name), R.drawable.icon_376, isState("yddlt37"), "yddlt37"));
                 } else if (gameListName.get(i).equals(Constant.Game_Name_90x5)) {
                     ltBeanList.add(new MyImmediateBean(5, getString(R.string.s90x5name), R.drawable.icon_905, isState("yddlt90"), "yddlt90"));
-                }else if (gameListName.get(i).equals(Constant.Game_Name_49x6)) {
+                } else if (gameListName.get(i).equals(Constant.Game_Name_49x6)) {
                     ltBeanList.add(new MyImmediateBean(7, getString(R.string.s49x6name), R.drawable.icon_496, isState("yddlt496"), "yddlt496"));
                 }
             }
         }
-//        ltBeanList.add(new MyImmediateBean(4, getString(R.string.s37x6name), R.drawable.icon_376,false,""));
-//        ltBeanList.add(new MyImmediateBean(5, getString(R.string.s90x5name), R.drawable.icon_905,false,""));
-//        if (ltBeanList.size() > 0) {
-//            myLotteryLtAdapter = new MyLotteryAdapter(getActivity(), this);
-//            myLotteryLtAdapter.setList(ltBeanList);
-//            relMyLotteryLt.setAdapter(myLotteryLtAdapter);
-//            llyMyLotteryLt.setVisibility(View.VISIBLE);
-//        } else {
+//        ltBeanList.add(new MyImmediateBean(4, getString(R.string.s37x6name), R.drawable.icon_376, false, ""));
+//        ltBeanList.add(new MyImmediateBean(5, getString(R.string.s90x5name), R.drawable.icon_905, false, ""));
+        if (ltBeanList.size() > 0) {
+            myLotteryLtAdapter = new MyLotteryAdapter(getActivity(), this);
+            myLotteryLtAdapter.setList(ltBeanList);
+            relMyLotteryLt.setAdapter(myLotteryLtAdapter);
+            llyMyLotteryLt.setVisibility(View.VISIBLE);
+        } else {
             llyMyLotteryLt.setVisibility(View.GONE);
-//        }
+        }
     }
 
     private void getValidation(final int popType, String password, final int pos, final boolean type, final String name, final String stateType) {
@@ -559,7 +556,7 @@ public class MyLotteryFragment extends BaseFragment {
             btLockPopYes.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    showPopView(pos, 2, type, name,"");
+                    showPopView(pos, 2, type, name, "");
                     llyLockPop.setVisibility(View.GONE);
                 }
             });

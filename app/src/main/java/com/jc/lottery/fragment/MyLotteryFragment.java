@@ -73,10 +73,10 @@ public class MyLotteryFragment extends BaseFragment {
     Group<MumericalSelection> group;
     @BindView(R.id.banner)
     Banner banner;
-    @BindView(R.id.lly_my_lottery_ticket)
-    PercentLinearLayout llyMyLotteryTicket;
-    @BindView(R.id.lly_my_lottery_activation)
-    PercentLinearLayout llyMyLotteryActivation;
+//    @BindView(R.id.lly_my_lottery_ticket)
+//    PercentLinearLayout llyMyLotteryTicket;
+//    @BindView(R.id.lly_my_lottery_activation)
+//    PercentLinearLayout llyMyLotteryActivation;
     @BindView(R.id.lly_my_lottery_settlement)
     PercentLinearLayout llyMyLotterySettlement;
     @BindView(R.id.rel_my_lottery_lt)
@@ -188,19 +188,19 @@ public class MyLotteryFragment extends BaseFragment {
 //        }
     }
 
-
-    @OnClick({R.id.lly_my_lottery_ticket, R.id.lly_my_lottery_activation, R.id.lly_my_lottery_settlement, R.id.bt_my_immediate_pop_yes, R.id.bt_my_immediate_pop_no, R.id.lly_my_immediate_pop, R.id.bt_lock_pop_no, R.id.lly_lock_pop})
+//    R.id.lly_my_lottery_ticket, R.id.lly_my_lottery_activation,
+    @OnClick({ R.id.lly_my_lottery_settlement, R.id.bt_my_immediate_pop_yes, R.id.bt_my_immediate_pop_no, R.id.lly_my_immediate_pop, R.id.bt_lock_pop_no, R.id.lly_lock_pop})
     public void onViewClicked(View view) {
         Intent intent = new Intent();
         switch (view.getId()) {
-            case R.id.lly_my_lottery_ticket:
-                intent.setClass(getActivity(), LotteryPurchaseActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.lly_my_lottery_activation:
-                intent.setClass(getActivity(), ImmediatelActivationActivity.class);
-                startActivity(intent);
-                break;
+//            case R.id.lly_my_lottery_ticket:
+//                intent.setClass(getActivity(), LotteryPurchaseActivity.class);
+//                startActivity(intent);
+//                break;
+//            case R.id.lly_my_lottery_activation:
+//                intent.setClass(getActivity(), ImmediatelActivationActivity.class);
+//                startActivity(intent);
+//                break;
             case R.id.lly_my_lottery_settlement:
                 intent.setClass(getActivity(), ImmediatelSettlementActivity.class);
                 startActivity(intent);
@@ -330,12 +330,12 @@ public class MyLotteryFragment extends BaseFragment {
         } else {
             llyMyLotteryImmediate.setVisibility(View.GONE);
         }
-        if (getPermissionsUtil.getPermissions("yddlttz")) {
+        if (getPermissionsUtil.getPermissions("yddlttz")) {//投注
             GetGameList();
         } else {
             llyMyLotteryLt.setVisibility(View.GONE);
         }
-        if (getPermissionsUtil.getPermissions("yddsfctz")) {
+        if (getPermissionsUtil.getPermissions("yddsfctz")) {//投注
             jcBeanList.add(new MyImmediateBean(6, getString(R.string.jackpot), R.drawable.jackpot_icon, false, "yddsfc"));
         } else {
             llyMyLotteryJack.setVisibility(View.GONE);
@@ -343,7 +343,6 @@ public class MyLotteryFragment extends BaseFragment {
         myLotteryJcAdapter = new MyLotteryAdapter(getActivity(), this);
         myLotteryJcAdapter.setList(jcBeanList);
         relMyJack.setAdapter(myLotteryJcAdapter);
-        llyMyLotteryImmediate.setVisibility(View.VISIBLE);
     }
 
     //乐透

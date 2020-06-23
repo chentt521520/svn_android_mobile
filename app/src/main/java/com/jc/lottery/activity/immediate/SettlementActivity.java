@@ -1,6 +1,5 @@
 package com.jc.lottery.activity.immediate;
 
-import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -8,35 +7,18 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.google.gson.Gson;
 import com.jc.lottery.R;
-import com.jc.lottery.adapter.SettlementRecordAdapter;
 import com.jc.lottery.base.BaseActivity;
-import com.jc.lottery.bean.SettlementRecordBean;
-import com.jc.lottery.bean.req.pos_GetSettlementRecord;
-import com.jc.lottery.fragment.MyImmediateRecordFragment;
 import com.jc.lottery.fragment.SettlementRecordFragment;
-import com.jc.lottery.http.MyUrl;
 import com.jc.lottery.util.ImagePagerIndicator;
-import com.jc.lottery.util.ProgressUtil;
 import com.jc.lottery.util.SPUtils;
 import com.jc.lottery.util.SPkey;
-import com.jc.lottery.util.ToastUtils;
 import com.jc.lottery.util.ViewAnimationUtil;
-import com.jc.lottery.view.XListView;
 import com.jc.lottery.view.widget.CustomDatePicker;
-import com.lzy.okgo.OkGo;
-import com.lzy.okgo.callback.StringCallback;
-import com.lzy.okgo.model.Response;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

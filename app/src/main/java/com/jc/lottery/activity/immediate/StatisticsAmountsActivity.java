@@ -137,7 +137,7 @@ public class StatisticsAmountsActivity extends BaseActivity {
             tvStatisticsTwo.setTextColor(Color.rgb(22, 119, 255));
             viewStatisticsTwo.setVisibility(View.VISIBLE);
         } else {
-            tvStatisticsOne.setText(getString(R.string.administrators));
+//            tvStatisticsOne.setText(getString(R.string.administrators));
             llyStatisticsOne.setVisibility(View.VISIBLE);
             llyStatisticsTwo.setVisibility(View.GONE);
             llyAmountsGly.setVisibility(View.VISIBLE);

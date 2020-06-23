@@ -848,5 +848,5 @@
     <string name="back_home">Back Home</string>
     <string name="see_order">See Order</string>
     <string name="number_settle">Number Settle</string>
-
+    <string name="actual_settlement_amount">Actual settlement amount</string>
 </resources>

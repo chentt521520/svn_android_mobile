@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="48dp"
@@ -22,11 +23,12 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="23dip"
-                android:paddingLeft="10dip"
                 android:adjustViewBounds="true"
+                android:paddingLeft="10dip"
                 android:src="@drawable/arrow_left_white" />
 
         </LinearLayout>
+
         <TextView
             android:id="@+id/tv_recharge_detail_title"
             android:layout_width="wrap_content"
@@ -42,557 +44,624 @@
         android:id="@+id/srl_receiving"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <com.scwang.smartrefresh.layout.header.ClassicsHeader
-        android:id="@+id/header_receiving"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:id="@+id/header_receiving"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <com.zhy.android.percent.support.PercentLinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:orientation="vertical">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="40dip"
-                    android:gravity="center_vertical"
-                    android:background="#f3f3f3"
-                    android:visibility="gone">
-                    <View
-                        android:layout_width="3dip"
-                        android:layout_height="15dip"
-                        android:background="@color/main_color"
-                        android:layout_marginLeft="15dip"
-                        android:layout_marginTop="0.5dip"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/settlement_information"
-                        android:textSize="16dip"
-                        android:textColor="@color/black"
-                        android:layout_marginLeft="5dip"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:gravity="center">
-                    <TextView
-                        android:id="@+id/tv_preview_game"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/book_number"
-                        android:textSize="16dip"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="10dip"
-                        android:layout_marginBottom="10dip"/>
-                    <TextView
-                        android:id="@+id/tv_receiving_real_moneys"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text=""
-                        android:textSize="24dip"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-                        android:layout_marginBottom="5dip"/>
-                    <TextView
-                        android:id="@+id/tv_preview_total_settlement_status"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/settled"
-                        android:textSize="12dip"
-                        android:textColor="@color/black"
-                        android:layout_marginBottom="5dip"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="50dip"
-                    android:orientation="horizontal"
-                    android:visibility="gone">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/game_type"
-                        android:textSize="14dip"
-                        android:textColor="#333333"
-                        android:layout_marginLeft="15dip"/>
-                </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dip"
-                    android:background="#F3F3F3"
-                    android:layout_marginLeft="15dip"
-                    android:layout_marginRight="15dip"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dip"
-                    android:orientation="horizontal"
-                    android:visibility="visible">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/settlement_book"
-                        android:textSize="12dip"
-                        android:textColor="#999999"
-                        android:layout_marginLeft="15dip"/>
-                    <TextView
-                        android:id="@+id/tv_preview_book"
-                        android:layout_width="0dip"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center|right"
-                        android:text=""
-                        android:textSize="12dip"
-                        android:textColor="#333333"
-                        android:layout_marginRight="15dip"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dip"
-                    android:background="#F3F3F3"
-                    android:layout_marginLeft="15dip"
-                    android:layout_marginRight="15dip"
-                    android:visibility="gone"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dip"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/payable"
-                        android:textSize="12dip"
-                        android:textColor="#999999"
-                        android:layout_marginLeft="15dip"/>
-                    <TextView
-                        android:id="@+id/tv_preview_payable"
-                        android:layout_width="0dip"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center|right"
-                        android:text=""
-                        android:textSize="12dip"
-                        android:textColor="#333333"
-                        android:layout_marginRight="15dip"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dip"
-                    android:background="#F3F3F3"
-                    android:layout_marginLeft="15dip"
-                    android:layout_marginRight="15dip"
-                    android:visibility="gone"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dip"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/total_settlement_amount"
-                        android:textSize="12dip"
-                        android:textColor="#999999"
-                        android:layout_marginLeft="15dip"/>
-                    <TextView
-                        android:id="@+id/tv_preview_total_settlement_amount"
-                        android:layout_width="0dip"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center|right"
-                        android:text=""
-                        android:textSize="12dip"
-                        android:textColor="#333333"
-                        android:layout_marginRight="15dip"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dip"
-                    android:background="#F3F3F3"
-                    android:layout_marginLeft="15dip"
-                    android:layout_marginRight="15dip"
-                    android:layout_marginTop="5dip"
-                    android:layout_marginBottom="5dip"
-                    android:visibility="visible"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dip"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/sales_commission_ratio"
-                        android:textSize="12dip"
-                        android:textColor="#999999"
-                        android:layout_marginLeft="15dip"/>
-                    <TextView
-                        android:id="@+id/tv_preview_sales_commission_ratio"
-                        android:layout_width="0dip"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center|right"
-                        android:text=""
-                        android:textSize="12dip"
-                        android:textColor="#333333"
-                        android:layout_marginRight="15dip"/>
-                </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dip"
-                    android:background="#F3F3F3"
-                    android:layout_marginLeft="15dip"
-                    android:layout_marginRight="15dip"
-                    android:visibility="gone"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dip"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/sales_commission"
-                        android:textSize="12dip"
-                        android:textColor="#999999"
-                        android:layout_marginLeft="15dip"/>
-                    <TextView
-                        android:id="@+id/tv_preview_sales_commission"
-                        android:layout_width="0dip"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center|right"
-                        android:text=""
-                        android:textSize="12dip"
-                        android:textColor="#333333"
-                        android:layout_marginRight="15dip"/>
-                </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dip"
-                    android:background="#F3F3F3"
-                    android:layout_marginLeft="15dip"
-                    android:layout_marginRight="15dip"
-                    android:visibility="gone"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dip"
-                    android:orientation="horizontal"
-                    android:visibility="visible">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/total_rewards"
-                        android:textSize="12dip"
-                        android:textColor="#999999"
-                        android:layout_marginLeft="15dip"/>
-                    <TextView
-                        android:id="@+id/tv_preview_total_rewards"
-                        android:layout_width="0dip"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center|right"
-                        android:text=""
-                        android:textSize="12dip"
-                        android:textColor="#333333"
-                        android:layout_marginRight="15dip"/>
-                </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dip"
-                    android:background="#F3F3F3"
-                    android:layout_marginLeft="15dip"
-                    android:layout_marginRight="15dip"
-                    android:visibility="gone"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dip"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/exchange_commission_ratio"
-                        android:textSize="12dip"
-                        android:textColor="#999999"
-                        android:layout_marginLeft="15dip"/>
-                    <TextView
-                        android:id="@+id/tv_preview_commission_ratio"
-                        android:layout_width="0dip"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center|right"
-                        android:text=""
-                        android:textSize="12dip"
-                        android:textColor="#333333"
-                        android:layout_marginRight="15dip"/>
-                </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dip"
-                    android:background="#F3F3F3"
-                    android:layout_marginLeft="15dip"
-                    android:layout_marginRight="15dip"
-                    android:visibility="gone"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dip"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/exchange_commission"
-                        android:textSize="12dip"
-                        android:textColor="#999999"
-                        android:layout_marginLeft="15dip"/>
-                    <TextView
-                        android:id="@+id/tv_preview_exchange_commission"
-                        android:layout_width="0dip"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center|right"
-                        android:text=""
-                        android:textSize="12dip"
-                        android:textColor="#333333"
-                        android:layout_marginRight="15dip"/>
-                </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dip"
-                    android:background="#F3F3F3"
-                    android:layout_marginLeft="15dip"
-                    android:layout_marginRight="15dip"
-                    android:visibility="gone"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dip"
-                    android:orientation="horizontal"
-                    android:visibility="gone">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/total_commission"
-                        android:textSize="12dip"
-                        android:textColor="#999999"
-                        android:layout_marginLeft="15dip"/>
-                    <TextView
-                        android:id="@+id/tv_preview_total_commission"
-                        android:layout_width="0dip"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center|right"
-                        android:text=""
-                        android:textSize="12dip"
-                        android:textColor="#333333"
-                        android:layout_marginRight="15dip"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dip"
-                    android:background="#F3F3F3"
-                    android:layout_marginLeft="15dip"
-                    android:layout_marginRight="15dip"
-                    android:visibility="gone"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dip"
-                    android:orientation="horizontal"
-                    android:visibility="gone">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/settlement_status"
-                        android:textSize="12dip"
-                        android:textColor="#999999"
-                        android:layout_marginLeft="15dip"/>
-                </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dip"
-                    android:background="#F3F3F3"
-                    android:layout_marginLeft="15dip"
-                    android:layout_marginRight="15dip"
-                    android:visibility="gone"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dip"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/audit_time"
-                        android:textSize="12dip"
-                        android:textColor="#999999"
-                        android:layout_marginLeft="15dip"/>
-                    <TextView
-                        android:id="@+id/tv_preview_total_settlement_time"
-                        android:layout_width="0dip"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center|right"
-                        android:text=""
-                        android:textSize="12dip"
-                        android:textColor="#333333"
-                        android:layout_marginRight="15dip"/>
-                </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dip"
-                    android:background="#F3F3F3"
-                    android:layout_marginLeft="15dip"
-                    android:layout_marginRight="15dip"
-                    android:visibility="gone"/>
-            </com.zhy.android.percent.support.PercentLinearLayout>
             <LinearLayout
-                android:id="@+id/lly_receiving_activation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@color/white"
-                android:visibility="visible"
-                android:layout_marginTop="10dip">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="40dip"
-                    android:gravity="center_vertical"
-                    android:background="@color/white">
-                    <View
-                        android:layout_width="3dip"
-                        android:layout_height="10dip"
-                        android:background="#1577FF"
-                        android:layout_marginLeft="15dip"
-                        android:layout_marginTop="0.5dip"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/book_number"
-                        android:textSize="14dip"
-                        android:textColor="#1577FF"
-                        android:layout_marginLeft="5dip"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_margin="10dip">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="35dip"
-                        android:orientation="horizontal"
-                        android:weightSum="3">
-                        <TextView
-                            android:id="@+id/tv_receiving_item_no"
-                            android:layout_width="30dip"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:text="@string/xuhao"
-                            android:textSize="12dip"
-                            android:textColor="#333333"
-                            android:layout_marginLeft="5dip"/>
-                        <TextView
-                            android:id="@+id/tv_receiving_item_one"
-                            android:layout_width="0dip"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="@string/batch_number"
-                            android:textSize="12dip"
-                            android:textColor="#333333" />
-                        <TextView
-                            android:id="@+id/tv_receiving_item_two"
-                            android:layout_width="0dip"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="@string/book_number"
-                            android:textSize="12dip"
-                            android:textColor="#333333" />
-                        <TextView
-                            android:id="@+id/tv_receiving_item_three"
-                            android:layout_width="0dip"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="@string/reward_money"
-                            android:textSize="12dip"
-                            android:textColor="#333333" />
-                        <TextView
-                            android:id="@+id/tv_receiving_item_type"
-                            android:layout_width="0dip"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="@string/settlement_status"
-                            android:textSize="12dip"
-                            android:textColor="#333333"
-                            android:visibility="gone"/>
-                        <TextView
-                            android:id="@+id/tv_receiving_item_time"
-                            android:layout_width="0dip"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="@string/audit_time"
-                            android:textSize="12dip"
-                            android:textColor="#333333"
-                            android:visibility="gone"/>
-                    </LinearLayout>
-                    <ListView
-                        android:id="@+id/lv_receiving_detail"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:divider="@null"
-                        android:layout_marginLeft="1dip"
-                        android:layout_marginRight="1dip"
-                        android:layout_marginBottom="1dip"/>
-                </LinearLayout>
-            </LinearLayout>
-            <com.zhy.android.percent.support.PercentLinearLayout
-                android:id="@+id/lly_settlement_detail_examine"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:visibility="gone">
-                <Button
-                    android:id="@+id/bt_settlement_detail_examine"
+                android:orientation="vertical">
+
+                <com.zhy.android.percent.support.PercentLinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="48dip"
-                    android:background="@drawable/button_add_zhuce"
-                    android:text="@string/to_examine"
-                    android:textColor="@color/white"
-                    android:textSize="14dip"
-                    android:layout_marginLeft="15dip"
-                    android:layout_marginRight="15dip"/>
-            </com.zhy.android.percent.support.PercentLinearLayout>
-        </LinearLayout>
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:descendantFocusability="blocksDescendants"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dip"
+                        android:background="#f3f3f3"
+                        android:gravity="center_vertical"
+                        android:visibility="gone">
+
+                        <View
+                            android:layout_width="3dip"
+                            android:layout_height="15dip"
+                            android:layout_marginLeft="15dip"
+                            android:layout_marginTop="0.5dip"
+                            android:background="@color/main_color" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dip"
+                            android:text="@string/settlement_information"
+                            android:textColor="@color/black"
+                            android:textSize="16dip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_preview_game"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dip"
+                            android:layout_marginBottom="10dip"
+                            android:gravity="center"
+                            android:text="@string/book_number"
+                            android:textColor="@color/black"
+                            android:textSize="16dip" />
+
+                        <TextView
+                            android:id="@+id/tv_receiving_real_moneys"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dip"
+                            android:gravity="center"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="24dip"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_preview_total_settlement_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dip"
+                            android:gravity="center"
+                            android:text="@string/settled"
+                            android:textColor="@color/black"
+                            android:textSize="12dip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dip"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="15dip"
+                            android:gravity="center"
+                            android:text="@string/game_type"
+                            android:textColor="#333333"
+                            android:textSize="14dip" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginLeft="15dip"
+                        android:layout_marginRight="15dip"
+                        android:background="#F3F3F3" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dip"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="15dip"
+                            android:gravity="center"
+                            android:text="@string/settlement_book"
+                            android:textColor="#999999"
+                            android:textSize="12dip" />
+
+                        <TextView
+                            android:id="@+id/tv_preview_book"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="15dip"
+                            android:layout_weight="1"
+                            android:gravity="center|right"
+                            android:text=""
+                            android:textColor="#333333"
+                            android:textSize="12dip" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginLeft="15dip"
+                        android:layout_marginRight="15dip"
+                        android:background="#F3F3F3"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dip"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="15dip"
+                            android:gravity="center"
+                            android:text="@string/payable"
+                            android:textColor="#999999"
+                            android:textSize="12dip" />
+
+                        <TextView
+                            android:id="@+id/tv_preview_payable"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="15dip"
+                            android:layout_weight="1"
+                            android:gravity="center|right"
+                            android:text=""
+                            android:textColor="#333333"
+                            android:textSize="12dip" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginLeft="15dip"
+                        android:layout_marginRight="15dip"
+                        android:background="#F3F3F3"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dip"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="15dip"
+                            android:gravity="center"
+                            android:text="@string/total_settlement_amount"
+                            android:textColor="#999999"
+                            android:textSize="12dip" />
+
+                        <TextView
+                            android:id="@+id/tv_preview_total_settlement_amount"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="15dip"
+                            android:layout_weight="1"
+                            android:gravity="center|right"
+                            android:text=""
+                            android:textColor="#333333"
+                            android:textSize="12dip" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginLeft="15dip"
+                        android:layout_marginTop="5dip"
+                        android:layout_marginRight="15dip"
+                        android:layout_marginBottom="5dip"
+                        android:background="#F3F3F3"
+                        android:visibility="visible" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dip"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="15dip"
+                            android:gravity="center"
+                            android:text="@string/sales_commission_ratio"
+                            android:textColor="#999999"
+                            android:textSize="12dip" />
+
+                        <TextView
+                            android:id="@+id/tv_preview_sales_commission_ratio"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="15dip"
+                            android:layout_weight="1"
+                            android:gravity="center|right"
+                            android:text=""
+                            android:textColor="#333333"
+                            android:textSize="12dip" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginLeft="15dip"
+                        android:layout_marginRight="15dip"
+                        android:background="#F3F3F3"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dip"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="15dip"
+                            android:gravity="center"
+                            android:text="@string/sales_commission"
+                            android:textColor="#999999"
+                            android:textSize="12dip" />
+
+                        <TextView
+                            android:id="@+id/tv_preview_sales_commission"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="15dip"
+                            android:layout_weight="1"
+                            android:gravity="center|right"
+                            android:text=""
+                            android:textColor="#333333"
+                            android:textSize="12dip" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginLeft="15dip"
+                        android:layout_marginRight="15dip"
+                        android:background="#F3F3F3"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dip"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="15dip"
+                            android:gravity="center"
+                            android:text="@string/total_rewards"
+                            android:textColor="#999999"
+                            android:textSize="12dip" />
+
+                        <TextView
+                            android:id="@+id/tv_preview_total_rewards"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="15dip"
+                            android:layout_weight="1"
+                            android:gravity="center|right"
+                            android:text=""
+                            android:textColor="#333333"
+                            android:textSize="12dip" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginLeft="15dip"
+                        android:layout_marginRight="15dip"
+                        android:background="#F3F3F3"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dip"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="15dip"
+                            android:gravity="center"
+                            android:text="@string/exchange_commission_ratio"
+                            android:textColor="#999999"
+                            android:textSize="12dip" />
+
+                        <TextView
+                            android:id="@+id/tv_preview_commission_ratio"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="15dip"
+                            android:layout_weight="1"
+                            android:gravity="center|right"
+                            android:text=""
+                            android:textColor="#333333"
+                            android:textSize="12dip" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginLeft="15dip"
+                        android:layout_marginRight="15dip"
+                        android:background="#F3F3F3"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dip"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="15dip"
+                            android:gravity="center"
+                            android:text="@string/exchange_commission"
+                            android:textColor="#999999"
+                            android:textSize="12dip" />
+
+                        <TextView
+                            android:id="@+id/tv_preview_exchange_commission"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="15dip"
+                            android:layout_weight="1"
+                            android:gravity="center|right"
+                            android:text=""
+                            android:textColor="#333333"
+                            android:textSize="12dip" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginLeft="15dip"
+                        android:layout_marginRight="15dip"
+                        android:background="#F3F3F3"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dip"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="15dip"
+                            android:gravity="center"
+                            android:text="@string/total_commission"
+                            android:textColor="#999999"
+                            android:textSize="12dip" />
+
+                        <TextView
+                            android:id="@+id/tv_preview_total_commission"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="15dip"
+                            android:layout_weight="1"
+                            android:gravity="center|right"
+                            android:text=""
+                            android:textColor="#333333"
+                            android:textSize="12dip" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginLeft="15dip"
+                        android:layout_marginRight="15dip"
+                        android:background="#F3F3F3"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dip"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="15dip"
+                            android:gravity="center"
+                            android:text="@string/settlement_status"
+                            android:textColor="#999999"
+                            android:textSize="12dip" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginLeft="15dip"
+                        android:layout_marginRight="15dip"
+                        android:background="#F3F3F3"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dip"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="15dip"
+                            android:gravity="center"
+                            android:text="@string/audit_time"
+                            android:textColor="#999999"
+                            android:textSize="12dip" />
+
+                        <TextView
+                            android:id="@+id/tv_preview_total_settlement_time"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="15dip"
+                            android:layout_weight="1"
+                            android:gravity="center|right"
+                            android:text=""
+                            android:textColor="#333333"
+                            android:textSize="12dip" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginLeft="15dip"
+                        android:layout_marginRight="15dip"
+                        android:background="#F3F3F3"
+                        android:visibility="gone" />
+                </com.zhy.android.percent.support.PercentLinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lly_receiving_activation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dip"
+                        android:background="@color/white"
+                        android:gravity="center_vertical">
+
+                        <View
+                            android:layout_width="3dip"
+                            android:layout_height="10dip"
+                            android:layout_marginLeft="15dip"
+                            android:layout_marginTop="0.5dip"
+                            android:background="#1577FF" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dip"
+                            android:text="@string/book_number"
+                            android:textColor="#1577FF"
+                            android:textSize="14dip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dip"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="35dip"
+                            android:orientation="horizontal"
+                            android:weightSum="3">
+
+                            <TextView
+                                android:id="@+id/tv_receiving_item_no"
+                                android:layout_width="30dip"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dip"
+                                android:gravity="center"
+                                android:text="@string/xuhao"
+                                android:textColor="#333333"
+                                android:textSize="12dip" />
+
+                            <TextView
+                                android:id="@+id/tv_receiving_item_one"
+                                android:layout_width="0dip"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/batch_number"
+                                android:textColor="#333333"
+                                android:textSize="12dip" />
+
+                            <TextView
+                                android:id="@+id/tv_receiving_item_two"
+                                android:layout_width="0dip"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/book_number"
+                                android:textColor="#333333"
+                                android:textSize="12dip" />
+
+                            <TextView
+                                android:id="@+id/tv_receiving_item_three"
+                                android:layout_width="0dip"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/reward_money"
+                                android:textColor="#333333"
+                                android:textSize="12dip" />
+
+                            <TextView
+                                android:id="@+id/tv_receiving_item_type"
+                                android:layout_width="0dip"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/settlement_status"
+                                android:textColor="#333333"
+                                android:textSize="12dip"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/tv_receiving_item_time"
+                                android:layout_width="0dip"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/audit_time"
+                                android:textColor="#333333"
+                                android:textSize="12dip"
+                                android:visibility="gone" />
+                        </LinearLayout>
+
+                        <ListView
+                            android:id="@+id/lv_receiving_detail"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="1dip"
+                            android:layout_marginRight="1dip"
+                            android:layout_marginBottom="1dip"
+                            android:divider="@null" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <com.zhy.android.percent.support.PercentLinearLayout
+                    android:id="@+id/lly_settlement_detail_examine"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:visibility="gone">
+
+                    <Button
+                        android:id="@+id/bt_settlement_detail_examine"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dip"
+                        android:layout_marginLeft="15dip"
+                        android:layout_marginRight="15dip"
+                        android:background="@drawable/button_add_zhuce"
+                        android:text="@string/to_examine"
+                        android:textColor="@color/white"
+                        android:textSize="14dip" />
+                </com.zhy.android.percent.support.PercentLinearLayout>
+            </LinearLayout>
         </ScrollView>
+
         <com.scwang.smartrefresh.layout.footer.ClassicsFooter
             android:id="@+id/footer_receiving"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 </LinearLayout>

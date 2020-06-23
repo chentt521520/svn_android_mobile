@@ -27,6 +27,8 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.jc.lottery.R;
+import com.jc.lottery.activity.MainFragmentTabActivity;
+import com.jc.lottery.activity.money.OrderPaymentActivity;
 import com.jc.lottery.activity.scanner.RewardScannerActivity;
 import com.jc.lottery.adapter.SettlementNewsAdapter;
 import com.jc.lottery.adapter.SettlementSelectAdapter;
@@ -174,6 +176,7 @@ public class ImmediatelSettlementActivity extends BaseActivity {
     private int typePosTop = 0;
     private int typesPos = 0;
     private int typesPosTop = 0;
+
 
     @Override
     public int getLayoutId() {

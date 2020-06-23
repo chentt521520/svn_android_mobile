@@ -201,7 +201,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="15dp"
                         android:gravity="center"
-                        android:text="@string/payable"
+                        android:text="@string/actual_settlement_amount"
                         android:textColor="#333333"
                         android:textSize="14sp" />
 

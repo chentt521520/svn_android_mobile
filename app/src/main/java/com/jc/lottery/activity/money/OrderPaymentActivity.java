@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.jc.lottery.R;
 import com.jc.lottery.activity.MainFragmentTabActivity;
+import com.jc.lottery.activity.immediate.ReceivingRecordsActivity;
 import com.jc.lottery.base.BaseActivity;
 import com.jc.lottery.bean.req.pos_GetOrderPay;
 import com.jc.lottery.http.MyUrl;
@@ -195,6 +196,7 @@ public class OrderPaymentActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.btn_lottery_pop_to_detail://订单详情
+                startActivity(new Intent(OrderPaymentActivity.this,ReceivingRecordsActivity.class));
 
 //                Intent intent2 = new Intent();
 //                intent2.putExtra("activityType", payChannl);

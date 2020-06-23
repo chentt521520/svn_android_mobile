@@ -1,5 +1,6 @@
 package com.jc.lottery.activity.immediate;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.jc.lottery.R;
+import com.jc.lottery.activity.my.SettlementResultActivity;
 import com.jc.lottery.base.BaseActivity;
 import com.jc.lottery.bean.req.pos_GetSettlement;
 import com.jc.lottery.bean.req.pos_settlementQuery;
@@ -218,6 +220,12 @@ public class SettlementPreviewActivity extends BaseActivity {
                                 ImmediatelSettlementActivity.instance.getBookInfoHttp("");
 
                                 //弹出结算成功界面
+//                                finish();
+                                Intent intent = new Intent(SettlementPreviewActivity.this, SettlementResultActivity.class);
+                                intent.putExtra("amount", settlementQueryBean.getTotalMoney());
+//                                intent.putExtra("type",)
+                                startActivity(intent);
+
                                 finish();
                             }
                         } catch (JSONException e) {

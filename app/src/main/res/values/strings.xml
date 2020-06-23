@@ -715,6 +715,7 @@
     <string name="settled_amount">已结算金额</string>
     <string name="payment_record">支付记录</string>
     <string name="actual_payment_amount">实际支付金额</string>
+    <string name="actual_settlement_amount">实际结算金额</string>
     <string name="preview_of_settlement">结算预览</string>
     <string name="settlement_information">结算信息</string>
     <string name="total_rewards">兑奖总额</string>
